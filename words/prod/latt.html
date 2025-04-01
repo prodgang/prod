@@ -361,6 +361,7 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-algebras">Boolean Algebras</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fin">Fin</a></li>
 </ul>
             </nav>
         </div>
@@ -374,7 +375,7 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="lattices">
 <span id="sections-lattice"></span><h1>Lattices<a class="headerlink" href="#lattices" title="Link to this heading">#</a></h1>
-<p>One day, I was sitting on a roof top practicing some … breathing excercises … and it occured to me that maybe graft and prune form a lattice. I didn’t really know what a lattice was, so I went downstairs, pulled up the <a class="reference external" href="https://en.wikipedia.org/wiki/Lattice_(order)#As_algebraic_structure">wikipedia definition</a> and coded up some python to check which conditions were satisfied. It went pretty well.</p>
+<p>One day, I was sitting on a rooftop practicing some … breathing excercises … and it occured to me that maybe graft and prune form a lattice. I didn’t really know what a lattice was, so I went downstairs, pulled up the <a class="reference external" href="https://en.wikipedia.org/wiki/Lattice_(order)#As_algebraic_structure">wikipedia definition</a> and coded up some python to check which conditions were satisfied. It went pretty well.</p>
 <p>It turns out there’s a whole family of different type of lattices that form a kind of poset themselves:</p>
 <figure class="align-center" id="latt-map">
 <a class="reference internal image-reference" href="../../_images/Lattice_v4.png"><img alt="../../_images/Lattice_v4.png" src="../../_images/Lattice_v4.png" style="height: 400px;" /></a>
@@ -382,7 +383,7 @@
 <p><span class="caption-number">Fig. 3 </span><span class="caption-text"><a class="reference external" href="https://en.wikipedia.org/wiki/Map_of_lattices">source</a></span><a class="headerlink" href="#latt-map" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Almost immediately, I realized I had accidentally discovered a distributive lattice. A week later, I had proven it. The next week, I looked into connections with <a class="reference external" href="https://en.wikipedia.org/wiki/Lattice-based_cryptography">lattice based cryptography</a>. Turns out to be a completely different lattice and massive waste of time. Just goes to show that not only do mathematicians suck at naming things, they can’t even do it uniquely. Anyway, after a few more months, I finally worked out how to produce Boolean algebras. The following sections detail this journey but with hindsight’s gift of clarity.</p>
+<p>Almost immediately, I realized I had accidentally discovered a distributive lattice. A week later, I had proven it. The next week, I looked into connections with <a class="reference external" href="https://en.wikipedia.org/wiki/Lattice-based_cryptography">lattice based cryptography</a>. Turns out to be a completely different lattice and massive waste of time. Just goes to show that not only do mathematicians suck at naming things, they can’t even do it uniquely. Anyway, after a few more months, I finally worked out how to produce Boolean algebras, right at the top. The following sections detail this journey but with hindsight’s gift of clarity.</p>
 <section id="poset">
 <span id="sections-lattice-poset"></span><h2>Poset<a class="headerlink" href="#poset" title="Link to this heading">#</a></h2>
 <p>As you can see from the image above, a lattice is at the very least a partial order. So how do we make a productive partial order?</p>
@@ -403,10 +404,10 @@
 </ol>
 <p>Here’s a snapshot of the Hasse diagram:</p>
 <a class="reference internal image-reference" href="../../_images/plat.svg"><img alt="productive lattice" class="align-center" src="../../_images/plat.svg" style="height: 450px;" /></a>
-<p>Once again, its much easier to interpret things with trees. The general pattern is that <span class="math notranslate nohighlight">\(x \sqsubseteq y\)</span> if you can place <span class="math notranslate nohighlight">\(y\)</span> on top of <span class="math notranslate nohighlight">\(x\)</span> and completely cover it. Practice a few for yourself if you want.</p>
+<p>Once again, its much easier to interpret things with trees. The general pattern is that <span class="math notranslate nohighlight">\(x \sqsubseteq y\)</span> if you can place <span class="math notranslate nohighlight">\(y\)</span> on top of <span class="math notranslate nohighlight">\(x\)</span> and completely smother <span class="math notranslate nohighlight">\(x\)</span>. Practice a few for yourself if you want.</p>
 <p>Other than the <span class="math notranslate nohighlight">\(4|8\)</span> thing and the fact that the productive poset includes <span class="math notranslate nohighlight">\(0\)</span>, hopefully you can see there’s a lot of similarities between the <a class="reference internal" href="../pre/poset.html#divlatt"><span class="std std-ref">divisibility poset</span></a> and the productive poset above. In fact, the productive poset is hidden inside the divisibility one!</p>
 <div class="proof theorem admonition" id="leqdiv">
-<p class="admonition-title"><span class="caption-number">Theorem 7 </span></p>
+<p class="admonition-title"><span class="caption-number">Theorem 6 </span></p>
 <section class="theorem-content" id="proof-content">
 <p><span class="math notranslate nohighlight">\(x \sqsubseteq y \implies x | y \text{, for any } x \neq 0\)</span></p>
 </section>
@@ -424,7 +425,7 @@
 </ol>
 <p class="sd-card-text">These all seem obvious to me. I refrain from proving them because I’m not a number theorist.</p>
 <div class="proof lemma admonition" id="lemma-1">
-<p class="admonition-title"><span class="caption-number">Lemma 1 </span></p>
+<p class="admonition-title"><span class="caption-number">Lemma 2 </span></p>
 <section class="lemma-content" id="proof-content">
 <p class="sd-card-text"><span class="math notranslate nohighlight">\(x \sqsubseteq y \implies I(x) \leq_+ I(y)\)</span></p>
 </section>
@@ -448,12 +449,12 @@
 <p class="sd-card-text">Applying the final number theory fact, <span class="math notranslate nohighlight">\(I(x) = \prod_{i=1}^n p_i^{I(x_i)} | \prod_{i=1}^n p_i^{I(y_i)} = I(y)\)</span></p>
 <p class="sd-card-text">Done.</p>
 </div>
-<p class="sd-card-text"><a class="reference internal" href="#leqdiv">Theorem 7</a> is subtle but possibly the most important conceptual result so far. While it makes sense to think of the productive order as a small deviation from the divisibility order, I think the proof highlights how the divisibility order is actually more closely related to the additive order. So maybe the visual similarities of the Hasse diagrams is because we’re just looking at the beginning parts and the higher you go, the sparser the similarities. Or maybe not. But it’s worth pondering.</p>
+<p class="sd-card-text"><a class="reference internal" href="#leqdiv">Theorem 6</a> is subtle but possibly the most important conceptual result so far. While it makes sense to think of the productive order as a small deviation from the divisibility order, I think the proof highlights how the divisibility order is actually more closely related to the additive order. So maybe the visual similarities of the Hasse diagrams is because we’re just looking at the beginning parts and the higher you go, the sparser the similarities. Or maybe not. But it’s worth pondering.</p>
 </div>
-</details><p>In any case, we’d probably better check that <span class="math notranslate nohighlight">\(\sqsubseteq\)</span> really does define a partial order! I’ll go through the reflexivity proof in ‘’detail’’ and you can check out the other parts if you want. They’re all not-particularly-insightful inductions.</p>
-<div class="proof theorem admonition" id="pleqrefl">
-<p class="admonition-title"><span class="caption-number">Theorem 8 </span></p>
-<section class="theorem-content" id="proof-content">
+</details><p>In any case, we’d probably better check that <span class="math notranslate nohighlight">\(\sqsubseteq\)</span> really does define a partial order. I’ll go through the reflexivity proof in ‘’detail’’ and you can check out the other parts if you want. They’re all not-particularly-insightful inductions. Quick reminder in case you skipped the previous proofs: productive induction is just: prove it for <span class="math notranslate nohighlight">\(0\)</span>, then assume it for <span class="math notranslate nohighlight">\(x_1, ... x_n\)</span> and prove it for <span class="math notranslate nohighlight">\([x_1, ..., x_n]\)</span>.</p>
+<div class="proof lemma admonition" id="pleqrefl">
+<p class="admonition-title"><span class="caption-number">Lemma 3 </span></p>
+<section class="lemma-content" id="proof-content">
 <p><span class="math notranslate nohighlight">\(x \sqsubseteq x\)</span></p>
 </section>
 </div><div class="proof admonition" id="proof">
@@ -464,9 +465,9 @@
 <summary class="sd-summary-title sd-card-header">
 <span class="sd-summary-text">Click me for proofs of transitivity and anti-symmetry</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">We’ll go with anti-symmetry first because its merely a double induction.</p>
-<div class="proof theorem admonition" id="pleqasymm">
-<p class="admonition-title"><span class="caption-number">Theorem 9 </span></p>
-<section class="theorem-content" id="proof-content">
+<div class="proof lemma admonition" id="pleqasymm">
+<p class="admonition-title"><span class="caption-number">Lemma 4 </span></p>
+<section class="lemma-content" id="proof-content">
 <p class="sd-card-text"><span class="math notranslate nohighlight">\(x \sqsubseteq y \land y \sqsubseteq x \implies x = y\)</span></p>
 </section>
 </div><div class="proof admonition" id="proof">
@@ -476,9 +477,9 @@
 <p class="sd-card-text">Now apply inductive hypothesis to get <span class="math notranslate nohighlight">\(x_i = y_i\)</span>. So <span class="math notranslate nohighlight">\([x_1, ..., x_n] = [y_1, ..., y_n]\)</span> and <span class="math notranslate nohighlight">\(x = y\)</span>. Done.</p>
 </div>
 <p class="sd-card-text">Transitivity triple induction time!</p>
-<div class="proof theorem admonition" id="pleqtrans">
-<p class="admonition-title"><span class="caption-number">Theorem 10 </span></p>
-<section class="theorem-content" id="proof-content">
+<div class="proof lemma admonition" id="pleqtrans">
+<p class="admonition-title"><span class="caption-number">Lemma 5 </span></p>
+<section class="lemma-content" id="proof-content">
 <p class="sd-card-text"><span class="math notranslate nohighlight">\(x \sqsubseteq y \land y \sqsubseteq z \implies x \sqsubseteq z\)</span></p>
 </section>
 </div><div class="proof admonition" id="proof">
@@ -496,7 +497,7 @@
 </div>
 </details><p>Recall that trick I mentioned about fitting <span class="math notranslate nohighlight">\(y\)</span> on top of <span class="math notranslate nohighlight">\(x\)</span> to check whether its bigger. If you’ve read the wikipedia article on lattices closely (or just know enough about them already), you’ll know that there’s two different ways to define a lattice: either starting with a poset and looking for greatest/least upper/lower bounds or starting with two operations <span class="math notranslate nohighlight">\(\land, \lor\)</span> and using them to define a poset. Conveniently, these are identical in our case.</p>
 <div class="proof theorem admonition" id="pleqeqlatt">
-<p class="admonition-title"><span class="caption-number">Theorem 11 </span></p>
+<p class="admonition-title"><span class="caption-number">Theorem 7 </span></p>
 <section class="theorem-content" id="proof-content">
 <p><span class="math notranslate nohighlight">\(x \sqsubseteq y \iff x = x \sqcap y\)</span></p>
 </section>
@@ -519,7 +520,7 @@
 </details><div class="admonition-historical-tangent admonition">
 <p class="admonition-title">Historical Tangent</p>
 <p>This equivalence was pretty exciting for me when I first noticed it because I had written down the definitions of <span class="math notranslate nohighlight">\(\sqsubseteq\)</span> and <span class="math notranslate nohighlight">\(\sqcap\)</span> completely independently, years apart, and they ended up working together in the nicest possible way, forming some structure I had barely even heard of. The only link between their definitions was that both times, I had tried to write down the simplest thing I could imagine. This gave the same sense of eery excitement you might get from realizing the way you butter your toast is the same as the way you brush your teeth, and these similiarities could help you solve a rubik’s cube.</p>
-<p>The fact that both definitions had split into a <span class="math notranslate nohighlight">\(0\)</span> case and a <span class="math notranslate nohighlight">\([x_1, ..., x_n]\)</span> case is what led me to write down <a class="reference internal" href="defs.html#equation-prod0">(13)</a> and <a class="reference internal" href="defs.html#equation-prod1">(14)</a>, where your journey began. Only then did I realize I could prove things by induction at which point the proofs wrote themselves and I could write this book. A couple of coincidences like these should be enough to convince anyone that prods (actually all math) are discovered, not invented.</p>
+<p>The fact that both definitions had split into a <span class="math notranslate nohighlight">\(0\)</span> case and a <span class="math notranslate nohighlight">\([x_1, ..., x_n]\)</span> case is what led me to write down <a class="reference internal" href="defs.html#equation-prod0">(13)</a> and <a class="reference internal" href="defs.html#equation-prod1">(14)</a>, where your journey began. Only then did I realize I could prove things by induction at which point the proofs wrote themselves and I could write this book. Coincidences like these are what convince me that prods (actually all math) are discovered, not invented.</p>
 </div>
 <p>So we’ve made it onto the first rung of <a class="reference internal" href="#latt-map"><span class="std std-ref">the map</span></a>!</p>
 </section>
@@ -532,9 +533,9 @@
 <li><p>Absorption: <span class="math notranslate nohighlight">\(x \sqcup (x \sqcap y) = x\)</span> and <span class="math notranslate nohighlight">\(x \sqcap (x \sqcup y) = x\)</span></p></li>
 </ul>
 <p>I won’t prove all of these because the proofs are all dull, mechanical inductions. But here’s a couple for illustration.</p>
-<div class="proof theorem admonition" id="graftcomm">
-<p class="admonition-title"><span class="caption-number">Theorem 12 </span></p>
-<section class="theorem-content" id="proof-content">
+<div class="proof lemma admonition" id="graftcomm">
+<p class="admonition-title"><span class="caption-number">Lemma 6 </span></p>
+<section class="lemma-content" id="proof-content">
 <p><span class="math notranslate nohighlight">\(x \sqcup y = y \sqcup x\)</span></p>
 </section>
 </div><div class="proof admonition" id="proof">
@@ -542,16 +543,16 @@
 <p>Inductive step (<span class="math notranslate nohighlight">\(x = [x_1, ..., x_n], y = [y_1, ..., y_n]\)</span>). Assume for inductive hypothesis that <span class="math notranslate nohighlight">\(x_i \sqcup y_i = y_i \sqcup x_i\)</span>. Then <span class="math notranslate nohighlight">\(x \sqcup y = [x_1 \sqcup y_1, ..., x_n \sqcup y_n] = [y_1 \sqcup x_1, ..., y_n \sqcup x_n] = y \sqcup x\)</span>. Done.</p>
 </div>
 <p>The only thing that would change for the proof of <span class="math notranslate nohighlight">\(x \sqcap y = y \sqcap x\)</span> would be the base cases, which still of course go through.</p>
-<div class="proof theorem admonition" id="absorb1">
-<p class="admonition-title"><span class="caption-number">Theorem 13 </span></p>
-<section class="theorem-content" id="proof-content">
+<div class="proof lemma admonition" id="absorb1">
+<p class="admonition-title"><span class="caption-number">Lemma 7 </span></p>
+<section class="lemma-content" id="proof-content">
 <p><span class="math notranslate nohighlight">\(x \sqcup (x \sqcap y) = x\)</span></p>
 </section>
 </div><div class="proof admonition" id="proof">
 <p>Proof. Base cases:</p>
 <ul class="simple">
 <li><p>(<span class="math notranslate nohighlight">\(x = 0\)</span>): <span class="math notranslate nohighlight">\(0 \sqcup (0 \sqcap y) = 0 \sqcup 0 = 0\)</span></p></li>
-<li><p>(<span class="math notranslate nohighlight">\(y = 0\)</span>): <span class="math notranslate nohighlight">\(x \sqcup (x \sqcap 0) = x \sqcup x = x\)</span>, by <a class="reference internal" href="ops.html#graftidem">Theorem 6</a></p></li>
+<li><p>(<span class="math notranslate nohighlight">\(y = 0\)</span>): <span class="math notranslate nohighlight">\(x \sqcup (x \sqcap 0) = x \sqcup x = x\)</span>, by <a class="reference internal" href="ops.html#graftidem">Lemma 1</a></p></li>
 </ul>
 <p>Inductive step (<span class="math notranslate nohighlight">\(x = [x_1, ..., x_n], y = [y_1, ..., y_n]\)</span>): assume for inductive hypothesis that <span class="math notranslate nohighlight">\(x_i \sqcup (x_i \sqcap y_i) = x_i\)</span>, for every <span class="math notranslate nohighlight">\(i\)</span>.</p>
 <p>Then:</p>
@@ -567,7 +568,7 @@ x \sqcup (x \sqcap y) &amp;= [x_1, ..., x_n] \sqcup [x_1 \sqcap y_1, ..., x_n \s
 <p>Obviously the proof of the other absorption law looks very similar, though you’d have to prove <span class="math notranslate nohighlight">\(x \sqcap x = x\)</span> first. I’m not going to bother with the associativity proofs because you either get the idea at this point, or you should stop reading and revisit some older chapters.</p>
 <p>So we’ve hit lattice - the third rung! While we’re on a roll, we can jump way further to distributive lattice which you can see somewhere in the top left of the <a class="reference internal" href="#latt-map"><span class="std std-ref">map</span></a>. All we need is the following.</p>
 <div class="proof theorem admonition" id="distrib">
-<p class="admonition-title"><span class="caption-number">Theorem 14 </span></p>
+<p class="admonition-title"><span class="caption-number">Theorem 8 </span></p>
 <section class="theorem-content" id="proof-content">
 <p><span class="math notranslate nohighlight">\(x \sqcap (y \sqcup z) = (x \sqcap y) \sqcup (x \sqcap z)\)</span></p>
 </section>
@@ -577,7 +578,7 @@ x \sqcup (x \sqcap y) &amp;= [x_1, ..., x_n] \sqcup [x_1 \sqcap y_1, ..., x_n \s
 <ul class="simple">
 <li><p>(<span class="math notranslate nohighlight">\(x=0\)</span>): <span class="math notranslate nohighlight">\(0 \sqcap (y \sqcup z) = 0 = 0 \sqcup 0 = (0 \sqcap y) \sqcup (0 \sqcap z)\)</span></p></li>
 <li><p>(<span class="math notranslate nohighlight">\(y=0\)</span>): <span class="math notranslate nohighlight">\(x \sqcap (0 \sqcup z) = x \sqcap z = 0 \sqcup (x \sqcap z) = (x \sqcap 0) \sqcup (x \sqcap z)\)</span></p></li>
-<li><p>(<span class="math notranslate nohighlight">\(z=0\)</span>): follows from previous case by commutativity (<a class="reference internal" href="#graftcomm">Theorem 12</a>)</p></li>
+<li><p>(<span class="math notranslate nohighlight">\(z=0\)</span>): follows from previous case by commutativity (<a class="reference internal" href="#graftcomm">Lemma 6</a>)</p></li>
 </ul>
 <p>Inductive step (<span class="math notranslate nohighlight">\(x = [x_1, ..., x_n], y = [y_1, ..., y_n], z = [z_1, ..., z_n]\)</span>): Assume for inductive hypothesis that <span class="math notranslate nohighlight">\(x_i \sqcap (y_i \sqcup z_i) = (x_i \sqcap y_i) \sqcup (x_i \sqcap z_i)\)</span>.</p>
 <p>Then:</p>
@@ -586,6 +587,7 @@ x \sqcup (x \sqcap y) &amp;= [x_1, ..., x_n] \sqcup [x_1 \sqcap y_1, ..., x_n \s
 x \sqcap (y \sqcup z) &amp;= [x_1, ..., x_n] \sqcap [y_1 \sqcup z_1, ..., y_n \sqcup z_n] 
 \\ &amp;= [x_1 \sqcap (y_1 \sqcup z_1), ..., x_n \sqcap (y_n \sqcup z_n)] 
 \\ &amp;=_{(IH)} [(x_1 \sqcap y_1) \sqcup (x_1 \sqcap z_1), ..., (x_n \sqcap y_n) \sqcup (x_n \sqcap z_n)] 
+\\ &amp;= [x_1 \sqcap y_1, ... x_n \sqcap y_n] \sqcup [x_1 \sqcap z_1, ..., x_n \sqcap z_n]
 \\ &amp;= (x \sqcap y) \sqcup (x \sqcap z)
 \end{align*}\]</div>
 <p>Done.</p>
@@ -595,22 +597,22 @@ x \sqcap (y \sqcup z) &amp;= [x_1, ..., x_n] \sqcap [y_1 \sqcup z_1, ..., y_n \s
 <section id="heyting-algebra">
 <h2>Heyting Algebra<a class="headerlink" href="#heyting-algebra" title="Link to this heading">#</a></h2>
 <p>So we’ve got a distributive lattice. The next step up on the <a class="reference internal" href="#latt-map"><span class="std std-ref">map</span></a> is either totally ordered set (which we definitely don’t have) or something called a Heyting algebra. Apparently, a Heyting algebra means you can do logic inside a lattice which sounds pretty fun. You’ll notice that Heyting algebra is also above bounded lattice, so that’s a sort of pre-requisite for getting to Heyting.</p>
-<p>In a bounded lattice, there’s a least element <span class="math notranslate nohighlight">\(\bot\)</span> that’s less than everything and a greatest element <span class="math notranslate nohighlight">\(\top\)</span> that’s bigger than everything. Clearly, <span class="math notranslate nohighlight">\(0\)</span> works for our least element. The greatest element is not so obvious. One option would be to artificially insert some element <span class="math notranslate nohighlight">\(\top\)</span> that just by definition is greater than everything, i.e. <span class="math notranslate nohighlight">\(x \sqsubseteq \top\)</span>, for any <span class="math notranslate nohighlight">\(x\)</span> (which is equivalent to <span class="math notranslate nohighlight">\(x \sqcap \top = x\)</span> by <a class="reference internal" href="#pleqeqlatt">Theorem 11</a>).</p>
+<p>In a bounded lattice, there’s a least element <span class="math notranslate nohighlight">\(\bot\)</span> that’s less than everything and a greatest element <span class="math notranslate nohighlight">\(\top\)</span> that’s bigger than everything. Clearly, <span class="math notranslate nohighlight">\(0\)</span> works for our least element. The greatest element is not so obvious. One option would be to artificially insert some element <span class="math notranslate nohighlight">\(\top\)</span> that just by definition is greater than everything, i.e. <span class="math notranslate nohighlight">\(x \sqsubseteq \top\)</span>, for any <span class="math notranslate nohighlight">\(x\)</span> (which is equivalent to <span class="math notranslate nohighlight">\(x \sqcap \top = x\)</span> by <a class="reference internal" href="#pleqeqlatt">Theorem 7</a>).</p>
 <p>This works to get a bounded lattice but, as punishment for the artificiality, can take us no further. Let’s have a look.</p>
 <p>In a Heyting algebra, the idea is to interpret <span class="math notranslate nohighlight">\(a \leq b\)</span> as saying that <span class="math notranslate nohighlight">\(a\)</span> allows you to prove <span class="math notranslate nohighlight">\(b\)</span>. So <span class="math notranslate nohighlight">\(a \land b \leq a\)</span> means that you can prove <span class="math notranslate nohighlight">\(a\)</span> from <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>, which makes sense. <span class="math notranslate nohighlight">\(\bot\)</span> is interpreted as false and <span class="math notranslate nohighlight">\(\top\)</span> is interpreted as true, and everything else is a sort of intermediate truth value I don’t understand. The crucial requirement to be a Heyting algebra is that for every <span class="math notranslate nohighlight">\(a,b\)</span> there exists a <em>greatest</em> <span class="math notranslate nohighlight">\(x\)</span> such that <span class="math notranslate nohighlight">\(a \land x \leq b\)</span>. This <span class="math notranslate nohighlight">\(x\)</span> is often called <span class="math notranslate nohighlight">\(a \to b\)</span> since <span class="math notranslate nohighlight">\(a \land (a \to b) \leq b\)</span>, i.e. from <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(a \to b\)</span> you can prove <span class="math notranslate nohighlight">\(b\)</span>. The fact that <span class="math notranslate nohighlight">\(x\)</span> is the greatest kind of means its the best at proving <span class="math notranslate nohighlight">\(b\)</span>.</p>
 <p>In the productive lattice, it’s easy to always find some <span class="math notranslate nohighlight">\(x\)</span> such <span class="math notranslate nohighlight">\(a \sqcap x \sqsubseteq b\)</span> - just choose <span class="math notranslate nohighlight">\(x = 0\)</span> since <span class="math notranslate nohighlight">\(a \sqcap 0 = 0 \sqsubseteq b\)</span>, for any <span class="math notranslate nohighlight">\(a,b\)</span>. The problem is finding the greatest <span class="math notranslate nohighlight">\(x\)</span>. For example, imagine <span class="math notranslate nohighlight">\(a = [0, []]\)</span> and <span class="math notranslate nohighlight">\(b = []\)</span>. Then <span class="math notranslate nohighlight">\([[]]\)</span> would work for <span class="math notranslate nohighlight">\(x\)</span> because <span class="math notranslate nohighlight">\([0, []] \sqcap [[]] = [] \sqsubseteq []\)</span>. But so would <span class="math notranslate nohighlight">\([[[]]]\)</span> and <span class="math notranslate nohighlight">\([[[[]]]]\)</span>, and so on forever up the <span class="math notranslate nohighlight">\(2\)</span> chain. On the other hand, picking <span class="math notranslate nohighlight">\(\top\)</span> doesn’t work because <span class="math notranslate nohighlight">\([0, []] \sqcap \top = [0, []] \not \sqsubseteq []\)</span>. So there is no <em>greatest</em> <span class="math notranslate nohighlight">\(x\)</span>, so we don’t have a Heyting algebra. Yet.</p>
-<p>The problem is that the productive lattice is currently too large. So the obvious next step (which wasn’t obvious to me until a friend suggested it) is to try smaller lattices. Given a prod <span class="math notranslate nohighlight">\(x\)</span>, we can take the set of prods smaller than it. Techincally, this is called the <em>downset</em> of <span class="math notranslate nohighlight">\(x\)</span>, written <span class="math notranslate nohighlight">\(\downarrow x = \{y : y \sqsubseteq x \}\)</span>. Here’s the downset of <span class="math notranslate nohighlight">\(30 = [[], [], []]\)</span>:</p>
+<p>The problem is that the productive lattice is currently too large. So the obvious next step (which wasn’t obvious to me until a friend suggested it) is to try smaller lattices. Given a prod <span class="math notranslate nohighlight">\(x\)</span>, we can take the set of prods smaller than it. Technically, this is called the <em>downset</em> of <span class="math notranslate nohighlight">\(x\)</span>, written <span class="math notranslate nohighlight">\(\downarrow x = \{y : y \sqsubseteq x \}\)</span>. Here’s the downset of <span class="math notranslate nohighlight">\(30 = [[], [], []]\)</span>:</p>
 <a class="reference internal image-reference" href="../../_images/lat30.svg" id="lat30"><img alt="30 lattice" class="align-center" id="lat30" src="../../_images/lat30.svg" style="height: 300px;" /></a>
 <p>Note only does this look pretty (and very similar to <a class="reference internal" href="../pre/poset.html#sublatt"><span class="std std-ref">this</span></a>), but it forms a baby lattice of its own! This <a class="reference external" href="https://math.stackexchange.com/questions/4101103/is-every-finite-distributive-lattice-a-finite-heyting-algebra">automatically</a> makes it a Heyting algebra because its finite. We just have to prove a couple of things.</p>
 <div class="proof theorem admonition" id="sublatt">
-<p class="admonition-title"><span class="caption-number">Theorem 15 </span></p>
+<p class="admonition-title"><span class="caption-number">Theorem 9 </span></p>
 <section class="theorem-content" id="proof-content">
-<p>For any <span class="math notranslate nohighlight">\(x \in \mathbb{\Pi}, \downarrow x\)</span> is a finite distributive lattice.</p>
+<p>For any <span class="math notranslate nohighlight">\(x \in \mathbb{\Pi}, \downarrow x\)</span> is a Heyting algebra.</p>
 </section>
 </div><div class="proof admonition" id="proof">
-<p>Proof. That <span class="math notranslate nohighlight">\(\downarrow x\)</span> is finite is obvious. Distributivity is inherited from the larger lattice. We just have to make sure that if <span class="math notranslate nohighlight">\(y, z \in \downarrow x\)</span>, then <span class="math notranslate nohighlight">\(y \sqcup z\)</span> and <span class="math notranslate nohighlight">\(y \sqcap z\)</span> are both still in <span class="math notranslate nohighlight">\(\downarrow x\)</span>. In other words, <span class="math notranslate nohighlight">\(\sqcup\)</span> and <span class="math notranslate nohighlight">\(\sqcap\)</span> cannot take you out of the downset.</p>
+<p>Proof. Every finite distributive lattice is a Heyting algebra, so we’ll actually prove that instead. That <span class="math notranslate nohighlight">\(\downarrow x\)</span> is finite is obvious. Distributivity is inherited from the larger lattice. We just have to make sure that if <span class="math notranslate nohighlight">\(y, z \in \downarrow x\)</span>, then <span class="math notranslate nohighlight">\(y \sqcup z\)</span> and <span class="math notranslate nohighlight">\(y \sqcap z\)</span> are both still in <span class="math notranslate nohighlight">\(\downarrow x\)</span>. In other words, <span class="math notranslate nohighlight">\(\sqcup\)</span> and <span class="math notranslate nohighlight">\(\sqcap\)</span> cannot take you out of the downset.</p>
 <p>Proving it for <span class="math notranslate nohighlight">\(\sqcap\)</span> is easy. It’s always the case that <span class="math notranslate nohighlight">\(y \sqcap z \sqsubseteq y \sqsubseteq x\)</span>, so <span class="math notranslate nohighlight">\(y \sqcap z \sqsubseteq x\)</span> by transitivity.</p>
-<p>For <span class="math notranslate nohighlight">\(\sqcup\)</span> we can use induction on the statement <span class="math notranslate nohighlight">\(y,z \sqsubseteq x \implies y \sqcup z \sqsubseteq x\)</span>. There could be easier ways but whatever.</p>
+<p>For <span class="math notranslate nohighlight">\(\sqcup\)</span> we can use induction on the statement <span class="math notranslate nohighlight">\(y,z \sqsubseteq x \implies y \sqcup z \sqsubseteq x\)</span>. There could be nicer ways but whatever.</p>
 <p>Base cases:</p>
 <ul class="simple">
 <li><p>if <span class="math notranslate nohighlight">\(x=0\)</span>, then <span class="math notranslate nohighlight">\(\downarrow x\)</span> contains only <span class="math notranslate nohighlight">\(0\)</span> so there’s nothing to check.</p></li>
@@ -619,22 +621,24 @@ x \sqcap (y \sqcup z) &amp;= [x_1, ..., x_n] \sqcap [y_1 \sqcup z_1, ..., y_n \s
 <p>Inductive step (<span class="math notranslate nohighlight">\(x=[x_1, ..., x_n], y=[y_1, ..., y_n], z=[z_1,..., z_n]\)</span>): assume for inductive hypothesis that <span class="math notranslate nohighlight">\(y_i,z_i \sqsubseteq x_i \implies y_i \sqcup z_i \sqsubseteq x_i\)</span> for every <span class="math notranslate nohighlight">\(i\)</span>.</p>
 <p>Assuming <span class="math notranslate nohighlight">\(y,z \sqsubseteq x\)</span>, then <span class="math notranslate nohighlight">\(y_i, z_i \sqsubseteq x_i\)</span>. So applying IH, <span class="math notranslate nohighlight">\(y_i \sqcup z_i \sqsubseteq x_i\)</span>. Therefore, <span class="math notranslate nohighlight">\(y \sqcup z = [y_1 \sqcup z_1, ..., y_n \sqcup z_n] \sqsubseteq [x_1, ..., x_n] = x\)</span>. Done.</p>
 </div>
-<p>Once you have <span class="math notranslate nohighlight">\(a \to b\)</span> for every element, you can define the opposite of <span class="math notranslate nohighlight">\(a\)</span> as <span class="math notranslate nohighlight">\(a \to \bot\)</span>. This is usally written <span class="math notranslate nohighlight">\(\lnot a\)</span> because if <span class="math notranslate nohighlight">\(a\)</span> gives you a proof of false, then <span class="math notranslate nohighlight">\(a\)</span> had better be false!</p>
+<p>Once you have <span class="math notranslate nohighlight">\(a \to b\)</span> for every element, you can define the opposite of <span class="math notranslate nohighlight">\(a\)</span> as <span class="math notranslate nohighlight">\(a \to \bot\)</span>. This is usually written <span class="math notranslate nohighlight">\(\lnot a\)</span> (i.e. <em>not</em> <span class="math notranslate nohighlight">\(a\)</span>) because if <span class="math notranslate nohighlight">\(a\)</span> gives you a proof of false, then <span class="math notranslate nohighlight">\(a\)</span> had better be false!</p>
 <p>If you choose <span class="math notranslate nohighlight">\(0\)</span> as <span class="math notranslate nohighlight">\(\bot\)</span>, things don’t go very well: <span class="math notranslate nohighlight">\(a \to 0\)</span> will always be <span class="math notranslate nohighlight">\(0\)</span>. On the other hand, if you get rid of <span class="math notranslate nohighlight">\(0\)</span> from your downsets, some nice structure appears. <span class="math notranslate nohighlight">\(\bot\)</span> becomes <span class="math notranslate nohighlight">\([]\)</span> and since there are more ways <span class="math notranslate nohighlight">\(\sqcap\)</span> can create <span class="math notranslate nohighlight">\([]\)</span>, you get more interesting values for <span class="math notranslate nohighlight">\(a \to []\)</span>. For example, in the <span class="math notranslate nohighlight">\(30\)</span> lattice from above (but without <span class="math notranslate nohighlight">\(0\)</span>), <span class="math notranslate nohighlight">\(\lnot [[]] = [0, [], []]\)</span>. In general, you can kind of hop across the diagonal.</p>
 <p>Getting rid of <span class="math notranslate nohighlight">\(0\)</span> is kind of ad-hoc. I’ve done it just to make the structure nicer. But interestingly it also makes the lattice closer to the divisibility one. So maybe there’s also good reasons.</p>
 <section id="boolean-algebras">
 <h3>Boolean Algebras<a class="headerlink" href="#boolean-algebras" title="Link to this heading">#</a></h3>
+<p>Brief tangnet which I promise is relevant.</p>
 <p>If the average science bro is to be believed, Logic gives you the sort objective rational access to Truth that in a different era was attributed to God. However, as you soon as you start studying formal logic you learn that there’s actually several different types of logics and (as with most things) their relative merits depend on the context in which you’re using them.</p>
 <p>Two different logics which concern us here are classical vs. intuitionistic logic. Classical logic is the most popular and what people usually mean when they talk about Logic with a capital L. Classical logic is like the smug uncle who loves arguing with everyone at the Thanksgiving table. Intuitionistic logic (despite the terrible name) is like the shy cousin who knows better but only chimes in when they’re absolutely sure. The <a class="reference external" href="https://en.wikipedia.org/wiki/Brouwer%E2%80%93Hilbert_controversy">historical origin</a> of intuitionism went something like this:</p>
 <figure class="align-center" id="meme">
-<a class="reference internal image-reference" href="../../_images/meme.webp"><img alt="../../_images/meme.webp" src="../../_images/meme.webp" style="height: 200px;" /></a>
+<a class="reference internal image-reference" href="../../_images/meme.webp"><img alt="../../_images/meme.webp" src="../../_images/meme.webp" style="height: 300px;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 4 </span><span class="caption-text"><a class="reference external" href="https://www.reddit.com/r/mathmemes/comments/19f9zde/intuitionistic_logic_classical_logic/">source</a></span><a class="headerlink" href="#meme" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>Formally speaking, the difference between the logics all comes down to whether or not you’re willing to automatically assume that for any <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(a \lor \lnot a\)</span>. This is called the Law of Excluded Middle because it rules out any weird edge cases between True and False. Classical logicians say yes to excluded middle, intuitionistic logicians don’t. It’s worth emphasizing intuitionists don’t assume the opposite (though there is <a class="reference external" href="https://en.wikipedia.org/wiki/Paraconsistent_logic">another logic</a> which allows it), they just stay silent on it. While the classical logician says “of course <span class="math notranslate nohighlight">\(a\)</span> is either true of false”, the intuitionist says “I am yet to prove <span class="math notranslate nohighlight">\(a\)</span> or <span class="math notranslate nohighlight">\(\lnot a\)</span>”.</p>
-<p>Having been through a non-classical logic phase myself, it was quite a fun coincidence that intutionism appeared to be making a come back in a completely independent number system. From what I understand, lattices are a useful way for comparing the differences between classical and intuitionistic logic. Heyting is a dead intuitionist and so Heyting algebras are all about intuitionistic logic. Boole is a dead classical logician and so Boolean algebras are all about classical logic. In particular, a Boolean algebra is a Heyting algebra which also satisfies the equation <span class="math notranslate nohighlight">\(a \lor \lnot a = \top\)</span> for every <span class="math notranslate nohighlight">\(a\)</span>. The subset lattice from <a class="reference internal" href="../pre/poset.html#sections-pre-lattice"><span class="std std-ref">here</span></a> is actually a Boolean algebra. The negation of a subset is the subset that has all and only the elements the first one didn’t, so taking the union gives back the whole set.</p>
-<p>Let’s check some examples on <span class="math notranslate nohighlight">\(\downarrow 30\)</span> from <a class="reference internal" href="#lat30"><span class="std std-ref">before</span></a>. Remember that <span class="math notranslate nohighlight">\(\top\)</span> is <span class="math notranslate nohighlight">\([[], [], []]\)</span> and <span class="math notranslate nohighlight">\(\bot\)</span> is <span class="math notranslate nohighlight">\([]\)</span> because we got rid of <span class="math notranslate nohighlight">\(0\)</span>:</p>
+<p>Formally speaking, the difference between the logics all comes down to whether or not you’re willing to automatically assume that for any <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(a \lor \lnot a\)</span> (i.e. either <span class="math notranslate nohighlight">\(a\)</span> or not <span class="math notranslate nohighlight">\(a\)</span>). This is called the Law of Excluded Middle because it rules out any weird edge cases between True and False. Classical logicians say yes to excluded middle, intuitionistic logicians don’t. It’s worth emphasizing intuitionists don’t assume the opposite (though there is <a class="reference external" href="https://en.wikipedia.org/wiki/Paraconsistent_logic">another logic</a> which allows it), they just stay silent on it. While the classical logician says “of course <span class="math notranslate nohighlight">\(a\)</span> is either true of false”, the intuitionist says “I am yet to prove <span class="math notranslate nohighlight">\(a\)</span> or <span class="math notranslate nohighlight">\(\lnot a\)</span>”.</p>
+<p>Having been through a non-classical logic phase myself, it was quite a fun coincidence that intutionism appeared to be making a come back in a completely independent number system. From what I understand, lattices are a useful way of comparing the differences between classical and intuitionistic logic. Heyting is a dead intuitionist and so Heyting algebras are all about intuitionistic logic. Boole is a dead classical logician and so Boolean algebras are all about classical logic.</p>
+<p>In particular, a Boolean algebra is a Heyting algebra which also satisfies the equation <span class="math notranslate nohighlight">\(a \lor \lnot a = \top\)</span> for every <span class="math notranslate nohighlight">\(a\)</span>. The subset lattice from <a class="reference internal" href="../pre/poset.html#sections-pre-lattice"><span class="std std-ref">here</span></a> is actually a Boolean algebra. The negation of a subset is the subset that has all and only the elements the first one didn’t, so taking the union gives back the whole set.</p>
+<p>Let’s check some examples on <span class="math notranslate nohighlight">\(\downarrow 30\)</span> from <a class="reference internal" href="#lat30"><span class="std std-ref">before</span></a>. Remember that <span class="math notranslate nohighlight">\(\top\)</span> is <span class="math notranslate nohighlight">\([[], [], []]\)</span> and <span class="math notranslate nohighlight">\(\bot\)</span> is <span class="math notranslate nohighlight">\([]\)</span> because we got rid of <span class="math notranslate nohighlight">\(0\)</span>.</p>
 <ul class="simple">
 <li><p>Recall <span class="math notranslate nohighlight">\([[]] \to [] = [0, [], []]\)</span>. Then <span class="math notranslate nohighlight">\([[]] \sqcup [0, [], []] = [[], [], []]\)</span>. No middle!</p></li>
 <li><p><span class="math notranslate nohighlight">\([[], []] \to [] = [0, 0, []]\)</span>. Then <span class="math notranslate nohighlight">\([[], []] \sqcup [0, 0, []] = [[], [], []]\)</span>. Middle excluded!</p></li>
@@ -644,17 +648,23 @@ x \sqcap (y \sqcup z) &amp;= [x_1, ..., x_n] \sqcap [y_1 \sqcup z_1, ..., y_n \s
 <a class="reference internal image-reference" href="../../_images/lat24.svg" id="lat24"><img alt="24 lattice" class="align-center" id="lat24" src="../../_images/lat24.svg" style="height: 250px;" /></a>
 <p>Now things get more interesting. <span class="math notranslate nohighlight">\([[]] \to [] = [0, []]\)</span> but then <span class="math notranslate nohighlight">\([[]] \sqcup [0, []] = [[], []] \neq [[0, []], []]\)</span>! So <span class="math notranslate nohighlight">\([[]] \sqcup \lnot [[]] \neq \top\)</span>. So it’s not Boolean. It turns out the example of <span class="math notranslate nohighlight">\(30\)</span> was quite special. The downset of <span class="math notranslate nohighlight">\(x\)</span> is only Boolean when <span class="math notranslate nohighlight">\(x\)</span> is shallow, i.e. all of the <span class="math notranslate nohighlight">\(x_i\)</span> are <span class="math notranslate nohighlight">\([]\)</span> or <span class="math notranslate nohighlight">\(0\)</span>. It’s very similar to the subset case, because shallow prods basically are just sets of primes.</p>
 <div class="proof theorem admonition" id="shallowbool">
-<p class="admonition-title"><span class="caption-number">Theorem 16 </span></p>
+<p class="admonition-title"><span class="caption-number">Theorem 10 </span></p>
 <section class="theorem-content" id="proof-content">
 <p><span class="math notranslate nohighlight">\(x\)</span> is shallow if and only if <span class="math notranslate nohighlight">\(\downarrow x\)</span> is a Boolean algebra</p>
 </section>
 </div><div class="proof admonition" id="proof">
 <p>Proof. In the forwards direction, assume that <span class="math notranslate nohighlight">\(x\)</span> is shallow. Then identify <span class="math notranslate nohighlight">\(x\)</span> with the set of primes <span class="math notranslate nohighlight">\(\{p_1, ..., p_k\}\)</span> such that <span class="math notranslate nohighlight">\(x_i = []\)</span> (since <span class="math notranslate nohighlight">\(x\)</span> is shallow, all other <span class="math notranslate nohighlight">\(x_j\)</span> are <span class="math notranslate nohighlight">\(0\)</span>). Then every <span class="math notranslate nohighlight">\(y \sqsubseteq x\)</span> corresponds to a subset of <span class="math notranslate nohighlight">\(\{p_1, ..., p_k\}\)</span>. Since the lattice of subsets is a Boolean algebra, so is the lattice <span class="math notranslate nohighlight">\(\downarrow x\)</span>.</p>
-<p>In the other direction, suppose that <span class="math notranslate nohighlight">\(x = [x_1, ..., x_n]\)</span> is not shallow. Without loss of generality, we can assume <span class="math notranslate nohighlight">\(x_1\)</span> is strictly greater than <span class="math notranslate nohighlight">\([]\)</span>. Thus we have an increasing chain <span class="math notranslate nohighlight">\([[]] \sqsubset [x_1] \sqsubseteq x\)</span>.</p>
+<p>In the other direction, suppose that <span class="math notranslate nohighlight">\(x = [x_1, ..., x_n]\)</span> is not shallow. Assume <span class="math notranslate nohighlight">\(x_1\)</span> is strictly greater than <span class="math notranslate nohighlight">\([]\)</span> (there’ll always be some <span class="math notranslate nohighlight">\(x_i\)</span> like this but assuming its <span class="math notranslate nohighlight">\(x_1\)</span> just means there’s fewer … in the proof). Thus we have an increasing chain <span class="math notranslate nohighlight">\([[]] \sqsubset [x_1] \sqsubseteq x\)</span>.</p>
 <p>Consider <span class="math notranslate nohighlight">\(\lnot [[]] = [[]] \to []\)</span>.  By definition, <span class="math notranslate nohighlight">\([[]] \sqcap \lnot [[]] = []\)</span> and so <span class="math notranslate nohighlight">\(\lnot [[]] = [0, y_2, ..., y_n]\)</span> for some <span class="math notranslate nohighlight">\(y_i\)</span>. But that means <span class="math notranslate nohighlight">\([[]] \sqcup \lnot [[]] = [[], y_2, ..., y_n] \sqsubset [x_1, y_2, ..., y_n] \sqsubseteq x\)</span>. Therefore <span class="math notranslate nohighlight">\([[]] \sqcup \lnot [[]] \neq x\)</span>, so <span class="math notranslate nohighlight">\(\downarrow x\)</span> is not a Boolean algebra.</p>
 </div>
 <p>Reassuringly, the same dichotomy happens in the <a class="reference external" href="https://en.wikipedia.org/wiki/Division_lattice">divisibility lattice</a> for numbers that are <em>square-free</em> (which I regrettably only learnt after struggling on this for ages). The lattices of shallow prods are identical to those of square-free numbers which are both basically identical to subset lattices. So all of the interesting differences are amongst Heyting algebras. If I understood them better, that’s where I would look next.</p>
-<p>That’s it. <a class="reference internal" href="#shallowbool">Theorem 16</a> gets us to the top of the <a class="reference internal" href="#latt-map"><span class="std std-ref">map</span></a>. I don’t really know where else to go next, so I leave it up to you. See <a class="reference internal" href="../post/next.html#sections-post-next"><span class="std std-ref">this section</span></a> for some vague suggestions.</p>
+</section>
+</section>
+<section id="fin">
+<h2>Fin<a class="headerlink" href="#fin" title="Link to this heading">#</a></h2>
+<p>That’s it. <a class="reference internal" href="#shallowbool">Theorem 10</a> gets us to the top of the <a class="reference internal" href="#latt-map"><span class="std std-ref">map</span></a>. Big respect for reading this far - it definitely got a bit hairy near the end.</p>
+<p>Having completed wikipedia’s instruction manual for lattices,  I don’t really know where else to go next. So I leave it up to you. See <a class="reference internal" href="../post/next.html#sections-post-next"><span class="std std-ref">this section</span></a> for some vague suggestions.</p>
+<p>Thanks for reading :)</p>
 <hr class="footnotes docutils" />
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="leqref" role="doc-footnote">
@@ -662,7 +672,6 @@ x \sqcap (y \sqcup z) &amp;= [x_1, ..., x_n] \sqcap [y_1 \sqcup z_1, ..., y_n \s
 <p>Technically, the definition should be written as <span class="math notranslate nohighlight">\(x \sqsubseteq y \iff x = 0 \lor\)</span> <a class="reference internal" href="#equation-pleq1">(23)</a> but you get the idea.</p>
 </aside>
 </aside>
-</section>
 </section>
 </section>
 
@@ -737,6 +746,7 @@ x \sqcap (y \sqcup z) &amp;= [x_1, ..., x_n] \sqcap [y_1 \sqcup z_1, ..., y_n \s
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-algebras">Boolean Algebras</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fin">Fin</a></li>
 </ul>
   </nav></div>
 

@@ -25,11 +25,11 @@ For any number $n > 1$, $n$ can be factored as $n = 2^{e_1} \times 3^{e_2} \time
 ````
 Those $e_i$ guys are going to play an important role, and I will call them the *exponents* of $n$. 
 
-In short, any number can be uniquely written as the product of some primes. That it can be done at all is obvious - if a number can't be decomposed then it's a prime so we're done. The interesting part is that this can be done uniquely which means you can't have two different ways of writing the same number (excluding the boring edge cases like $2 \times 3 = 3 \times 2 = 3 \times 2 \times 1$).
+In short, any number can be uniquely written as the product of some primes. That it can be done at all is obvious - if a number can't be decomposed then it's a prime so we're done. The interesting part is that this can be done uniquely which means you can't have two different ways of writing the same number (excluding the boring edge cases like $2 \times 3 = 3 \times 2 = 3 \times 2 \times 1$). Thus we can talk about *the* exponents of $n$.
 
-## Productivization
+## Productivization?
 
-So the most obvious way to write $n$ productively would be $[e_1, e_2, ..., e_k]$. The $i$th value in the list is just the exponent of the $i$th prime.
+So the most obvious way to write $n$ productively would be as a list of its exponents: $[e_1, e_2, ..., e_k]$. The $i$th value in the list is just the exponent of the $i$th prime.
 
 Then $6$ would be $[1, 1]$, $8$ would be $[3]$ (because $8 = 2^3$) and $20$ would be $[2, 0, 1]$. Sounds pretty good right?
 

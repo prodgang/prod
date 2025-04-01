@@ -3,26 +3,26 @@
 # Sets
 
 
-Very briefly, a *set* is collection of things (called elements) that share some property. We write sets between $'\{'$ and $'\}'$. For example, $\{a, b, c, ..., z\}$ is the set of lowercase letters. Some more important examples:
+Very briefly, a *set* is a collection of things (called elements) that share some property. We write sets between $'\{'$ and $'\}'$. For example, $\{a, b, c, ..., z\}$ is the set of lowercase letters. Some more numbery examples:
 
+\begin{align*}
+\mathbb{N} &= \{0, 1, 2, ...\} \text{ the natural numbers} \\
 
-```{math}  \mathbb{N} = \{0, 1, 2, ...\}
+\mathbb{Z} &= \{..., -2, -1, 0, 1, 2, ...\} \text{ the integers} \\
 
-\mathbb{Z}= \{..., -2, -1, 0, 1, 2, ...\}
+ \mathbb{Q}^+ &= \{1/2, 1/3, ...\} \text{ the (positive) rational numbers aka fractions}
 
- \mathbb{Q}^+ = \{1/2, 1/3, ...\} 
-
- ```
+\end{align*}
 
 And so on. If $a$ is an element of a set $A$, we write $a \in A$. 
 
 (sections:sets:ops)=
 ## Set Operations
 
-Sometimes, sets share elements. For example, $\mathbb{N}$ and $\mathbb{Z}$ both contain $0$. If $A$ and $B$ are sets, then $A \cap B$ is the set of all the shared elements of $A$ and $B$, called the *intersection*. For example, $\mathbb{Z} \cap \mathbb{Q}^+ = \mathbb{N}$. 
+Sometimes, sets share elements. For example, $\mathbb{N}$ and $\mathbb{Z}$ both contain $0$. If $A$ and $B$ are sets, then $A \cap B$ is the set of all the shared elements of $A$ and $B$, called the *intersection*. For example, $\mathbb{Z} \cap \mathbb{Q}^+ = \{1, 2, 3, ...\} = \mathbb{N} - \{0\}$. 
 
 
-Intersection has a dual operation called *union* and written $A \cup B$ which gives you the set of elements that are either in $A$ or $B$ (as opposed to both). So if $EVEN$ is the set of even integers and $ODD$ is the set of odd integers, then $EVEN \cup ODD = \mathbb{Z}$. 
+Intersection has a dual operation called *union* and written $A \cup B$ which gives you the set of elements that are either in $A$ or $B$ (or possibly both). So if $EVEN$ is the set of even integers and $ODD$ is the set of odd integers, then $EVEN \cup ODD = \mathbb{Z}$. 
 
 
 
@@ -40,10 +40,10 @@ A trick for remembering the difference between $\cap$ and $\cup$ is that $\cap$ 
 (sections:sets:functions)=
 ## Functions
 
-Sets by themselves are fairly boring. Things get more interesting when we can hop between them. One way of hopping between sets is using *functions*. A function $f$ from a set $A$ to another set $B$ (written $f: A \to B$) takes in an element of $A$ and spits out an element of $B$. Symbolically, if $a \in A$, then $f(a) \in B$. Crucially, a function will always spit out the same element each time. 
+Sets by themselves are fairly boring. Things get more interesting when we can hop between them. One way of hopping between sets is using *functions*. A function $f$ from a set $A$ to another set $B$ (written $f: A \to B$) takes in an element of $A$ and spits out an element of $B$. Symbolically, if $a \in A$, then $f(a) \in B$. Crucially, a function will always spit out the same element of $B$ for a given element $a \in A$.
 
 Examples:
-* The *identity* function $id: A \to A$ does nothing: $id(a) = a$. Plays a very important role for a function that does so little.
+* The *identity* function $id: A \to A$ does nothing: $id(a) = a$. Turns out to play a very important role for a function that does so little.
 * The *addition* function $+ : \mathbb{N} \times \mathbb{N} \to \mathbb{N}$ does what you would expect $+(n, m) = n + m$. The $\times$ symbol means the function takes in a pair of elements.
 * If you had a set of names, you could describe everyone's age with the function $age: NAMES \to \mathbb{N}$
 
@@ -60,7 +60,7 @@ align: center
 More examples:
 * The identity function from above is a bijection, albeit a very uninteresting one.
 * The straightforward function $in: \mathbb{N} \to \mathbb{Z}$ which sends $n \in \mathbb{N}$ to itself is injective. But it is not surjective because nothing is mapped to $-1$. 
-* The obvious function $\mathbb{N} \to {EVEN, ODD}$ is surjective because there are even and odd numbers. But it is not injective because $2$ and $4$ are both mapped to $EVEN$. 
+* The obvious function $\mathbb{N} \to \{EVEN, ODD\}$ is surjective because there are even and odd numbers. But it is not injective because $2$ and $4$ are both mapped to $EVEN$. 
 * Imagine the function that maps someone's name to their seat on a plane. This is injective because two people can't sit on the same seat. If the plane is fully booked, then it is bjiective.
 
 Typically, when there is a bijection we consider the sets to be basically the same and write $A \simeq B$. 

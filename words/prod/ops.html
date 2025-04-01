@@ -381,22 +381,22 @@
   <section class="tex2jax_ignore mathjax_ignore" id="operate">
 <span id="sections-prod-ops"></span><h1>Operate<a class="headerlink" href="#operate" title="Link to this heading">#</a></h1>
 <p>The <a class="reference internal" href="defs.html#sections-prod-iso"><span class="std std-ref">previous section</span></a> showed we can write any natural number uniquely as a prod. That’s great. But what can we do with prods?</p>
-<p>In this section, we’ll take a look at some extremely simple operations that do some extremely cool things. But first, let’s take a look at some bad operations.</p>
+<p>In this section, we’ll take a look at some extremely simple operations that do some surprisingly cool things. But first, let’s take a look at some bad operations.</p>
 <section id="counter-productive-operations">
 <h2>Counter-productive operations<a class="headerlink" href="#counter-productive-operations" title="Link to this heading">#</a></h2>
 <p>My criteria for a bad operation is that it cannot be defined in a form that’s coherent with productive numbers themselves. We’ll see that counting is a bad operation - hence counter-productive. Haha.</p>
 <section id="addition">
 <h3>Addition<a class="headerlink" href="#addition" title="Link to this heading">#</a></h3>
 <p>Recall that <a class="reference internal" href="../pre/numbers.html#sections-numbers-peano"><span class="std std-ref">Peano arithmetic</span></a> kicks off by defining addition. How do you think we could define addition in productive arithmetic?</p>
-<p>The quick answer is that you can’t. Just adding one to a number will change its factorization properties in very unpredictable ways. Basically all you can guarantee is that its factors will be completely different. So its not gonna happen. I don’t know how to formally prove this, so if you don’t believe me just try it yourself.</p>
+<p>The short answer is that you can’t. Just adding one to a number will change its factorization properties in very unpredictable ways. Basically all you can guarantee is that its factors will be completely different. So its not gonna happen. I don’t know how to formally prove this, so if you don’t believe me just try it yourself.</p>
 </section>
 <section id="multiplication">
 <h3>Multiplication<a class="headerlink" href="#multiplication" title="Link to this heading">#</a></h3>
-<p>Next operation: multiplication. There’s a very good case that you should be able to define multiplication productively: the fundamental idea behind prods is multiplying primes so that’s kind of what they’re all about. We can even see this happen with an example. Take a look at the trees of <span class="math notranslate nohighlight">\(4,3,12\)</span> and remember that <span class="math notranslate nohighlight">\(12 = 4 \times 3\)</span>:</p>
+<p>Next operation: multiplication. There’s a very good case that you should be able to define multiplication productively: the fundamental idea behind prods is multiplying primes so that’s kind of what they’re all about. We can even see this happen with an example. Take a look at the trees of <span class="math notranslate nohighlight">\(4,3,12\)</span> and remember that <span class="math notranslate nohighlight">\(4 \times 3 = 12\)</span>:</p>
 <a class="reference internal image-reference" href="../../_images/p4.svg"><img alt="4 as tree" src="../../_images/p4.svg" style="height: 75px;" /></a>
 <a class="reference internal image-reference" href="../../_images/p3.svg"><img alt="3 as tree" src="../../_images/p3.svg" style="height: 50px;" /></a>
 <a class="reference internal image-reference" href="../../_images/p12.svg"><img alt="12 as tree" src="../../_images/p12.svg" style="height: 75px;" /></a>
-<p>You can literally see how four and three are just attached to each other side by side to give <span class="math notranslate nohighlight">\(12\)</span>! Indeed, any time <span class="math notranslate nohighlight">\(x,y\)</span> don’t share any factors (i.e. are coprime), you can multiply them side-by-side like this. However, when they <em>do</em> share factors, then we’re back to the classic equation: <span class="math notranslate nohighlight">\(a^b \times a^c = a^{b+c}\)</span>. So multiplication reduces to addition. So multiplication is counter-productive.</p>
+<p>You can literally see how four and three are just attached to each other side by side to give twelve! Indeed, any time <span class="math notranslate nohighlight">\(x,y\)</span> don’t share any factors (i.e. are coprime), you can multiply them side-by-side like this. However, when they <em>do</em> share factors, then we’re back to the classic equation: <span class="math notranslate nohighlight">\(a^b \times a^c = a^{b+c}\)</span>. So multiplication reduces to addition. And we just saw that we can’t do addition. So multiplication is counter-productive.</p>
 </section>
 <section id="exponentiation">
 <h3>Exponentiation<a class="headerlink" href="#exponentiation" title="Link to this heading">#</a></h3>
@@ -407,7 +407,7 @@
 <h3>List operations<a class="headerlink" href="#list-operations" title="Link to this heading">#</a></h3>
 <p>A fun way to test the rapidly developing abilities of language models is to try to get them to recreate prod arithmetic from scratch. Its a useful test case because there’s been no trace of prods on the internet (until now) and so they really are required to work things out from scratch, as opposed to memorizing the thousands of training examples they’ve seen. In the past few years, they’ve gone from being incapable of consistently writing numbers productively to proving <a class="reference internal" href="defs.html#ftpa">Theorem 5</a> given only the axioms.</p>
 <p>However, even the newest models continue to suck at coming up with productive operations. What usually happens is they propose some additive operation, I repeat the argument from above to show its not productive and then they switch to list based operations.</p>
-<p>For example, given two lists you can <em>concantenate</em> them which just means stick one on the end of the other one. So <span class="math notranslate nohighlight">\([a, b, c] + [d, e] = [a, b, c, d, e]\)</span>. But this is not a productive operation because it does not respect the padding axiom <a class="reference internal" href="defs.html#equation-prodpad">(15)</a>: you can pad then concatenate to get <span class="math notranslate nohighlight">\([0] + [[]] = [0, []]\)</span> or you can concatenate then pad to get <span class="math notranslate nohighlight">\([] + [[]] = [[]] = [[], 0]\)</span>, which is very different.</p>
+<p>For example, given two lists you can <em>concantenate</em> them which just means stick one on the end of the other. So <span class="math notranslate nohighlight">\([a, b, c] + [d, e] = [a, b, c, d, e]\)</span>. But this is not a productive operation because it does not respect the padding axiom <a class="reference internal" href="defs.html#equation-prodpad">(15)</a>: you can pad then concatenate to get <span class="math notranslate nohighlight">\([0] + [[]] = [0, []]\)</span> or you can concatenate then pad to get <span class="math notranslate nohighlight">\([] + [[]] = [[]] = [[], 0]\)</span>, which is very different.</p>
 <p>So operations that are natural for lists are not necessarily productive.</p>
 </section>
 </section>
@@ -419,7 +419,7 @@
 <p>The simplest prod is <span class="math notranslate nohighlight">\(0\)</span> and the simplest thing to do with <span class="math notranslate nohighlight">\(0\)</span> is nothing. So let’s define an operation that does nothing with zero:</p>
 <div class="math notranslate nohighlight" id="equation-graft0">
 <span class="eqno">(18)<a class="headerlink" href="#equation-graft0" title="Link to this equation">#</a></span>\[   0 \sqcup x = x = x \sqcup 0\]</div>
-<p>I’ve chosen the <span class="math notranslate nohighlight">\(\sqcup\)</span> symbol to suggestively look like the set union symbol, and made it square because prod has square vibes. But <a class="reference internal" href="#equation-graft0">(18)</a> isn’t enough for a fully fledged operation, because what happens to nonzero prods? What about the simplest possible thing:</p>
+<p>I’ve chosen the <span class="math notranslate nohighlight">\(\sqcup\)</span> symbol to suggestively look like the set union symbol, and made it square because prod has square vibes. But <a class="reference internal" href="#equation-graft0">(18)</a> isn’t enough for a fully fledged operation, because what happens to nonzero prods? As boomers know very well, the easiest thing to do is pass the problem to the next generation. Similarly with <span class="math notranslate nohighlight">\(\sqcup\)</span>:</p>
 <div class="math notranslate nohighlight" id="equation-graft1">
 <span class="eqno">(19)<a class="headerlink" href="#equation-graft1" title="Link to this equation">#</a></span>\[   [x_1, ..., x_n] \sqcup [y_1, ..., y_n] = [x_1 \sqcup y_1, ..., x_n \sqcup y_n]\]</div>
 <p>On trees this looks like:</p>
@@ -427,10 +427,11 @@
 <p>So it’s recursive! All <a class="reference internal" href="#equation-graft1">(19)</a> does is the pass the work down one level. But that’s enough because all prods eventually end with zeros and then <a class="reference internal" href="#equation-graft0">(18)</a> kicks in. By the way, you can safely assume that <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> are both the same length in <a class="reference internal" href="#equation-graft1">(19)</a> by padding the shorter one with zeros.</p>
 <div class="admonition-historical-clarification admonition">
 <p class="admonition-title">Historical Clarification</p>
-<p>Just because I’m currently claiming this is the simplest possible operation, doesn’t mean it was the first one I wrote down! In fact, the first operation I came up with was not well-defined. I found this out by trying to get python to compute it for me on the first 50 numbers. Python complained, so I mindlessly messed around with the base cases until something worked. The end result was something that could be eventually boiled down to <a class="reference internal" href="#equation-graft0">(18)</a> and <a class="reference internal" href="#equation-graft1">(19)</a>. So python deserves the credit for this one.</p>
+<p>Just because I’m currently claiming this is the simplest possible operation, doesn’t mean it was the first one I wrote down! In fact, the first operation I came up with was not well-defined. I found this out by trying to get python to compute it for me on the first 50 numbers. Python complained, so I mindlessly messed around with the base cases until something worked. The end result was something that could be eventually boiled down to <a class="reference internal" href="#equation-graft0">(18)</a> and <a class="reference internal" href="#equation-graft1">(19)</a>. Shout out sketchy python code.</p>
 </div>
 <p>Let’s see it in action! Here’s a detailed walkthrough for how to compute <span class="math notranslate nohighlight">\(4 \sqcup 3\)</span>:</p>
 <a class="reference internal image-reference" href="../../_images/egcup1.svg"><img alt="cup tree" class="align-center" src="../../_images/egcup1.svg" style="width: 500px;" /></a>
+<p>Notice that the first step is just <a class="reference internal" href="#equation-graft1">(19)</a> and the last step is just two simultaneous applications of <a class="reference internal" href="#equation-graft0">(18)</a>.</p>
 <p>Here’s a more complicated example: <span class="math notranslate nohighlight">\(40 \sqcup 90\)</span> (remember that <span class="math notranslate nohighlight">\(40 = 2^3 \times 5\)</span> and <span class="math notranslate nohighlight">\(90 = 2 \times 3^2 \times 5\)</span>):</p>
 <a class="reference internal image-reference" href="../../_images/egcup2.svg"><img alt="cup tree" class="align-center" src="../../_images/egcup2.svg" style="width: 750px;" /></a>
 <p>The trick is to start off with everything padded so that they have roughly the same shape, then work bottom-up. Here’s a few more examples:</p>
@@ -491,8 +492,9 @@
 <p>If you look at the final column of the table, you might notice some other patterns:</p>
 <ol class="arabic simple">
 <li><p>When <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> don’t share factors, they are multiplied.</p></li>
-<li><p><span class="math notranslate nohighlight">\(x \sqcup x = x\)</span>. You can see the proof of that below, which is also our first example of a purely productive proof.</p></li>
-<li><p>When <span class="math notranslate nohighlight">\(x \neq y\)</span> but they do share some factors, those factors are combined.</p></li>
+<li><p>When <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> are both simple chains, graft picks the longer chain. See <span class="math notranslate nohighlight">\(2 \sqcup 4 = 4\)</span> and try to work out <span class="math notranslate nohighlight">\(9 \sqcup 81\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(x \sqcup x = x\)</span>. You can see the proof of that below, which is also our first example of a purely productive proof(!)</p></li>
+<li><p>When <span class="math notranslate nohighlight">\(x \neq y\)</span> but they share multiple factors, those factors are combined.</p></li>
 </ol>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -500,9 +502,9 @@
 <p class="sd-card-text">This is our first instance of productive induction!</p>
 <p class="sd-card-text">Remember from <a class="reference internal" href="../pre/numbers.html#sections-numbers-induction"><span class="std std-ref">here</span></a> that additive induction proves something for every number by showing that it holds for <span class="math notranslate nohighlight">\(0\)</span>, and that if it holds for <span class="math notranslate nohighlight">\(n\)</span> then it holds for <span class="math notranslate nohighlight">\(n+1\)</span>.</p>
 <p class="sd-card-text">So productive induction is very similar: first show that some property holds for <span class="math notranslate nohighlight">\(0\)</span>. Then assume that it holds for <span class="math notranslate nohighlight">\(x_1, ..., x_n\)</span> and show that it holds for <span class="math notranslate nohighlight">\([x_1, ..., x_n]\)</span>. Since all prods are built in such a way, this proves the property holds for every prod.</p>
-<div class="proof theorem admonition" id="graftidem">
-<p class="admonition-title"><span class="caption-number">Theorem 6 </span></p>
-<section class="theorem-content" id="proof-content">
+<div class="proof lemma admonition" id="graftidem">
+<p class="admonition-title"><span class="caption-number">Lemma 1 </span></p>
+<section class="lemma-content" id="proof-content">
 <p class="sd-card-text"><span class="math notranslate nohighlight">\(x \sqcup x = x\)</span></p>
 </section>
 </div><div class="proof admonition" id="proof">
@@ -512,7 +514,8 @@
 <p class="sd-card-text">Done.</p>
 </div>
 </div>
-</details><p>Those properties make grafting look a lot like LCM. I initially thought they were the same. But my trusty method of making wildly optimistic conjectures then getting python to check on the first 50 numbers showed me a very crucial difference: LCM takes the additive max of the exponents, while graft takes the graft of the exponents (because its recursive). This has dramatic consequences: <span class="math notranslate nohighlight">\(lcm(4, 8) = 8\)</span>, but <span class="math notranslate nohighlight">\(4 \sqcup 8 = 64 = 2^6\)</span>. In this case, the exponents were multiplied but that’s just because the exponents <span class="math notranslate nohighlight">\(2\)</span> and <span class="math notranslate nohighlight">\(3\)</span> don’t share factors (try out an example where they do like <span class="math notranslate nohighlight">\(4 \sqcup 16\)</span>).</p>
+</details><p>Those properties make grafting look a lot like LCM (<a class="reference external" href="https://en.wikipedia.org/wiki/Least_common_multiple">least common multiple</a>). I initially thought they were the same. But my trusty method of making wildly optimistic conjectures then getting python to check on the first 50 numbers showed me a very crucial difference: LCM takes the additive max of the exponents, while graft takes the graft of the exponents (because its recursive).</p>
+<p>This has dramatic consequences. Remember that <span class="math notranslate nohighlight">\(4 = 2^2\)</span> and <span class="math notranslate nohighlight">\(8 = 2^3\)</span>. Then <span class="math notranslate nohighlight">\(lcm(4, 8) = 8\)</span>, but <span class="math notranslate nohighlight">\(4 \sqcup 8 = 64 = 2^6\)</span>. In this case, the exponents were multiplied but that’s just because the exponents <span class="math notranslate nohighlight">\(2\)</span> and <span class="math notranslate nohighlight">\(3\)</span> don’t share factors (try out an example where they do like <span class="math notranslate nohighlight">\(4 \sqcup 16\)</span>).</p>
 <p>We’ll see in the <a class="reference internal" href="latt.html#sections-lattice"><span class="std std-ref">next section</span></a> that graft shares a lot of <em>algebraic</em> properties with LCM, but hopefully you can nevertheless appreciate that they are very different functions indeed. I do not recommend trying to interpret graft additively.</p>
 </section>
 <section id="and-prune">
@@ -544,7 +547,7 @@
 </td>
 <td><a class="reference internal image-reference" href="../../_images/p3.svg"><img alt="3 as tree" class="align-center" src="../../_images/p3.svg" style="height: 50px;" /></a>
 </td>
-<td><a class="reference internal image-reference" href="../../_images/p1.svg"><img alt="1 as tree" class="align-center" src="../../_images/p1.svg" style="height: 25px;" /></a>
+<td><a class="reference internal image-reference" href="../../_images/p1.svg"><img alt="1 as tree" class="align-center" src="../../_images/p1.svg" style="height: 20px;" /></a>
 </td>
 <td><p><span class="math notranslate nohighlight">\(2 \sqcap 3 = 1\)</span></p></td>
 </tr>

@@ -39,4 +39,25 @@ Function
 Bijection
     A special type of function $f: A \to B$ in which pairs every element of $B$ with exactly one element of $A$.
 
+Number
+    Amounty thing.
+
+Additive Number
+    Numbers from the perspective of $+$.
+
+Multiplicative Number
+    Numbers from the perspective of $\times$.
+
+Productive Number
+    Numbers from the perspective of $\prod_i p_i^{x_i}$ ($p_i$ is ith prime).
+
+Factorization
+    Breaking a number down into its prime exponents.
+
+Partial Order
+    A way of comparing stuff $x \leq y$ with fairly general requirements. See [here](sections:pre:order).
+
+Total Order
+    Partial order where everything is comparable.
+
 ```

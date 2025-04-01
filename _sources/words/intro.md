@@ -5,7 +5,7 @@ This book is about numbers. But not the usual boring numbers you've had drilled 
 
 **What makes them new?** No counting. Just primes.
 
-**What do they look this?** Trees! Here's a few:
+**What do they look like?** Trees! Here's a few:
 
 
 ```{image} ../tikz/favs.svg

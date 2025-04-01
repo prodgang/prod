@@ -38,7 +38,7 @@ The dual operation $\sqcap: \mathbb{\Pi} \times \mathbb{\Pi} \to \mathbb{\Pi}$, 
 
 ## Results
 
-1. $I: \mathbb{\Pi} \to \mathbb{N}$ is an isomorphism ({prf:ref}`ftpa`).
+1. $I: \mathbb{\Pi} \to \mathbb{N}$ is a bijection ({prf:ref}`ftpa`).
 2. $\sqcap$ induces a partial order equivalent to $x \sqsubseteq y \iff x = 0 \lor (x_1 \sqsubseteq y_1 \land ... \land x_n \sqsubseteq y_n)$ ([this section](sections:lattice:poset))
 3. $x \sqsubseteq y \implies I(x) | I(y)$, but not vice-versa ({prf:ref}`leqdiv`)
 4. $\mathbb{\Pi}, \sqcup, \sqcap$ form a distributive lattice ([this section](sections:lattice:lattice)).
