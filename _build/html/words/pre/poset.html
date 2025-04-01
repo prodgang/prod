@@ -1,0 +1,650 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Orders &#8212; PROD</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=afb57fd3" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'words/pre/poset';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Productive Numbers" href="../prod/prod.html" />
+    <link rel="prev" title="Algebra" href="algebra.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.svg" class="logo__image only-light" alt="PROD - Home"/>
+    <img src="../../_static/logo.svg" class="logo__image only-dark pst-js-only" alt="PROD - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    PROD
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="prelim.html">PRE</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="sets.html">Sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numbers.html">Numbers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="algebra.html">Algebra</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Orders</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../prod/prod.html">MAIN</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../prod/defs.html">Define</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../prod/ops.html">Operate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../prod/latt.html">Lattices</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../post/post.html">POST</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../post/next.html">Next Steps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../post/note.html">Note from the author</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Symbols and Jargon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prod/draw.html">CODE</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/words/pre/poset.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Orders</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Orders</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">Definition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#additive-numbers">Additive Numbers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiplicative-numbers">Multiplicative Numbers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subsets">Subsets</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fun-examples">Fun examples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#lattices">Lattices</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="orders">
+<span id="sections-pre-order"></span><h1>Orders<a class="headerlink" href="#orders" title="Link to this heading">#</a></h1>
+<p>People just seem to love putting things in order.</p>
+<figure class="align-center" id="id2">
+<img alt="../../_images/bercow.gif" src="../../_images/bercow.gif" />
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text"><a class="reference external" href="https://giphy.com/gifs/euronews-order-commons-john-bercow-l2AYpTe5FOOMkBZ3I3">source</a></span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Sometimes this can get a bit ridiculous: there’s a whole <a class="reference external" href="https://tiermaker.com/">corner of the internet</a> dedicated to ranking things that realistically cannot be ranked. On the other side, <a class="reference external" href="https://culanth.org/fieldsights/comparison-the-impossible-method">some people</a> are averse to any form of comparison altogether.</p>
+<p>These tensions are reconciled in what mathematicians call a <em>partial order</em>. A partial order is one of my favourite math gizmos because it has affected the way I understand not only the mathematical world, but also the real world. The idea behind partial orders can basically be summed up with the slogan:</p>
+<blockquote>
+<div><p>Not everything is better or worse. Some things are just different.</p>
+</div></blockquote>
+<p>Here’s an informal example. Suppose you want to buy a smoothie. You want it to be healthy, tasty and cheap. Some smoothies are genuinely better than others: a banana smoothie is healthier, tastier and cheaper than a chocolate and truffle smoothie which is itself slightly tastier but otherwise the same as a chocolate and balsamic vinegar smoothie. On the other hand, a superfood smoothie is tastier and healthier than a banana smoothie, but more expensive. So neither is wholly better than the other, which we will call <em>incomparable</em>. We can draw these relationships in what’s called a <em>Hasse Diagram</em>:</p>
+<a class="reference internal image-reference" href="../../_images/smoothie.svg"><img alt="smoothie order" class="align-center" src="../../_images/smoothie.svg" style="height: 200px;" /></a>
+<p>Remember: Hasse diagrams always go up.</p>
+<p>If you disagree about any of the placements, just draw your own version. Hopefully this gives you a sense of how to order things that may be incomparable. Don’t worry if this is boringly obvious, partial orders are pretty easy to understand themselves. So let’s jump into the details!</p>
+<section id="definition">
+<h2>Definition<a class="headerlink" href="#definition" title="Link to this heading">#</a></h2>
+<p>The formal definition is as follows. Some relation <span class="math notranslate nohighlight">\(x \leq y\)</span> is a <strong>partial order</strong> if:</p>
+<div class="math notranslate nohighlight" id="equation-refl">
+<span class="eqno">(7)<a class="headerlink" href="#equation-refl" title="Link to this equation">#</a></span>\[    x \leq x \hspace{1cm} \text{(Reflexivity)}\]</div>
+<div class="math notranslate nohighlight" id="equation-trans">
+<span class="eqno">(8)<a class="headerlink" href="#equation-trans" title="Link to this equation">#</a></span>\[    x \leq y \land y \leq z \implies x \leq z \hspace{1cm} \text{(Transitivity)}\]</div>
+<div class="math notranslate nohighlight" id="equation-asymm">
+<span class="eqno">(9)<a class="headerlink" href="#equation-asymm" title="Link to this equation">#</a></span>\[    x \leq y \land y \leq x \implies x = y \hspace{1cm} \text{(Anti-symmetry)}\]</div>
+<p>Let’s break that definition down:</p>
+<ul class="simple">
+<li><p>Reflexivity just means everything is less than or equal to itself. Not very problematic. Math definitions almost always start with some trivial requirement like this.</p></li>
+<li><p>Transitivity is very important. It means you can chain together multiple comparisons into a new one. It also enforces the idea that you are comparing things consistently. For example, the relation of being a synonym is not transitive: ‘tangerine’ is synonymous with ‘orange’ and ‘orange’ is synomyous with ‘yellowy-red’, but ‘tangerine’ and ‘yellowy-red’ are not at all synonymous. The problem is that ‘orange’ is both a noun and an adjective, and we allowed the meaning of orange to change between comparisons. Similarly, the “is beaten by” relation is not transitive in rock-paper-scissors, but is in poker.</p></li>
+<li><p>Anti-symmetry is subtle. I initially wrote it off as chalkboard grease to help prove equality. But I’ve learned to think of it as enforcing the beautiful idea that x’s relationships with everything else determine what x is. For example, the smoothie order I introduced above is not anti-symmetric because two smoothies that have the same taste, cost and healthiness could still be different smoothies. On the other hand, you should be able to guess what number I’m thinking of if I tell you it’s both at least as big and at least as small as <span class="math notranslate nohighlight">\(2\)</span>.</p></li>
+</ul>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h2>
+<p>By the way, a partially ordered set is often abbreviated as a poset, which is quite a cute name. Let’s look at some examples of posets in more detail.</p>
+<section id="additive-numbers">
+<h3>Additive Numbers<a class="headerlink" href="#additive-numbers" title="Link to this heading">#</a></h3>
+<p>Additive numbers is indeed a poset. You probably think of <span class="math notranslate nohighlight">\(x \leq y\)</span> as meaning <span class="math notranslate nohighlight">\(x\)</span> comes before <span class="math notranslate nohighlight">\(y\)</span> in the number line. But the technical definition is:</p>
+<div class="math notranslate nohighlight" id="equation-nleq">
+<span class="eqno">(10)<a class="headerlink" href="#equation-nleq" title="Link to this equation">#</a></span>\[    x \leq y \iff \text{ there exists some } z\in \mathbb{N} \text{ such that } x + z = y\]</div>
+<p>Here’s the Hasse diagram (which in this case is just the number line but rotated).</p>
+<a class="reference internal image-reference" href="../../_images/line.svg"><img alt="number line" class="align-center" src="../../_images/line.svg" style="height: 200px;" /></a>
+<p>I’ll call the <span class="math notranslate nohighlight">\(z\)</span> in equation <a class="reference internal" href="#equation-nleq">(10)</a> the <em>witness</em> of <span class="math notranslate nohighlight">\(x \leq y\)</span>. Remeber that we’re talking about <span class="math notranslate nohighlight">\(\mathbb{N}\)</span> so all numbers are positive (or <span class="math notranslate nohighlight">\(0\)</span>). This relation is indeed reflexive: just pick <span class="math notranslate nohighlight">\(0\)</span> for the witness and check that <span class="math notranslate nohighlight">\(x + 0 = x\)</span> (it does). Proof of other properties in box below.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Click me for proof of transitivity and anti-symmetry</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<div class="proof admonition" id="proof">
+<p class="sd-card-text">Proof. (Proof of transitivity)</p>
+<p class="sd-card-text">Suppose that <span class="math notranslate nohighlight">\(x \leq y\)</span>. Then there’s some <span class="math notranslate nohighlight">\(w_1\)</span> such that <span class="math notranslate nohighlight">\(x + w_1 = y\)</span>. Similarly, assuming <span class="math notranslate nohighlight">\(y \leq z\)</span> means there’s some <span class="math notranslate nohighlight">\(w_2\)</span> such that <span class="math notranslate nohighlight">\(y + w_2 = z\)</span>.</p>
+<p class="sd-card-text">Putting these together gives <span class="math notranslate nohighlight">\((x + w_1) + w_2 = z\)</span>, which we can rearrange to <span class="math notranslate nohighlight">\(x + (w_1 + w_2) = z\)</span>, so <span class="math notranslate nohighlight">\(w_1 + w_2\)</span> is the witness of <span class="math notranslate nohighlight">\(x \leq z\)</span>. Done.</p>
+</div>
+<div class="proof admonition" id="proof">
+<p class="sd-card-text">Proof. (Proof of anti-symmetry)</p>
+<p class="sd-card-text">Let <span class="math notranslate nohighlight">\(w_1\)</span> be the witness for <span class="math notranslate nohighlight">\(x \leq y\)</span> and <span class="math notranslate nohighlight">\(w_2\)</span> the witness for <span class="math notranslate nohighlight">\(y \leq x\)</span>. So we have <span class="math notranslate nohighlight">\(x + w_1 = y\)</span> and <span class="math notranslate nohighlight">\(y + w_2 = x\)</span>.</p>
+<p class="sd-card-text">Plugging the first equation into the second gives <span class="math notranslate nohighlight">\((x + w_1) + w_2 = x\)</span>. Taking <span class="math notranslate nohighlight">\(x\)</span> away from both sides gives <span class="math notranslate nohighlight">\(w_1 + w_2 = 0\)</span>. Since <span class="math notranslate nohighlight">\(w_1, w_2\)</span> cannot be negative, <span class="math notranslate nohighlight">\(w_1 = w_2 = 0\)</span>. Therefore <span class="math notranslate nohighlight">\(x = y\)</span>. Done.</p>
+</div>
+</div>
+</details><p>The order of numbers satisfies one additional property which is solely responsible for making it so boring:</p>
+<div class="math notranslate nohighlight" id="equation-total">
+<span class="eqno">(11)<a class="headerlink" href="#equation-total" title="Link to this equation">#</a></span>\[    x \leq y \lor y \leq x \hspace{1cm} \text{(Totality)}\]</div>
+<p>The proof is also boring and uses induction, so I won’t bother.</p>
+<p>In other words, an order is <em>total</em> when everything is comparable. Though technically partial orders include total orders (i.e. <em>partial</em> <span class="math notranslate nohighlight">\(\leq\)</span> <em>total</em> in the order of orders), calling something a partial order usually means it is not total. So let’s look at an example of a genuinely partial order.</p>
+</section>
+<section id="multiplicative-numbers">
+<h3>Multiplicative Numbers<a class="headerlink" href="#multiplicative-numbers" title="Link to this heading">#</a></h3>
+<p>We can define a very similar relation to <a class="reference internal" href="#equation-nleq">(10)</a>, but with multiplication. To avoid confusing notation, this is usually written <span class="math notranslate nohighlight">\(x | y\)</span> and read as <span class="math notranslate nohighlight">\(x\)</span> <em>divides</em> <span class="math notranslate nohighlight">\(y\)</span>.</p>
+<div class="math notranslate nohighlight" id="equation-div">
+<span class="eqno">(12)<a class="headerlink" href="#equation-div" title="Link to this equation">#</a></span>\[x | y \iff \text{there exists some } z \in \mathbb{N}^+ \text{such that } x \times z = y\]</div>
+<p>As before, I’ll call <span class="math notranslate nohighlight">\(z\)</span> the <em>witness</em> of the divisibility of <span class="math notranslate nohighlight">\(y\)</span> by <span class="math notranslate nohighlight">\(x\)</span>. The reason <span class="math notranslate nohighlight">\(z\)</span> comes from <span class="math notranslate nohighlight">\(\mathbb{N}^+\)</span> rather than <span class="math notranslate nohighlight">\(\mathbb{N}\)</span> is because <span class="math notranslate nohighlight">\(0\)</span> behaves horribly in times land, so is excluded altogether.</p>
+<p>It’s not hard to see that <span class="math notranslate nohighlight">\(x | x\)</span> (choose <span class="math notranslate nohighlight">\(1\)</span> as witness and check <span class="math notranslate nohighlight">\(x \times 1 = x\)</span>). Proof of other properties below:</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Click me for proof of transitivity and anti-symmetry</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">These are extremely similar to the additive proofs. Like I literally copied, pasted and replaced <span class="math notranslate nohighlight">\(+\)</span> with <span class="math notranslate nohighlight">\(\times\)</span> and a couple of other symbols. Skip unless you really care.</p>
+<div class="proof admonition" id="proof">
+<p class="sd-card-text">Proof. (Proof of transitivity)</p>
+<p class="sd-card-text">Suppose that <span class="math notranslate nohighlight">\(x | y\)</span>. Then there’s some <span class="math notranslate nohighlight">\(w_1\)</span> such that <span class="math notranslate nohighlight">\(x \times w_1 = y\)</span>. Similarly, assuming <span class="math notranslate nohighlight">\(y | z\)</span> means there’s some <span class="math notranslate nohighlight">\(w_2\)</span> such that <span class="math notranslate nohighlight">\(y \times w_2 = z\)</span>.</p>
+<p class="sd-card-text">Putting these together gives <span class="math notranslate nohighlight">\((x \times w_1) \times w_2 = z\)</span>, which we can rearrange to <span class="math notranslate nohighlight">\(x \times (w_1 \times w_2) = z\)</span>, so <span class="math notranslate nohighlight">\(w_1 \times w_2\)</span> is the witness of <span class="math notranslate nohighlight">\(x | z\)</span>. Done.</p>
+</div>
+<div class="proof admonition" id="proof">
+<p class="sd-card-text">Proof. (Proof of anti-symmetry)</p>
+<p class="sd-card-text">Let <span class="math notranslate nohighlight">\(w_1\)</span> be the witness for <span class="math notranslate nohighlight">\(x | y\)</span> and <span class="math notranslate nohighlight">\(w_2\)</span> the witness for <span class="math notranslate nohighlight">\(y | x\)</span>. So we have <span class="math notranslate nohighlight">\(x \times w_1 = y\)</span> and <span class="math notranslate nohighlight">\(y \times w_2 = x\)</span>.</p>
+<p class="sd-card-text">Plugging the first equation into the second gives <span class="math notranslate nohighlight">\((x \times w_1) \times w_2 = x\)</span>. Dividing by <span class="math notranslate nohighlight">\(x\)</span> on both sides gives <span class="math notranslate nohighlight">\(w_1 \times w_2 = 1\)</span>. Since <span class="math notranslate nohighlight">\(w_1, w_2\)</span> are both positive whole numbers, <span class="math notranslate nohighlight">\(w_1 = w_2 = 1\)</span>. Therefore <span class="math notranslate nohighlight">\(x = y\)</span>. Done.</p>
+</div>
+</div>
+</details><p>Very crucially, divisibility is not total. For example, <span class="math notranslate nohighlight">\(2\)</span> can’t divide <span class="math notranslate nohighlight">\(3\)</span> and <span class="math notranslate nohighlight">\(3\)</span> can’t divide <span class="math notranslate nohighlight">\(2\)</span>. They are just different. This manifests in a far more intricate Hasse diagram than we’ve seen so far. As a reminder, a line going up from <span class="math notranslate nohighlight">\(x\)</span> to <span class="math notranslate nohighlight">\(y\)</span> now means <span class="math notranslate nohighlight">\(x | y\)</span>.</p>
+<a class="reference internal image-reference" href="../../_images/div.svg" id="divlatt"><img alt="divisibility lattice" class="align-center" id="divlatt" src="../../_images/div.svg" style="height: 300px;" /></a>
+<p>Unsurprisingly, the primes play a foundational role.</p>
+</section>
+<section id="subsets">
+<h3>Subsets<a class="headerlink" href="#subsets" title="Link to this heading">#</a></h3>
+<p>The most interesting and most important example of a partial order is the subset relation <span class="math notranslate nohighlight">\(A \subseteq B\)</span> (i.e. <span class="math notranslate nohighlight">\(B\)</span> contains all the elements of <span class="math notranslate nohighlight">\(A\)</span>) that we met back <a class="reference internal" href="sets.html#sections-sets-ops"><span class="std std-ref">here</span></a>.</p>
+<p>As a refresher, notice that <span class="math notranslate nohighlight">\(\{a\} \subseteq \{a, b\} \subseteq \{a, b, c\}\)</span>.</p>
+<p>The conditions are quite easy to check:</p>
+<ul class="simple">
+<li><p>Reflexive: clearly <span class="math notranslate nohighlight">\(A \subseteq A\)</span>.</p></li>
+<li><p>Transitive: if <span class="math notranslate nohighlight">\(A \subseteq B\)</span> then <span class="math notranslate nohighlight">\(B\)</span> contains all the elements of <span class="math notranslate nohighlight">\(A\)</span>. If <span class="math notranslate nohighlight">\(B \subseteq C\)</span>, then <span class="math notranslate nohighlight">\(C\)</span> contains all the elements of <span class="math notranslate nohighlight">\(B\)</span>. So <span class="math notranslate nohighlight">\(C\)</span> contains all the elements of <span class="math notranslate nohighlight">\(A\)</span> which means <span class="math notranslate nohighlight">\(A \subseteq C\)</span>.</p></li>
+<li><p>Anti-symmetric: if <span class="math notranslate nohighlight">\(A \subseteq B\)</span> and <span class="math notranslate nohighlight">\(B \subseteq A\)</span>, then they each contain all the same elements. By definition, sets that contain the same elements are the same, so <span class="math notranslate nohighlight">\(A = B\)</span>.</p></li>
+</ul>
+<p>Crucially, <span class="math notranslate nohighlight">\(\subseteq\)</span> is not total. For example, the sets <span class="math notranslate nohighlight">\(\{a, b, c\}\)</span> and <span class="math notranslate nohighlight">\(\{a,c,d\}\)</span> are incomparable.</p>
+<p>We are not allowed to talk about the set of all sets, so we cannot define the poset of all sets. However, given a starting set we can look at the poset of all its subsets. Here it is for the set <span class="math notranslate nohighlight">\(\{a, b, c\}\)</span>, (where a line now means a set is contained in the one above):</p>
+<a class="reference internal image-reference" href="../../_images/subset.svg" id="sublatt"><img alt="subset lattice" class="align-center" id="sublatt" src="../../_images/subset.svg" style="height: 250px;" /></a>
+<p>(yes - the empty set is technically a subset of everything)</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">What exactly is a Hasse diagram?</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">You can draw any (finite) partial order as a Hasse diagram. An vertical line from <span class="math notranslate nohighlight">\(x\)</span> to <span class="math notranslate nohighlight">\(y\)</span> means <span class="math notranslate nohighlight">\(x \leq y\)</span>. However, many of the relations are not drawn implicitly so really <span class="math notranslate nohighlight">\(x \leq y\)</span> means there is a vertical <em>path</em> from <span class="math notranslate nohighlight">\(x\)</span> to <span class="math notranslate nohighlight">\(y\)</span> in the diagram. How does this match with the definition of a poset?</p>
+<ol class="arabic simple">
+<li><p class="sd-card-text"><em>Reflexivity</em>: just assume that every element has a path to itself. Drawing circular lines from everything to itself would add clutter, so they’re implicit.</p></li>
+<li><p class="sd-card-text"><em>Transitivity</em>: if there’s a path from <span class="math notranslate nohighlight">\(x\)</span> to <span class="math notranslate nohighlight">\(y\)</span> and another path from <span class="math notranslate nohighlight">\(y\)</span> to <span class="math notranslate nohighlight">\(z\)</span>, then just imagine traversing each path separately and you have a path from <span class="math notranslate nohighlight">\(x\)</span> to <span class="math notranslate nohighlight">\(z\)</span>. This isn’t drawn explicitly because it would also add clutter.</p></li>
+<li><p class="sd-card-text"><em>Anti-symmetry</em>: this is the reason all lines go up. Without anti-symmetry, you would have to use directed arrows, rather than lines and they could go sideways or even downwards. But with anti-symmetry you know that if something is greater than <span class="math notranslate nohighlight">\(x\)</span>, then it cannot also be less than <span class="math notranslate nohighlight">\(x\)</span> (unless it actually is <span class="math notranslate nohighlight">\(x\)</span>) and so you can put it above <span class="math notranslate nohighlight">\(x\)</span>.</p></li>
+</ol>
+</div>
+</details></section>
+<section id="fun-examples">
+<h3>Fun examples<a class="headerlink" href="#fun-examples" title="Link to this heading">#</a></h3>
+<p>Here are some other examples that can be helpful to think about:</p>
+<ol class="arabic simple">
+<li><p><strong>Time</strong> In special relativity, observers can see the same events happening in a different order (e.g. A happens before B for one person, but A happens after B for another person). This forms a partial order - see <a class="reference external" href="https://physics.stackexchange.com/questions/227049/is-causality-a-total-order">here</a> for more info.</p></li>
+<li><p><strong>Getting Dressed</strong> A similar, but much simpler, time-based example is how to get dressed. You have to put your T-shirt on before your sweater before your coat, but you could put your socks on before or after any of these. I got this from <a class="reference external" href="https://courses.grainger.illinois.edu/cs173/fa2008/lectures/lect_34.pdf">here</a>, where you can see a few more examples.</p></li>
+<li><p><strong>Family Trees</strong> People are (transitively) descended from other people. But when we draw family trees, they are not total because people of the same generation or not descended from each other. So its a partial order. In fact, anything that can be drawn as a tree is a partial order.</p></li>
+<li><p><strong>Privilege</strong> In our society, some groups of people are more privileged than others. Intersectionality is the idea that combining privileges makes things more complicated. <a class="reference external" href="https://youtu.be/48VqWQ2YbGk?si=9IP_4SZn7q3yxupP&amp;amp;t=2213">This talk</a> explores how partial orders can help clarify some of these complications.</p></li>
+</ol>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="lattices">
+<span id="sections-pre-lattice"></span><h1>Lattices<a class="headerlink" href="#lattices" title="Link to this heading">#</a></h1>
+<p>I won’t say too much about lattices because I still don’t fully understand them. The basic idea is you have a poset with some extra structure. The extra structure includes, at the very least, two operations <span class="math notranslate nohighlight">\(\land\)</span> and <span class="math notranslate nohighlight">\(\lor\)</span>. These operations come in handy for finding shared properties of incomparable objects.</p>
+<p><span class="math notranslate nohighlight">\(x \land y\)</span> is the <em>greatest</em> element <span class="math notranslate nohighlight">\(z\)</span> such that <span class="math notranslate nohighlight">\(z \leq x\)</span> and <span class="math notranslate nohighlight">\(z \leq y\)</span>. This is often called the <em>greatest lower bound</em>. In the tree of life, <span class="math notranslate nohighlight">\(x \land y\)</span> is like the last common ancestor of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>.</p>
+<p>There are two distinct parts to this definition: firstly that there is at least one element that is less than both <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> and secondly that out of all the ancestors of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> we can uniquely pick out the one that is closest to <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> (according to <span class="math notranslate nohighlight">\(\leq\)</span>). The second part is why we can talk of <em>the</em> greatest lower bound.</p>
+<p>Dually, <span class="math notranslate nohighlight">\(x \lor y\)</span> gives the <em>least</em> element such that <span class="math notranslate nohighlight">\(x \leq z\)</span> and <span class="math notranslate nohighlight">\(y \leq z\)</span>. This is often called the <em>least upper bound</em>. In a world where evolution somehow ultimately merges all species, <span class="math notranslate nohighlight">\(x \lor y\)</span> would be the first common <em>descendent</em> of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>. The fact that our tree of life lacks this feature is a useful reminder that not every poset is a lattice.</p>
+<p>A diagram may help:</p>
+<a class="reference internal image-reference" href="../../_images/diamond.svg"><img alt="diamond lattice" class="align-center" src="../../_images/diamond.svg" style="height: 200px;" /></a>
+<p>In perhaps the worst clash of notations I’ve ever seen, <span class="math notranslate nohighlight">\(x \land y\)</span> is found at the bottom of the v-shape between <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>, while <span class="math notranslate nohighlight">\(x \lor y\)</span> is found at the top of the hat <em>above</em> <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>. Really sorry about that.</p>
+<p>The operations do have names: <span class="math notranslate nohighlight">\(\land\)</span> is called the <em>meet</em> and <span class="math notranslate nohighlight">\(\lor\)</span> is called the <em>join</em>. But I always get these names mixed up so won’t use them that much.</p>
+<p>There’s another way of defining lattices that I have no intution for but you can read about on <a class="reference external" href="https://en.wikipedia.org/wiki/Lattice_(order)#As_algebraic_structure">wikipedia</a> if you want.</p>
+<p>I’ll end with some examples of lattices:</p>
+<ul class="simple">
+<li><p>The <em>Boolean</em> lattice is just the total order <span class="math notranslate nohighlight">\(0 \leq 1\)</span> (interepreted as False and True), where <span class="math notranslate nohighlight">\(x \land y\)</span> equals the truth value of <span class="math notranslate nohighlight">\(x\)</span> AND <span class="math notranslate nohighlight">\(y\)</span>, <span class="math notranslate nohighlight">\(x \lor y\)</span> the truth value of <span class="math notranslate nohighlight">\(x\)</span> OR <span class="math notranslate nohighlight">\(y\)</span>. Even though this is an extremely boring lattice, it seems to play a very important role and is actually where the <span class="math notranslate nohighlight">\(\land,\lor\)</span> symbols come from.</p></li>
+<li><p>The divisibility partial order from above is a lattice. <span class="math notranslate nohighlight">\(x \land y\)</span> is defined as the greatest common divisor of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(x \lor y\)</span> is the least common multiple. Not too suprising - if <span class="math notranslate nohighlight">\(z\)</span> is a common divisor of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>, then <span class="math notranslate nohighlight">\(z | x\)</span> and <span class="math notranslate nohighlight">\(z | y\)</span> and it is greatest by definition.</p></li>
+<li><p>The subset partial order from above is also a lattice! <span class="math notranslate nohighlight">\(\land\)</span> is the intersection <span class="math notranslate nohighlight">\(A \cap B\)</span>, <span class="math notranslate nohighlight">\(\lor\)</span> is the union <span class="math notranslate nohighlight">\(A \cup B\)</span>. That <span class="math notranslate nohighlight">\(A \cap B\)</span> is contained in both <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> is fairly obvious. That it is the greatest such subset is because if it were any bigger, it would contain elements that either weren’t in <span class="math notranslate nohighlight">\(A\)</span> or weren’t in <span class="math notranslate nohighlight">\(B\)</span>.</p></li>
+</ul>
+<p>The last two examples are extremely important to keep in mind because in the next chapter because we’ll see that productive numbers form a lattice which sort of sits halfway between the divisibility lattice and the subset lattice. In short, <span class="math notranslate nohighlight">\(\sqsubseteq \ \cong \ | \ \land \subseteq \)</span><a class="footnote-reference brackets" href="#latref" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="latref" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>This is kind of a joke but also not really. There are order-preserving maps (which alas aren’t lattice homomorphisms) from productive numbers to both the divisibility order and the subset order. So it’s halfway there to being the product in the category of posets, just without the universal property.</p>
+</aside>
+</aside>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "prodgang/prod",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./words/pre"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="algebra.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Algebra</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../prod/prod.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Productive Numbers</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Orders</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definition">Definition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#additive-numbers">Additive Numbers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiplicative-numbers">Multiplicative Numbers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subsets">Subsets</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fun-examples">Fun examples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#lattices">Lattices</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PROD GANG
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p> © Copyright I sure hope you do </p>
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

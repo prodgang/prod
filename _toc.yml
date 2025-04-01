@@ -1,0 +1,29 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: words/intro
+chapters:
+  - file: words/pre/prelim
+    title: PRE
+    sections:
+      - file: words/pre/sets
+      - file: words/pre/numbers
+      - file: words/pre/algebra
+      - file: words/pre/poset
+  - file: words/prod/prod
+    title: MAIN
+    sections:
+      - file: words/prod/defs
+      - file: words/prod/ops
+      - file: words/prod/latt
+  - file: words/post/post
+    title: POST
+    sections:
+      - file: words/post/next
+      - file: words/post/note
+  - file: words/glossary
+  - file: words/prod/draw
+    title: CODE
+
+

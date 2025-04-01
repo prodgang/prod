@@ -1,0 +1,519 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Sets &#8212; PROD</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=afb57fd3" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'words/pre/sets';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Numbers" href="numbers.html" />
+    <link rel="prev" title="Preliminaries" href="prelim.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.svg" class="logo__image only-light" alt="PROD - Home"/>
+    <img src="../../_static/logo.svg" class="logo__image only-dark pst-js-only" alt="PROD - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    PROD
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="prelim.html">PRE</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="numbers.html">Numbers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="algebra.html">Algebra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="poset.html">Orders</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../prod/prod.html">MAIN</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../prod/defs.html">Define</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../prod/ops.html">Operate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../prod/latt.html">Lattices</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../post/post.html">POST</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../post/next.html">Next Steps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../post/note.html">Note from the author</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Symbols and Jargon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../prod/draw.html">CODE</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/words/pre/sets.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Sets</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-operations">Set Operations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="sets">
+<span id="sections-sets"></span><h1>Sets<a class="headerlink" href="#sets" title="Link to this heading">#</a></h1>
+<p>Very briefly, a <em>set</em> is collection of things (called elements) that share some property. We write sets between <span class="math notranslate nohighlight">\('\{'\)</span> and <span class="math notranslate nohighlight">\('\}'\)</span>. For example, <span class="math notranslate nohighlight">\(\{a, b, c, ..., z\}\)</span> is the set of lowercase letters. Some more important examples:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\mathbb{N} = \{0, 1, 2, ...\}\\\mathbb{Z}= \{..., -2, -1, 0, 1, 2, ...\}\\ \mathbb{Q}^+ = \{1/2, 1/3, ...\} 
+\end{aligned}\end{align} \]</div>
+<p>And so on. If <span class="math notranslate nohighlight">\(a\)</span> is an element of a set <span class="math notranslate nohighlight">\(A\)</span>, we write <span class="math notranslate nohighlight">\(a \in A\)</span>.</p>
+<section id="set-operations">
+<span id="sections-sets-ops"></span><h2>Set Operations<a class="headerlink" href="#set-operations" title="Link to this heading">#</a></h2>
+<p>Sometimes, sets share elements. For example, <span class="math notranslate nohighlight">\(\mathbb{N}\)</span> and <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> both contain <span class="math notranslate nohighlight">\(0\)</span>. If <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are sets, then <span class="math notranslate nohighlight">\(A \cap B\)</span> is the set of all the shared elements of <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>, called the <em>intersection</em>. For example, <span class="math notranslate nohighlight">\(\mathbb{Z} \cap \mathbb{Q}^+ = \mathbb{N}\)</span>.</p>
+<p>Intersection has a dual operation called <em>union</em> and written <span class="math notranslate nohighlight">\(A \cup B\)</span> which gives you the set of elements that are either in <span class="math notranslate nohighlight">\(A\)</span> or <span class="math notranslate nohighlight">\(B\)</span> (as opposed to both). So if <span class="math notranslate nohighlight">\(EVEN\)</span> is the set of even integers and <span class="math notranslate nohighlight">\(ODD\)</span> is the set of odd integers, then <span class="math notranslate nohighlight">\(EVEN \cup ODD = \mathbb{Z}\)</span>.</p>
+<p>Finally, if all the elements of one set are also in another set, we write <span class="math notranslate nohighlight">\(A \subseteq B\)</span> and say <span class="math notranslate nohighlight">\(A\)</span> is a <em>subset</em> of <span class="math notranslate nohighlight">\(B\)</span>. If there’s some <span class="math notranslate nohighlight">\(a \in A\)</span> that’s <em>not</em> in <span class="math notranslate nohighlight">\(B\)</span>, then <span class="math notranslate nohighlight">\(A \not\subseteq B\)</span>. For example, <span class="math notranslate nohighlight">\(\mathbb{N} \subseteq \mathbb{Z}\)</span> but <span class="math notranslate nohighlight">\(\mathbb{Z} \not\subseteq \mathbb{Q}^+\)</span>. Try and work out whether its true that <span class="math notranslate nohighlight">\(A \cap B \subseteq A \subseteq A \cup B\)</span> (or vice-versa).</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Click me for answer</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Yes. <span class="math notranslate nohighlight">\(A \cap B\)</span> is the set of elements that are in both in <span class="math notranslate nohighlight">\(A\)</span> <em>and</em> <span class="math notranslate nohighlight">\(B\)</span>, so they are definitely all in <span class="math notranslate nohighlight">\(A\)</span>. Similarly, <span class="math notranslate nohighlight">\(A \cup B\)</span> is the set of elements that are in <span class="math notranslate nohighlight">\(A\)</span> <em>or</em> <span class="math notranslate nohighlight">\(B\)</span>, so it contains all of <span class="math notranslate nohighlight">\(A\)</span>.</p>
+</div>
+</details><p>A trick for remembering the difference between <span class="math notranslate nohighlight">\(\cap\)</span> and <span class="math notranslate nohighlight">\(\cup\)</span> is that <span class="math notranslate nohighlight">\(\cap\)</span> sort of looks like an N and you can sort of think of the elements of <span class="math notranslate nohighlight">\(A \cap B\)</span> as the elements of “A aNd B”, meanwhile <span class="math notranslate nohighlight">\(\cup\)</span> sort of looks like a U and you can sort of read <span class="math notranslate nohighlight">\(A \cup B\)</span> as “A Uor B”…</p>
+</section>
+<section id="functions">
+<span id="sections-sets-functions"></span><h2>Functions<a class="headerlink" href="#functions" title="Link to this heading">#</a></h2>
+<p>Sets by themselves are fairly boring. Things get more interesting when we can hop between them. One way of hopping between sets is using <em>functions</em>. A function <span class="math notranslate nohighlight">\(f\)</span> from a set <span class="math notranslate nohighlight">\(A\)</span> to another set <span class="math notranslate nohighlight">\(B\)</span> (written <span class="math notranslate nohighlight">\(f: A \to B\)</span>) takes in an element of <span class="math notranslate nohighlight">\(A\)</span> and spits out an element of <span class="math notranslate nohighlight">\(B\)</span>. Symbolically, if <span class="math notranslate nohighlight">\(a \in A\)</span>, then <span class="math notranslate nohighlight">\(f(a) \in B\)</span>. Crucially, a function will always spit out the same element each time.</p>
+<p>Examples:</p>
+<ul class="simple">
+<li><p>The <em>identity</em> function <span class="math notranslate nohighlight">\(id: A \to A\)</span> does nothing: <span class="math notranslate nohighlight">\(id(a) = a\)</span>. Plays a very important role for a function that does so little.</p></li>
+<li><p>The <em>addition</em> function <span class="math notranslate nohighlight">\(+ : \mathbb{N} \times \mathbb{N} \to \mathbb{N}\)</span> does what you would expect <span class="math notranslate nohighlight">\(+(n, m) = n + m\)</span>. The <span class="math notranslate nohighlight">\(\times\)</span> symbol means the function takes in a pair of elements.</p></li>
+<li><p>If you had a set of names, you could describe everyone’s age with the function <span class="math notranslate nohighlight">\(age: NAMES \to \mathbb{N}\)</span></p></li>
+</ul>
+<p>You can learn a lot about sets by studying the functions in and out of them. For example, if you have a function <span class="math notranslate nohighlight">\(f: A \to B\)</span> that maps every <span class="math notranslate nohighlight">\(a \in A\)</span> to a different <span class="math notranslate nohighlight">\(b \in B\)</span>, then you know that <span class="math notranslate nohighlight">\(A\)</span> is bigger than <span class="math notranslate nohighlight">\(B\)</span> (we call this an injection). Similarly, if every <span class="math notranslate nohighlight">\(b \in B\)</span> is mapped to by some <span class="math notranslate nohighlight">\(a \in A\)</span>, then you know that <span class="math notranslate nohighlight">\(B\)</span> is bigger than <span class="math notranslate nohighlight">\(A\)</span> (we call this a surjection). So if you have both of these properties, the sets are the same size! We call this a bijection. You may find this picture useful:</p>
+<figure class="align-center" id="id1">
+<img alt="../../_images/bij.png" src="../../_images/bij.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text"><a class="reference external" href="https://ds055uzetaobb.cloudfront.net/brioche/uploads/EkswlzPrzb-examp.svg?width=600">source</a></span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>More examples:</p>
+<ul class="simple">
+<li><p>The identity function from above is a bijection, albeit a very uninteresting one.</p></li>
+<li><p>The straightforward function <span class="math notranslate nohighlight">\(in: \mathbb{N} \to \mathbb{Z}\)</span> which sends <span class="math notranslate nohighlight">\(n \in \mathbb{N}\)</span> to itself is injective. But it is not surjective because nothing is mapped to <span class="math notranslate nohighlight">\(-1\)</span>.</p></li>
+<li><p>The obvious function <span class="math notranslate nohighlight">\(\mathbb{N} \to {EVEN, ODD}\)</span> is surjective because there are even and odd numbers. But it is not injective because <span class="math notranslate nohighlight">\(2\)</span> and <span class="math notranslate nohighlight">\(4\)</span> are both mapped to <span class="math notranslate nohighlight">\(EVEN\)</span>.</p></li>
+<li><p>Imagine the function that maps someone’s name to their seat on a plane. This is injective because two people can’t sit on the same seat. If the plane is fully booked, then it is bjiective.</p></li>
+</ul>
+<p>Typically, when there is a bijection we consider the sets to be basically the same and write <span class="math notranslate nohighlight">\(A \simeq B\)</span>.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "prodgang/prod",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./words/pre"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="prelim.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Preliminaries</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="numbers.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Numbers</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-operations">Set Operations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PROD GANG
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p> © Copyright I sure hope you do </p>
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
