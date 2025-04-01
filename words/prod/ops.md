@@ -3,7 +3,7 @@
 
 The [previous section](sections:prod:iso) showed we can write any natural number uniquely as a prod. That's great. But what can we do with prods? 
 
-In this section, we'll take a look at some extremely simple operations that do some extremely cool things. But first, let's take a look at some bad operations.
+In this section, we'll take a look at some extremely simple operations that do some surprisingly cool things. But first, let's take a look at some bad operations.
 
 ## Counter-productive operations
 
@@ -13,32 +13,30 @@ My criteria for a bad operation is that it cannot be defined in a form that's co
 
 Recall that [Peano arithmetic](sections:numbers:peano) kicks off by defining addition. How do you think we could define addition in productive arithmetic? 
 
-The quick answer is that you can't. Just adding one to a number will change its factorization properties in very unpredictable ways. Basically all you can guarantee is that its factors will be completely different. So its not gonna happen. I don't know how to formally prove this, so if you don't believe me just try it yourself.
+The short answer is that you can't. Just adding one to a number will change its factorization properties in very unpredictable ways. Basically all you can guarantee is that its factors will be completely different. So its not gonna happen. I don't know how to formally prove this, so if you don't believe me just try it yourself.
 
 ### Multiplication
 
-Next operation: multiplication. There's a very good case that you should be able to define multiplication productively: the fundamental idea behind prods is multiplying primes so that's kind of what they're all about. We can even see this happen with an example. Take a look at the trees of $4,3,12$ and remember that $12 = 4 \times 3$:
+Next operation: multiplication. There's a very good case that you should be able to define multiplication productively: the fundamental idea behind prods is multiplying primes so that's kind of what they're all about. We can even see this happen with an example. Take a look at the trees of $4,3,12$ and remember that $4 \times 3 = 12$:
 
 
 ```{image} ../../tikz/p4.svg
 :alt: 4 as tree
-:align: left
+:height: 75px
 ```
 ```{image} ../../tikz/p3.svg
 :alt: 3 as tree
-:align: center
+:height: 50px
 ```
 ```{image} ../../tikz/p12.svg
 :alt: 12 as tree
-:align: right
+:height: 75px
 ```
 
 
+You can literally see how four and three are just attached to each other side by side to give twelve! Indeed, any time $x,y$ don't share any factors (i.e. are coprime), you can multiply them side-by-side like this. However, when they *do* share factors, then we're back to the classic equation: $a^b \times a^c = a^{b+c}$. So multiplication reduces to addition. And we just saw that we can't do addition. So multiplication is counter-productive.
 
-
-You can literally see how four and three are just attached to each other side by side to give $12$! Indeed, any time $x,y$ don't share any factors (i.e. are coprime), you can multiply them side-by-side like this. However, when they *do* share factors, then we're back to the classic equation: $a^b \times a^c = a^{b+c}$. So multiplication reduces to addition. So multiplication is counter-productive.
-
-### Expontentiation
+### Exponentiation
 
 There's a similar story for exponentiation. While you can get away with writing $2^x$ as $[x]$ and even $6^x = [x, x]$, as soon as you have nested powers you have to eventually use the fact that $(x^y)^z = x^{y \times z}$. So expontentiation reduces to multiplication. So expontention is counter-productive. And so on.
 
@@ -50,7 +48,7 @@ A fun way to test the rapidly developing abilities of language models is to try 
 
 However, even the newest models continue to suck at coming up with productive operations. What usually happens is they propose some additive operation, I repeat the argument from above to show its not productive and then they switch to list based operations. 
 
-For example, given two lists you can *concantenate* them which just means stick one on the end of the other one. So $[a, b, c] + [d, e] = [a, b, c, d, e]$. But this is not a productive operation because it does not respect the padding axiom {eq}`PRODPAD`: you can pad then concatenate to get $[0] + [[]] = [0, []]$ or you can concatenate then pad to get $[] + [[]] = [[]] = [[], 0]$, which is very different. 
+For example, given two lists you can *concantenate* them which just means stick one on the end of the other. So $[a, b, c] + [d, e] = [a, b, c, d, e]$. But this is not a productive operation because it does not respect the padding axiom {eq}`PRODPAD`: you can pad then concatenate to get $[0] + [[]] = [0, []]$ or you can concatenate then pad to get $[] + [[]] = [[]] = [[], 0]$, which is very different. 
 
 So operations that are natural for lists are not necessarily productive.
 
@@ -67,7 +65,7 @@ The simplest prod is $0$ and the simplest thing to do with $0$ is nothing. So le
    0 \sqcup x = x = x \sqcup 0
 ```
 
-I've chosen the $\sqcup$ symbol to suggestively look like the set union symbol, and made it square because prod has square vibes. But {eq}`GRAFT0` isn't enough for a fully fledged operation, because what happens to nonzero prods? What about the simplest possible thing:
+I've chosen the $\sqcup$ symbol to suggestively look like the set union symbol, and made it square because prod has square vibes. But {eq}`GRAFT0` isn't enough for a fully fledged operation, because what happens to nonzero prods? As boomers know very well, the easiest thing to do is pass the problem to the next generation. Similarly with $\sqcup$:
 
 ```{math}
 :label: GRAFT1
@@ -83,7 +81,7 @@ On trees this looks like:
 So it's recursive! All {eq}`GRAFT1` does is the pass the work down one level. But that's enough because all prods eventually end with zeros and then {eq}`GRAFT0` kicks in. By the way, you can safely assume that $x$ and $y$ are both the same length in {eq}`GRAFT1` by padding the shorter one with zeros. 
 
 ```{admonition} Historical Clarification
-Just because I'm currently claiming this is the simplest possible operation, doesn't mean it was the first one I wrote down! In fact, the first operation I came up with was not well-defined. I found this out by trying to get python to compute it for me on the first 50 numbers. Python complained, so I mindlessly messed around with the base cases until something worked. The end result was something that could be eventually boiled down to {eq}`GRAFT0` and {eq}`GRAFT1`. So python deserves the credit for this one.
+Just because I'm currently claiming this is the simplest possible operation, doesn't mean it was the first one I wrote down! In fact, the first operation I came up with was not well-defined. I found this out by trying to get python to compute it for me on the first 50 numbers. Python complained, so I mindlessly messed around with the base cases until something worked. The end result was something that could be eventually boiled down to {eq}`GRAFT0` and {eq}`GRAFT1`. Shout out sketchy python code.
 ```
 
 Let's see it in action! Here's a detailed walkthrough for how to compute $4 \sqcup 3$:
@@ -93,6 +91,7 @@ Let's see it in action! Here's a detailed walkthrough for how to compute $4 \sqc
    :width: 500px
 ````
 
+Notice that the first step is just {eq}`GRAFT1` and the last step is just two simultaneous applications of {eq}`GRAFT0`.
 
 Here's a more complicated example: $40 \sqcup 90$ (remember that $40 = 2^3 \times 5$ and $90 = 2 \times 3^2 \times 5$):
 ```{image} ../../tikz/egcup2.svg
@@ -200,8 +199,9 @@ The easiest way to understand $x \sqcup y$ is to imagine placing $x$ on top of $
 
 If you look at the final column of the table, you might notice some other patterns: 
 1. When $x$ and $y$ don't share factors, they are multiplied.
-2. $x \sqcup x = x$. You can see the proof of that below, which is also our first example of a purely productive proof.
-3. When $x \neq y$ but they do share some factors, those factors are combined. 
+2. When $x$ and $y$ are both simple chains, graft picks the longer chain. See $2 \sqcup 4 = 4$ and try to work out $9 \sqcup 81$.
+3. $x \sqcup x = x$. You can see the proof of that below, which is also our first example of a purely productive proof(!)
+4. When $x \neq y$ but they share multiple factors, those factors are combined. 
 
 ````{dropdown} Click me for proof of idempotence
 
@@ -211,7 +211,7 @@ Remember from [here](sections:numbers:induction) that additive induction proves 
 
 So productive induction is very similar: first show that some property holds for $0$. Then assume that it holds for $x_1, ..., x_n$ and show that it holds for $[x_1, ..., x_n]$. Since all prods are built in such a way, this proves the property holds for every prod.
 
-```{prf:theorem}
+```{prf:lemma}
 :label: graftidem
 $x \sqcup x = x$
 ```
@@ -230,7 +230,9 @@ $x \sqcup x = x$
 ````
 
 
-Those properties make grafting look a lot like LCM. I initially thought they were the same. But my trusty method of making wildly optimistic conjectures then getting python to check on the first 50 numbers showed me a very crucial difference: LCM takes the additive max of the exponents, while graft takes the graft of the exponents (because its recursive). This has dramatic consequences: $lcm(4, 8) = 8$, but $4 \sqcup 8 = 64 = 2^6$. In this case, the exponents were multiplied but that's just because the exponents $2$ and $3$ don't share factors (try out an example where they do like $4 \sqcup 16$). 
+Those properties make grafting look a lot like LCM ([least common multiple](https://en.wikipedia.org/wiki/Least_common_multiple)). I initially thought they were the same. But my trusty method of making wildly optimistic conjectures then getting python to check on the first 50 numbers showed me a very crucial difference: LCM takes the additive max of the exponents, while graft takes the graft of the exponents (because its recursive). 
+
+This has dramatic consequences. Remember that $4 = 2^2$ and $8 = 2^3$. Then $lcm(4, 8) = 8$, but $4 \sqcup 8 = 64 = 2^6$. In this case, the exponents were multiplied but that's just because the exponents $2$ and $3$ don't share factors (try out an example where they do like $4 \sqcup 16$). 
 
 We'll see in the [next section](sections:lattice) that graft shares a lot of *algebraic* properties with LCM, but hopefully you can nevertheless appreciate that they are very different functions indeed. I do not recommend trying to interpret graft additively.
 
@@ -286,7 +288,7 @@ This is almost identical to graft. The only real difference is that the base cas
     ```
   - ```{image} ../../tikz/p1.svg
         :alt: 1 as tree
-        :height: 25px
+        :height: 20px
         :align: center
     ```
   - $2 \sqcap 3 = 1$

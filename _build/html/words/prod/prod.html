@@ -193,8 +193,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../post/note.html">Note from the author</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Symbols and Jargon</a></li>
 <li class="toctree-l1"><a class="reference internal" href="draw.html">CODE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Symbols and Jargon</a></li>
 </ul>
 
     </div>
@@ -241,6 +241,21 @@
         <div class="header-article-item">
 
 <div class="article-header-buttons">
+
+
+<a href="https://github.com/prodgang/prod/issues/new?title=Issue%20on%20page%20%2Fwords/prod/prod.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button"
+   title="Open an issue"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+
+</a>
+
 
 
 
@@ -341,7 +356,7 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#factorization">Factorization</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#productivization">Productivization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#productivization">Productivization?</a></li>
 </ul>
             </nav>
         </div>
@@ -377,11 +392,11 @@
 <p>For any number <span class="math notranslate nohighlight">\(n &gt; 1\)</span>, <span class="math notranslate nohighlight">\(n\)</span> can be factored as <span class="math notranslate nohighlight">\(n = 2^{e_1} \times 3^{e_2} \times ... \times p_k^{e_k}\)</span>, where <span class="math notranslate nohighlight">\(p_k\)</span> is the <span class="math notranslate nohighlight">\(k\)</span>th prime number and <span class="math notranslate nohighlight">\(e_i \geq 0\)</span>. This is unique up to the ordering of primes and inclusion of <span class="math notranslate nohighlight">\(e_i = 0\)</span>.</p>
 </section>
 </div><p>Those <span class="math notranslate nohighlight">\(e_i\)</span> guys are going to play an important role, and I will call them the <em>exponents</em> of <span class="math notranslate nohighlight">\(n\)</span>.</p>
-<p>In short, any number can be uniquely written as the product of some primes. That it can be done at all is obvious - if a number can’t be decomposed then it’s a prime so we’re done. The interesting part is that this can be done uniquely which means you can’t have two different ways of writing the same number (excluding the boring edge cases like <span class="math notranslate nohighlight">\(2 \times 3 = 3 \times 2 = 3 \times 2 \times 1\)</span>).</p>
+<p>In short, any number can be uniquely written as the product of some primes. That it can be done at all is obvious - if a number can’t be decomposed then it’s a prime so we’re done. The interesting part is that this can be done uniquely which means you can’t have two different ways of writing the same number (excluding the boring edge cases like <span class="math notranslate nohighlight">\(2 \times 3 = 3 \times 2 = 3 \times 2 \times 1\)</span>). Thus we can talk about <em>the</em> exponents of <span class="math notranslate nohighlight">\(n\)</span>.</p>
 </section>
 <section id="productivization">
-<h2>Productivization<a class="headerlink" href="#productivization" title="Link to this heading">#</a></h2>
-<p>So the most obvious way to write <span class="math notranslate nohighlight">\(n\)</span> productively would be <span class="math notranslate nohighlight">\([e_1, e_2, ..., e_k]\)</span>. The <span class="math notranslate nohighlight">\(i\)</span>th value in the list is just the exponent of the <span class="math notranslate nohighlight">\(i\)</span>th prime.</p>
+<h2>Productivization?<a class="headerlink" href="#productivization" title="Link to this heading">#</a></h2>
+<p>So the most obvious way to write <span class="math notranslate nohighlight">\(n\)</span> productively would be as a list of its exponents: <span class="math notranslate nohighlight">\([e_1, e_2, ..., e_k]\)</span>. The <span class="math notranslate nohighlight">\(i\)</span>th value in the list is just the exponent of the <span class="math notranslate nohighlight">\(i\)</span>th prime.</p>
 <p>Then <span class="math notranslate nohighlight">\(6\)</span> would be <span class="math notranslate nohighlight">\([1, 1]\)</span>, <span class="math notranslate nohighlight">\(8\)</span> would be <span class="math notranslate nohighlight">\([3]\)</span> (because <span class="math notranslate nohighlight">\(8 = 2^3\)</span>) and <span class="math notranslate nohighlight">\(20\)</span> would be <span class="math notranslate nohighlight">\([2, 0, 1]\)</span>. Sounds pretty good right?</p>
 <p>Well, no. It took me about a year to realize, but there is a big problem with this definition that basically defeats the entire point. I’ll let you think about what the problem is and how to fix it (not necessarily for a year) before moving to the next part.</p>
 </section>
@@ -455,7 +470,7 @@
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#factorization">Factorization</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#productivization">Productivization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#productivization">Productivization?</a></li>
 </ul>
   </nav></div>
 

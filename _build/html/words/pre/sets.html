@@ -193,8 +193,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../post/note.html">Note from the author</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Symbols and Jargon</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prod/draw.html">CODE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Symbols and Jargon</a></li>
 </ul>
 
     </div>
@@ -241,6 +241,21 @@
         <div class="header-article-item">
 
 <div class="article-header-buttons">
+
+
+<a href="https://github.com/prodgang/prod/issues/new?title=Issue%20on%20page%20%2Fwords/pre/sets.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button"
+   title="Open an issue"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+
+</a>
+
 
 
 
@@ -355,15 +370,21 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="sets">
 <span id="sections-sets"></span><h1>Sets<a class="headerlink" href="#sets" title="Link to this heading">#</a></h1>
-<p>Very briefly, a <em>set</em> is collection of things (called elements) that share some property. We write sets between <span class="math notranslate nohighlight">\('\{'\)</span> and <span class="math notranslate nohighlight">\('\}'\)</span>. For example, <span class="math notranslate nohighlight">\(\{a, b, c, ..., z\}\)</span> is the set of lowercase letters. Some more important examples:</p>
-<div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}\mathbb{N} = \{0, 1, 2, ...\}\\\mathbb{Z}= \{..., -2, -1, 0, 1, 2, ...\}\\ \mathbb{Q}^+ = \{1/2, 1/3, ...\} 
-\end{aligned}\end{align} \]</div>
+<p>Very briefly, a <em>set</em> is a collection of things (called elements) that share some property. We write sets between <span class="math notranslate nohighlight">\('\{'\)</span> and <span class="math notranslate nohighlight">\('\}'\)</span>. For example, <span class="math notranslate nohighlight">\(\{a, b, c, ..., z\}\)</span> is the set of lowercase letters. Some more numbery examples:</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+\mathbb{N} &amp;= \{0, 1, 2, ...\} \text{ the natural numbers} \\
+
+\mathbb{Z} &amp;= \{..., -2, -1, 0, 1, 2, ...\} \text{ the integers} \\
+
+ \mathbb{Q}^+ &amp;= \{1/2, 1/3, ...\} \text{ the (positive) rational numbers aka fractions}
+
+\end{align*}\]</div>
 <p>And so on. If <span class="math notranslate nohighlight">\(a\)</span> is an element of a set <span class="math notranslate nohighlight">\(A\)</span>, we write <span class="math notranslate nohighlight">\(a \in A\)</span>.</p>
 <section id="set-operations">
 <span id="sections-sets-ops"></span><h2>Set Operations<a class="headerlink" href="#set-operations" title="Link to this heading">#</a></h2>
-<p>Sometimes, sets share elements. For example, <span class="math notranslate nohighlight">\(\mathbb{N}\)</span> and <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> both contain <span class="math notranslate nohighlight">\(0\)</span>. If <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are sets, then <span class="math notranslate nohighlight">\(A \cap B\)</span> is the set of all the shared elements of <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>, called the <em>intersection</em>. For example, <span class="math notranslate nohighlight">\(\mathbb{Z} \cap \mathbb{Q}^+ = \mathbb{N}\)</span>.</p>
-<p>Intersection has a dual operation called <em>union</em> and written <span class="math notranslate nohighlight">\(A \cup B\)</span> which gives you the set of elements that are either in <span class="math notranslate nohighlight">\(A\)</span> or <span class="math notranslate nohighlight">\(B\)</span> (as opposed to both). So if <span class="math notranslate nohighlight">\(EVEN\)</span> is the set of even integers and <span class="math notranslate nohighlight">\(ODD\)</span> is the set of odd integers, then <span class="math notranslate nohighlight">\(EVEN \cup ODD = \mathbb{Z}\)</span>.</p>
+<p>Sometimes, sets share elements. For example, <span class="math notranslate nohighlight">\(\mathbb{N}\)</span> and <span class="math notranslate nohighlight">\(\mathbb{Z}\)</span> both contain <span class="math notranslate nohighlight">\(0\)</span>. If <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are sets, then <span class="math notranslate nohighlight">\(A \cap B\)</span> is the set of all the shared elements of <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span>, called the <em>intersection</em>. For example, <span class="math notranslate nohighlight">\(\mathbb{Z} \cap \mathbb{Q}^+ = \{1, 2, 3, ...\} = \mathbb{N} - \{0\}\)</span>.</p>
+<p>Intersection has a dual operation called <em>union</em> and written <span class="math notranslate nohighlight">\(A \cup B\)</span> which gives you the set of elements that are either in <span class="math notranslate nohighlight">\(A\)</span> or <span class="math notranslate nohighlight">\(B\)</span> (or possibly both). So if <span class="math notranslate nohighlight">\(EVEN\)</span> is the set of even integers and <span class="math notranslate nohighlight">\(ODD\)</span> is the set of odd integers, then <span class="math notranslate nohighlight">\(EVEN \cup ODD = \mathbb{Z}\)</span>.</p>
 <p>Finally, if all the elements of one set are also in another set, we write <span class="math notranslate nohighlight">\(A \subseteq B\)</span> and say <span class="math notranslate nohighlight">\(A\)</span> is a <em>subset</em> of <span class="math notranslate nohighlight">\(B\)</span>. If there’s some <span class="math notranslate nohighlight">\(a \in A\)</span> that’s <em>not</em> in <span class="math notranslate nohighlight">\(B\)</span>, then <span class="math notranslate nohighlight">\(A \not\subseteq B\)</span>. For example, <span class="math notranslate nohighlight">\(\mathbb{N} \subseteq \mathbb{Z}\)</span> but <span class="math notranslate nohighlight">\(\mathbb{Z} \not\subseteq \mathbb{Q}^+\)</span>. Try and work out whether its true that <span class="math notranslate nohighlight">\(A \cap B \subseteq A \subseteq A \cup B\)</span> (or vice-versa).</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -374,10 +395,10 @@
 </section>
 <section id="functions">
 <span id="sections-sets-functions"></span><h2>Functions<a class="headerlink" href="#functions" title="Link to this heading">#</a></h2>
-<p>Sets by themselves are fairly boring. Things get more interesting when we can hop between them. One way of hopping between sets is using <em>functions</em>. A function <span class="math notranslate nohighlight">\(f\)</span> from a set <span class="math notranslate nohighlight">\(A\)</span> to another set <span class="math notranslate nohighlight">\(B\)</span> (written <span class="math notranslate nohighlight">\(f: A \to B\)</span>) takes in an element of <span class="math notranslate nohighlight">\(A\)</span> and spits out an element of <span class="math notranslate nohighlight">\(B\)</span>. Symbolically, if <span class="math notranslate nohighlight">\(a \in A\)</span>, then <span class="math notranslate nohighlight">\(f(a) \in B\)</span>. Crucially, a function will always spit out the same element each time.</p>
+<p>Sets by themselves are fairly boring. Things get more interesting when we can hop between them. One way of hopping between sets is using <em>functions</em>. A function <span class="math notranslate nohighlight">\(f\)</span> from a set <span class="math notranslate nohighlight">\(A\)</span> to another set <span class="math notranslate nohighlight">\(B\)</span> (written <span class="math notranslate nohighlight">\(f: A \to B\)</span>) takes in an element of <span class="math notranslate nohighlight">\(A\)</span> and spits out an element of <span class="math notranslate nohighlight">\(B\)</span>. Symbolically, if <span class="math notranslate nohighlight">\(a \in A\)</span>, then <span class="math notranslate nohighlight">\(f(a) \in B\)</span>. Crucially, a function will always spit out the same element of <span class="math notranslate nohighlight">\(B\)</span> for a given element <span class="math notranslate nohighlight">\(a \in A\)</span>.</p>
 <p>Examples:</p>
 <ul class="simple">
-<li><p>The <em>identity</em> function <span class="math notranslate nohighlight">\(id: A \to A\)</span> does nothing: <span class="math notranslate nohighlight">\(id(a) = a\)</span>. Plays a very important role for a function that does so little.</p></li>
+<li><p>The <em>identity</em> function <span class="math notranslate nohighlight">\(id: A \to A\)</span> does nothing: <span class="math notranslate nohighlight">\(id(a) = a\)</span>. Turns out to play a very important role for a function that does so little.</p></li>
 <li><p>The <em>addition</em> function <span class="math notranslate nohighlight">\(+ : \mathbb{N} \times \mathbb{N} \to \mathbb{N}\)</span> does what you would expect <span class="math notranslate nohighlight">\(+(n, m) = n + m\)</span>. The <span class="math notranslate nohighlight">\(\times\)</span> symbol means the function takes in a pair of elements.</p></li>
 <li><p>If you had a set of names, you could describe everyone’s age with the function <span class="math notranslate nohighlight">\(age: NAMES \to \mathbb{N}\)</span></p></li>
 </ul>
@@ -392,7 +413,7 @@
 <ul class="simple">
 <li><p>The identity function from above is a bijection, albeit a very uninteresting one.</p></li>
 <li><p>The straightforward function <span class="math notranslate nohighlight">\(in: \mathbb{N} \to \mathbb{Z}\)</span> which sends <span class="math notranslate nohighlight">\(n \in \mathbb{N}\)</span> to itself is injective. But it is not surjective because nothing is mapped to <span class="math notranslate nohighlight">\(-1\)</span>.</p></li>
-<li><p>The obvious function <span class="math notranslate nohighlight">\(\mathbb{N} \to {EVEN, ODD}\)</span> is surjective because there are even and odd numbers. But it is not injective because <span class="math notranslate nohighlight">\(2\)</span> and <span class="math notranslate nohighlight">\(4\)</span> are both mapped to <span class="math notranslate nohighlight">\(EVEN\)</span>.</p></li>
+<li><p>The obvious function <span class="math notranslate nohighlight">\(\mathbb{N} \to \{EVEN, ODD\}\)</span> is surjective because there are even and odd numbers. But it is not injective because <span class="math notranslate nohighlight">\(2\)</span> and <span class="math notranslate nohighlight">\(4\)</span> are both mapped to <span class="math notranslate nohighlight">\(EVEN\)</span>.</p></li>
 <li><p>Imagine the function that maps someone’s name to their seat on a plane. This is injective because two people can’t sit on the same seat. If the plane is fully booked, then it is bjiective.</p></li>
 </ul>
 <p>Typically, when there is a bijection we consider the sets to be basically the same and write <span class="math notranslate nohighlight">\(A \simeq B\)</span>.</p>

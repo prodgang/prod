@@ -10,7 +10,7 @@ kernelspec:
 ---
 
 (sections:draw)=
-# Draw
+# Code
 
 Draw your favourite productive number! Navigate to {fa}`rocket` --> {guilabel}`Live Code`, wait until it says ready and then drag the slider around.
 
@@ -33,6 +33,42 @@ from IPython.display import display, clear_output
 import sympy
 from sympy.ntheory import factorint
 primes = list(sympy.primerange(1, 100))
+
+# hey no way you're actually reading the code!
+# first of all, isnt is cool how simple these first two functions are?
+# (apart from the factoring behind the scenes lol)
+# btw used tuples rather than lists cos had to hash them once
+# drawing code is messy af - blame chat gpt for that one.
+
+def p_to_d(ps):
+    assert type(ps) == tuple or ps == 0, ("bad input", ps)
+    if ps == 0: return 0
+    
+    x = 1
+    for i, p in enumerate(ps):
+        x *= primes[i]**p_to_d(p)
+    
+    return x
+
+def d_to_p(x):
+    if x == 0: return 0
+    if x == 1: return () # use tuples because can be hashed
+
+    assert x < 2**420, "something tells me this number isnt gonna be worth trying to factor..."
+    
+    factors = factorint(x)
+    
+    max_prime = max(factors.keys())
+    assert max_prime in primes, "need more primes! Fix me please"
+    mp_index = primes.index(max_prime)
+    y = [0] * (mp_index + 1)
+    
+    # key recursive step
+    for p, e in factors.items():
+        i = primes.index(p)
+        y[i] = d_to_p(e)
+    
+    return tuple(y)
 
 def draw_white_dot(G, pos, ax=None):
     node_label = len(G.nodes) + 1
@@ -67,36 +103,6 @@ def draw_tree(G, tree, pos=None, root_pos=(0, 0), ax=None):
 
 
     return root_label
-
-def p_to_d(ps):
-    assert type(ps) == tuple or ps == 0, ("bad input", ps)
-    if ps == 0: return 0
-    
-    x = 1
-    for i, p in enumerate(ps):
-        x *= primes[i]**p_to_d(p)
-    
-    return x
-
-def d_to_p(x):
-    if x == 0: return 0
-    if x == 1: return () # use tuples because can be hashed
-
-    assert x < 2**420, "something tells me this number isnt gonna be worth trying to factor..."
-    
-    factors = factorint(x)
-    
-    max_prime = max(factors.keys())
-    assert max_prime in primes, "need more primes! Fix me please"
-    mp_index = primes.index(max_prime)
-    y = [0] * (mp_index + 1)
-    
-    # key recursive step
-    for p, e in factors.items():
-        i = primes.index(p)
-        y[i] = d_to_p(e)
-    
-    return tuple(y)
 
 def d2tree(x, ax=None):
     G = nx.Graph()

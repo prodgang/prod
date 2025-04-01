@@ -193,8 +193,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../post/note.html">Note from the author</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Symbols and Jargon</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../prod/draw.html">CODE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Symbols and Jargon</a></li>
 </ul>
 
     </div>
@@ -241,6 +241,21 @@
         <div class="header-article-item">
 
 <div class="article-header-buttons">
+
+
+<a href="https://github.com/prodgang/prod/issues/new?title=Issue%20on%20page%20%2Fwords/pre/poset.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button"
+   title="Open an issue"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+
+</a>
+
 
 
 
@@ -374,7 +389,7 @@
 </figcaption>
 </figure>
 <p>Sometimes this can get a bit ridiculous: there’s a whole <a class="reference external" href="https://tiermaker.com/">corner of the internet</a> dedicated to ranking things that realistically cannot be ranked. On the other side, <a class="reference external" href="https://culanth.org/fieldsights/comparison-the-impossible-method">some people</a> are averse to any form of comparison altogether.</p>
-<p>These tensions are reconciled in what mathematicians call a <em>partial order</em>. A partial order is one of my favourite math gizmos because it has affected the way I understand not only the mathematical world, but also the real world. The idea behind partial orders can basically be summed up with the slogan:</p>
+<p>These tensions are (partially) reconciled in what mathematicians call a <em>partial order</em>. A partial order is one of my favourite math gizmos because it has affected the way I understand not only the mathematical world, but also the real world. The idea behind partial orders can basically be summed up with the slogan:</p>
 <blockquote>
 <div><p>Not everything is better or worse. Some things are just different.</p>
 </div></blockquote>
@@ -394,8 +409,8 @@
 <p>Let’s break that definition down:</p>
 <ul class="simple">
 <li><p>Reflexivity just means everything is less than or equal to itself. Not very problematic. Math definitions almost always start with some trivial requirement like this.</p></li>
-<li><p>Transitivity is very important. It means you can chain together multiple comparisons into a new one. It also enforces the idea that you are comparing things consistently. For example, the relation of being a synonym is not transitive: ‘tangerine’ is synonymous with ‘orange’ and ‘orange’ is synomyous with ‘yellowy-red’, but ‘tangerine’ and ‘yellowy-red’ are not at all synonymous. The problem is that ‘orange’ is both a noun and an adjective, and we allowed the meaning of orange to change between comparisons. Similarly, the “is beaten by” relation is not transitive in rock-paper-scissors, but is in poker.</p></li>
-<li><p>Anti-symmetry is subtle. I initially wrote it off as chalkboard grease to help prove equality. But I’ve learned to think of it as enforcing the beautiful idea that x’s relationships with everything else determine what x is. For example, the smoothie order I introduced above is not anti-symmetric because two smoothies that have the same taste, cost and healthiness could still be different smoothies. On the other hand, you should be able to guess what number I’m thinking of if I tell you it’s both at least as big and at least as small as <span class="math notranslate nohighlight">\(2\)</span>.</p></li>
+<li><p>Transitivity is very important. It means you can chain together multiple comparisons into a new one. It also enforces the idea that you are comparing things consistently. For example, the relation of being a synonym is not transitive: ‘tangerine’ is synonymous with ‘orange’ and ‘orange’ is synomyous with ‘yellowy-red’, but ‘tangerine’ and ‘yellowy-red’ are not at all synonymous. The problem is that ‘orange’ is both a noun and an adjective, and we allowed the meaning of orange to change between comparisons. Similarly, the “is beaten by” relation is not transitive in rock-paper-scissors, though it is in poker.</p></li>
+<li><p>Anti-symmetry is subtle. I initially wrote it off as chalkboard grease to help prove equality. But I’ve learned to think of it as enforcing the beautiful idea that <span class="math notranslate nohighlight">\(x\)</span>’s relationships with everything else determine what <span class="math notranslate nohighlight">\(x\)</span> is. For example, the smoothie order I introduced above is not anti-symmetric because two smoothies that have the same taste, cost and healthiness could still be different smoothies. On the other hand, you should be able to guess what number I’m thinking of if I tell you it’s both at least as big and at least as small as <span class="math notranslate nohighlight">\(2\)</span>.</p></li>
 </ul>
 </section>
 <section id="examples">
@@ -434,7 +449,7 @@
 <p>We can define a very similar relation to <a class="reference internal" href="#equation-nleq">(10)</a>, but with multiplication. To avoid confusing notation, this is usually written <span class="math notranslate nohighlight">\(x | y\)</span> and read as <span class="math notranslate nohighlight">\(x\)</span> <em>divides</em> <span class="math notranslate nohighlight">\(y\)</span>.</p>
 <div class="math notranslate nohighlight" id="equation-div">
 <span class="eqno">(12)<a class="headerlink" href="#equation-div" title="Link to this equation">#</a></span>\[x | y \iff \text{there exists some } z \in \mathbb{N}^+ \text{such that } x \times z = y\]</div>
-<p>As before, I’ll call <span class="math notranslate nohighlight">\(z\)</span> the <em>witness</em> of the divisibility of <span class="math notranslate nohighlight">\(y\)</span> by <span class="math notranslate nohighlight">\(x\)</span>. The reason <span class="math notranslate nohighlight">\(z\)</span> comes from <span class="math notranslate nohighlight">\(\mathbb{N}^+\)</span> rather than <span class="math notranslate nohighlight">\(\mathbb{N}\)</span> is because <span class="math notranslate nohighlight">\(0\)</span> behaves horribly in times land, so is excluded altogether.</p>
+<p>As before, I’ll call <span class="math notranslate nohighlight">\(z\)</span> the <em>witness</em> of the divisibility of <span class="math notranslate nohighlight">\(y\)</span> by <span class="math notranslate nohighlight">\(x\)</span>. The reason <span class="math notranslate nohighlight">\(z\)</span> comes from <span class="math notranslate nohighlight">\(\mathbb{N}^+\)</span> rather than <span class="math notranslate nohighlight">\(\mathbb{N}\)</span> is because <span class="math notranslate nohighlight">\(0\)</span> behaves horribly in times land, so is banished altogether.</p>
 <p>It’s not hard to see that <span class="math notranslate nohighlight">\(x | x\)</span> (choose <span class="math notranslate nohighlight">\(1\)</span> as witness and check <span class="math notranslate nohighlight">\(x \times 1 = x\)</span>). Proof of other properties below:</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
@@ -454,7 +469,17 @@
 </details><p>Very crucially, divisibility is not total. For example, <span class="math notranslate nohighlight">\(2\)</span> can’t divide <span class="math notranslate nohighlight">\(3\)</span> and <span class="math notranslate nohighlight">\(3\)</span> can’t divide <span class="math notranslate nohighlight">\(2\)</span>. They are just different. This manifests in a far more intricate Hasse diagram than we’ve seen so far. As a reminder, a line going up from <span class="math notranslate nohighlight">\(x\)</span> to <span class="math notranslate nohighlight">\(y\)</span> now means <span class="math notranslate nohighlight">\(x | y\)</span>.</p>
 <a class="reference internal image-reference" href="../../_images/div.svg" id="divlatt"><img alt="divisibility lattice" class="align-center" id="divlatt" src="../../_images/div.svg" style="height: 300px;" /></a>
 <p>Unsurprisingly, the primes play a foundational role.</p>
-</section>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Wait what exactly is a Hasse diagram again?</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">You can draw any (finite) partial order as a Hasse diagram. The elements are points and a vertical line from <span class="math notranslate nohighlight">\(x\)</span> to <span class="math notranslate nohighlight">\(y\)</span> means <span class="math notranslate nohighlight">\(x \leq y\)</span>. However, many of the relationships are not drawn explicitly so really <span class="math notranslate nohighlight">\(x \leq y\)</span> means there is a vertical <em>path</em> from <span class="math notranslate nohighlight">\(x\)</span> to <span class="math notranslate nohighlight">\(y\)</span> in the diagram. How does this match with the definition of a poset?</p>
+<ol class="arabic simple">
+<li><p class="sd-card-text"><em>Reflexivity</em>: just assume that every element has a path to itself. Drawing circular lines from everything to itself would add clutter, so they’re implicit.</p></li>
+<li><p class="sd-card-text"><em>Transitivity</em>: if there’s a path from <span class="math notranslate nohighlight">\(x\)</span> to <span class="math notranslate nohighlight">\(y\)</span> and another path from <span class="math notranslate nohighlight">\(y\)</span> to <span class="math notranslate nohighlight">\(z\)</span>, then just imagine traversing each path separately and you have a path from <span class="math notranslate nohighlight">\(x\)</span> to <span class="math notranslate nohighlight">\(z\)</span>. This isn’t drawn explicitly because it would also add clutter.</p></li>
+<li><p class="sd-card-text"><em>Anti-symmetry</em>: this is the reason all lines go up. Without anti-symmetry, you would have to use directed arrows, rather than lines and they could go sideways or even downwards. But with anti-symmetry you know that if something is greater than <span class="math notranslate nohighlight">\(x\)</span>, then it cannot also be less than <span class="math notranslate nohighlight">\(x\)</span> (unless it actually is <span class="math notranslate nohighlight">\(x\)</span>) and so you can put it above <span class="math notranslate nohighlight">\(x\)</span>.</p></li>
+</ol>
+</div>
+</details></section>
 <section id="subsets">
 <h3>Subsets<a class="headerlink" href="#subsets" title="Link to this heading">#</a></h3>
 <p>The most interesting and most important example of a partial order is the subset relation <span class="math notranslate nohighlight">\(A \subseteq B\)</span> (i.e. <span class="math notranslate nohighlight">\(B\)</span> contains all the elements of <span class="math notranslate nohighlight">\(A\)</span>) that we met back <a class="reference internal" href="sets.html#sections-sets-ops"><span class="std std-ref">here</span></a>.</p>
@@ -465,28 +490,18 @@
 <li><p>Transitive: if <span class="math notranslate nohighlight">\(A \subseteq B\)</span> then <span class="math notranslate nohighlight">\(B\)</span> contains all the elements of <span class="math notranslate nohighlight">\(A\)</span>. If <span class="math notranslate nohighlight">\(B \subseteq C\)</span>, then <span class="math notranslate nohighlight">\(C\)</span> contains all the elements of <span class="math notranslate nohighlight">\(B\)</span>. So <span class="math notranslate nohighlight">\(C\)</span> contains all the elements of <span class="math notranslate nohighlight">\(A\)</span> which means <span class="math notranslate nohighlight">\(A \subseteq C\)</span>.</p></li>
 <li><p>Anti-symmetric: if <span class="math notranslate nohighlight">\(A \subseteq B\)</span> and <span class="math notranslate nohighlight">\(B \subseteq A\)</span>, then they each contain all the same elements. By definition, sets that contain the same elements are the same, so <span class="math notranslate nohighlight">\(A = B\)</span>.</p></li>
 </ul>
-<p>Crucially, <span class="math notranslate nohighlight">\(\subseteq\)</span> is not total. For example, the sets <span class="math notranslate nohighlight">\(\{a, b, c\}\)</span> and <span class="math notranslate nohighlight">\(\{a,c,d\}\)</span> are incomparable.</p>
+<p>Crucially, <span class="math notranslate nohighlight">\(\subseteq\)</span> is not total. For example, the sets <span class="math notranslate nohighlight">\(\{a, b, c\}\)</span> and <span class="math notranslate nohighlight">\(\{a,b,d\}\)</span> are incomparable.</p>
 <p>We are not allowed to talk about the set of all sets, so we cannot define the poset of all sets. However, given a starting set we can look at the poset of all its subsets. Here it is for the set <span class="math notranslate nohighlight">\(\{a, b, c\}\)</span>, (where a line now means a set is contained in the one above):</p>
 <a class="reference internal image-reference" href="../../_images/subset.svg" id="sublatt"><img alt="subset lattice" class="align-center" id="sublatt" src="../../_images/subset.svg" style="height: 250px;" /></a>
 <p>(yes - the empty set is technically a subset of everything)</p>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">What exactly is a Hasse diagram?</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">You can draw any (finite) partial order as a Hasse diagram. An vertical line from <span class="math notranslate nohighlight">\(x\)</span> to <span class="math notranslate nohighlight">\(y\)</span> means <span class="math notranslate nohighlight">\(x \leq y\)</span>. However, many of the relations are not drawn implicitly so really <span class="math notranslate nohighlight">\(x \leq y\)</span> means there is a vertical <em>path</em> from <span class="math notranslate nohighlight">\(x\)</span> to <span class="math notranslate nohighlight">\(y\)</span> in the diagram. How does this match with the definition of a poset?</p>
-<ol class="arabic simple">
-<li><p class="sd-card-text"><em>Reflexivity</em>: just assume that every element has a path to itself. Drawing circular lines from everything to itself would add clutter, so they’re implicit.</p></li>
-<li><p class="sd-card-text"><em>Transitivity</em>: if there’s a path from <span class="math notranslate nohighlight">\(x\)</span> to <span class="math notranslate nohighlight">\(y\)</span> and another path from <span class="math notranslate nohighlight">\(y\)</span> to <span class="math notranslate nohighlight">\(z\)</span>, then just imagine traversing each path separately and you have a path from <span class="math notranslate nohighlight">\(x\)</span> to <span class="math notranslate nohighlight">\(z\)</span>. This isn’t drawn explicitly because it would also add clutter.</p></li>
-<li><p class="sd-card-text"><em>Anti-symmetry</em>: this is the reason all lines go up. Without anti-symmetry, you would have to use directed arrows, rather than lines and they could go sideways or even downwards. But with anti-symmetry you know that if something is greater than <span class="math notranslate nohighlight">\(x\)</span>, then it cannot also be less than <span class="math notranslate nohighlight">\(x\)</span> (unless it actually is <span class="math notranslate nohighlight">\(x\)</span>) and so you can put it above <span class="math notranslate nohighlight">\(x\)</span>.</p></li>
-</ol>
-</div>
-</details></section>
+</section>
 <section id="fun-examples">
 <h3>Fun examples<a class="headerlink" href="#fun-examples" title="Link to this heading">#</a></h3>
 <p>Here are some other examples that can be helpful to think about:</p>
 <ol class="arabic simple">
 <li><p><strong>Time</strong> In special relativity, observers can see the same events happening in a different order (e.g. A happens before B for one person, but A happens after B for another person). This forms a partial order - see <a class="reference external" href="https://physics.stackexchange.com/questions/227049/is-causality-a-total-order">here</a> for more info.</p></li>
 <li><p><strong>Getting Dressed</strong> A similar, but much simpler, time-based example is how to get dressed. You have to put your T-shirt on before your sweater before your coat, but you could put your socks on before or after any of these. I got this from <a class="reference external" href="https://courses.grainger.illinois.edu/cs173/fa2008/lectures/lect_34.pdf">here</a>, where you can see a few more examples.</p></li>
-<li><p><strong>Family Trees</strong> People are (transitively) descended from other people. But when we draw family trees, they are not total because people of the same generation or not descended from each other. So its a partial order. In fact, anything that can be drawn as a tree is a partial order.</p></li>
+<li><p><strong>Family Trees</strong> People are (transitively) descended from other people. But when we draw family trees, they are not total because people of the same generation are not descended from each other. So its a partial order. In fact, anything that can be drawn as a tree is a partial order.</p></li>
 <li><p><strong>Privilege</strong> In our society, some groups of people are more privileged than others. Intersectionality is the idea that combining privileges makes things more complicated. <a class="reference external" href="https://youtu.be/48VqWQ2YbGk?si=9IP_4SZn7q3yxupP&amp;amp;t=2213">This talk</a> explores how partial orders can help clarify some of these complications.</p></li>
 </ol>
 </section>
@@ -501,7 +516,7 @@
 <p>A diagram may help:</p>
 <a class="reference internal image-reference" href="../../_images/diamond.svg"><img alt="diamond lattice" class="align-center" src="../../_images/diamond.svg" style="height: 200px;" /></a>
 <p>In perhaps the worst clash of notations I’ve ever seen, <span class="math notranslate nohighlight">\(x \land y\)</span> is found at the bottom of the v-shape between <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>, while <span class="math notranslate nohighlight">\(x \lor y\)</span> is found at the top of the hat <em>above</em> <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>. Really sorry about that.</p>
-<p>The operations do have names: <span class="math notranslate nohighlight">\(\land\)</span> is called the <em>meet</em> and <span class="math notranslate nohighlight">\(\lor\)</span> is called the <em>join</em>. But I always get these names mixed up so won’t use them that much.</p>
+<p>The operations do have names: <span class="math notranslate nohighlight">\(\land\)</span> is called the <em>meet</em> and <span class="math notranslate nohighlight">\(\lor\)</span> is called the <em>join</em>. But I always get these names mixed up (because they are literally <a class="reference external" href="https://www.thesaurus.com/browse/merge">synonyms</a> of each other 😡) so won’t use them that much.</p>
 <p>There’s another way of defining lattices that I have no intution for but you can read about on <a class="reference external" href="https://en.wikipedia.org/wiki/Lattice_(order)#As_algebraic_structure">wikipedia</a> if you want.</p>
 <p>I’ll end with some examples of lattices:</p>
 <ul class="simple">
@@ -509,7 +524,7 @@
 <li><p>The divisibility partial order from above is a lattice. <span class="math notranslate nohighlight">\(x \land y\)</span> is defined as the greatest common divisor of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(x \lor y\)</span> is the least common multiple. Not too suprising - if <span class="math notranslate nohighlight">\(z\)</span> is a common divisor of <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>, then <span class="math notranslate nohighlight">\(z | x\)</span> and <span class="math notranslate nohighlight">\(z | y\)</span> and it is greatest by definition.</p></li>
 <li><p>The subset partial order from above is also a lattice! <span class="math notranslate nohighlight">\(\land\)</span> is the intersection <span class="math notranslate nohighlight">\(A \cap B\)</span>, <span class="math notranslate nohighlight">\(\lor\)</span> is the union <span class="math notranslate nohighlight">\(A \cup B\)</span>. That <span class="math notranslate nohighlight">\(A \cap B\)</span> is contained in both <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> is fairly obvious. That it is the greatest such subset is because if it were any bigger, it would contain elements that either weren’t in <span class="math notranslate nohighlight">\(A\)</span> or weren’t in <span class="math notranslate nohighlight">\(B\)</span>.</p></li>
 </ul>
-<p>The last two examples are extremely important to keep in mind because in the next chapter because we’ll see that productive numbers form a lattice which sort of sits halfway between the divisibility lattice and the subset lattice. In short, <span class="math notranslate nohighlight">\(\sqsubseteq \ \cong \ | \ \land \subseteq \)</span><a class="footnote-reference brackets" href="#latref" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
+<p>The last two examples are extremely important to keep in mind because we’ll eventually see that productive numbers form a lattice which sort of sits halfway between the divisibility lattice and the subset lattice. In short, <span class="math notranslate nohighlight">\(\sqsubseteq \ \cong \ | \ \land \subseteq \)</span><a class="footnote-reference brackets" href="#latref" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
 <hr class="footnotes docutils" />
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="latref" role="doc-footnote">

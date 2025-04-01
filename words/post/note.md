@@ -1,20 +1,20 @@
 # Note from the author
 
-*Who am I?* A random internet nerd.
+*Who am I?* Doesn't matter.
 
-*Why did I do this?* No particular reason except I love numbers (and don't like counting).
+*Why bother deeping primes like this?* No particular reason except I love numbers (and don't particularly like counting).
 
-*Why did I write this?* Two reasons:
+*Why write a book on primes?* Two reasons:
 1. So that people can learn about productive numbers and do something cool with them.
-2. To demonstrate how much fun mathematical research is.
+2. To demonstrate how much fun mathematical research is in an accesible way.
 
 *What's the point of this section?* To go on a rant about mathematical snobbery.
 
-When I first started this journey, many years ago, I knew very little math. I literally just thought groups were cool and wanted to give multiplication some space to shine outside the shadow of the sucessor function. If I had known about the divisor lattice I probably would have stuck with that. But I didn't so I followed my gut and somehow found something new (at least I'm pretty sure its new - very possibly this is known by some niche crowds who haven't given it enough PR).
+When I first started this journey, many years ago, I knew very little math. I literally just thought modular arithmetic was cool and wanted to give multiplication some space to shine outside the shadow of the sucessor function. If I had known about the divisor lattice I probably would have stuck with that. But I didn't so I followed my gut and somehow found something new (at least I'm pretty sure its new - very possibly this is known by some niche crowds who haven't given it enough PR in which case shame on them).
 
 At this point, I know a bit more math. I knew it was time to get make this public when everything started feeling obvious but I had no fresh ideas for next steps. I expect that most professional mathematicians would consider all the results so far trivial. To be fair, what took me several years would probably take an average grad student an afternoon to work out. 
 
-But I'm not ashamed of that. In my opinion, part of the beauty of math is the sheer simplicity of it. Not simple in the sense of what you most expect initially - our expectations are often clouded by previous experiences. Instead, I mean simple as a sort of self-contained completeness where, at least with hindsight, every step follows the last in a way that's so natural its almost inevitable.
+But I'm not ashamed of that. In my opinion, part of the beauty of math is the sheer simplicity of it. Not simple in the sense of what you most expect initially - our expectations are often clouded by previous experiences. Instead, I mean simple as a sort of self-contained completeness where, at least with hindsight, every "decision" follows the last in a way that's so natural its almost inevitable.
 
 I'm not an expert but I believe professional mathematicians are perversely incentivized to make their work appear as complicated as possible. Academic mathematics is this kind of elite club where everyone is constantly trying to prove smart they are. They fight over jobs, titles, prizes and whose name goes on the latest type of vector space or whatever. To survive they compete to publish in the fanciest journals, which requires the fanciest titles and makes the most concrete progress towards the open problems in their tiny niche specialism. All of this ego continues to feed the idea that math is only for people with special brains. So they forget the best math is painfully simple.
 

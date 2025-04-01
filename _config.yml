@@ -1,6 +1,7 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
+#title: BOOK OF PRIMES
 title: PROD
 author: PROD GANG
 logo: imgs/logo.svg
@@ -30,7 +31,7 @@ repository:
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 html:
-  use_issues_button: false
+  use_issues_button: true
   use_repository_button: false
   extra_footer: "<p> © Copyright I sure hope you do </p>"
   extra_css: ["_static/custom.css"]

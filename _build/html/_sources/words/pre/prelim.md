@@ -10,3 +10,5 @@ If you can't be bothered to read the whole thing, but find yourself stuck later 
 - [Induction](sections:numbers:induction)
 - [Groups](sections:algebra)
 - [Partial order](sections:pre:order)
+
+Most importantly, if you've read everything twice and you're still stuck - ask a question! You're probably not the only one. All you need to do is click the lightbulb on the top of the page that most confuses you.

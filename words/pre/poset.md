@@ -12,7 +12,7 @@ align: center
 
 Sometimes this can get a bit ridiculous: there's a whole [corner of the internet](https://tiermaker.com/) dedicated to ranking things that realistically cannot be ranked. On the other side, [some people](https://culanth.org/fieldsights/comparison-the-impossible-method) are averse to any form of comparison altogether.
 
-These tensions are reconciled in what mathematicians call a *partial order*. A partial order is one of my favourite math gizmos because it has affected the way I understand not only the mathematical world, but also the real world. The idea behind partial orders can basically be summed up with the slogan:
+These tensions are (partially) reconciled in what mathematicians call a *partial order*. A partial order is one of my favourite math gizmos because it has affected the way I understand not only the mathematical world, but also the real world. The idea behind partial orders can basically be summed up with the slogan:
 > Not everything is better or worse. Some things are just different.
 
 Here's an informal example. Suppose you want to buy a smoothie. You want it to be healthy, tasty and cheap. Some smoothies are genuinely better than others: a banana smoothie is healthier, tastier and cheaper than a chocolate and truffle smoothie which is itself slightly tastier but otherwise the same as a chocolate and balsamic vinegar smoothie. On the other hand, a superfood smoothie is tastier and healthier than a banana smoothie, but more expensive. So neither is wholly better than the other, which we will call *incomparable*. We can draw these relationships in what's called a *Hasse Diagram*:
@@ -44,8 +44,8 @@ The formal definition is as follows. Some relation $x \leq y$ is a **partial ord
 
 Let's break that definition down:
 - Reflexivity just means everything is less than or equal to itself. Not very problematic. Math definitions almost always start with some trivial requirement like this.
-- Transitivity is very important. It means you can chain together multiple comparisons into a new one. It also enforces the idea that you are comparing things consistently. For example, the relation of being a synonym is not transitive: 'tangerine' is synonymous with 'orange' and 'orange' is synomyous with 'yellowy-red', but 'tangerine' and 'yellowy-red' are not at all synonymous. The problem is that 'orange' is both a noun and an adjective, and we allowed the meaning of orange to change between comparisons. Similarly, the "is beaten by" relation is not transitive in rock-paper-scissors, but is in poker.
-- Anti-symmetry is subtle. I initially wrote it off as chalkboard grease to help prove equality. But I've learned to think of it as enforcing the beautiful idea that x's relationships with everything else determine what x is. For example, the smoothie order I introduced above is not anti-symmetric because two smoothies that have the same taste, cost and healthiness could still be different smoothies. On the other hand, you should be able to guess what number I'm thinking of if I tell you it's both at least as big and at least as small as $2$.
+- Transitivity is very important. It means you can chain together multiple comparisons into a new one. It also enforces the idea that you are comparing things consistently. For example, the relation of being a synonym is not transitive: 'tangerine' is synonymous with 'orange' and 'orange' is synomyous with 'yellowy-red', but 'tangerine' and 'yellowy-red' are not at all synonymous. The problem is that 'orange' is both a noun and an adjective, and we allowed the meaning of orange to change between comparisons. Similarly, the "is beaten by" relation is not transitive in rock-paper-scissors, though it is in poker.
+- Anti-symmetry is subtle. I initially wrote it off as chalkboard grease to help prove equality. But I've learned to think of it as enforcing the beautiful idea that $x$'s relationships with everything else determine what $x$ is. For example, the smoothie order I introduced above is not anti-symmetric because two smoothies that have the same taste, cost and healthiness could still be different smoothies. On the other hand, you should be able to guess what number I'm thinking of if I tell you it's both at least as big and at least as small as $2$.
 
 ## Examples
 
@@ -111,7 +111,7 @@ We can define a very similar relation to {eq}`nleq`, but with multiplication. To
 x | y \iff \text{there exists some } z \in \mathbb{N}^+ \text{such that } x \times z = y
 ```
 
-As before, I'll call $z$ the *witness* of the divisibility of $y$ by $x$. The reason $z$ comes from $\mathbb{N}^+$ rather than $\mathbb{N}$ is because $0$ behaves horribly in times land, so is excluded altogether. 
+As before, I'll call $z$ the *witness* of the divisibility of $y$ by $x$. The reason $z$ comes from $\mathbb{N}^+$ rather than $\mathbb{N}$ is because $0$ behaves horribly in times land, so is banished altogether. 
 
 It's not hard to see that $x | x$ (choose $1$ as witness and check $x \times 1 = x$). Proof of other properties below:
 
@@ -152,6 +152,16 @@ Very crucially, divisibility is not total. For example, $2$ can't divide $3$ and
 
 Unsurprisingly, the primes play a foundational role.
 
+```{dropdown} Wait what exactly is a Hasse diagram again?
+You can draw any (finite) partial order as a Hasse diagram. The elements are points and a vertical line from $x$ to $y$ means $x \leq y$. However, many of the relationships are not drawn explicitly so really $x \leq y$ means there is a vertical *path* from $x$ to $y$ in the diagram. How does this match with the definition of a poset?
+
+1. *Reflexivity*: just assume that every element has a path to itself. Drawing circular lines from everything to itself would add clutter, so they're implicit.
+2. *Transitivity*: if there's a path from $x$ to $y$ and another path from $y$ to $z$, then just imagine traversing each path separately and you have a path from $x$ to $z$. This isn't drawn explicitly because it would also add clutter.
+3. *Anti-symmetry*: this is the reason all lines go up. Without anti-symmetry, you would have to use directed arrows, rather than lines and they could go sideways or even downwards. But with anti-symmetry you know that if something is greater than $x$, then it cannot also be less than $x$ (unless it actually is $x$) and so you can put it above $x$. 
+
+```
+
+
 ### Subsets
 
 The most interesting and most important example of a partial order is the subset relation $A \subseteq B$ (i.e. $B$ contains all the elements of $A$) that we met back [here](sections:sets:ops). 
@@ -163,7 +173,7 @@ The conditions are quite easy to check:
 - Transitive: if $A \subseteq B$ then $B$ contains all the elements of $A$. If $B \subseteq C$, then $C$ contains all the elements of $B$. So $C$ contains all the elements of $A$ which means $A \subseteq C$.
 - Anti-symmetric: if $A \subseteq B$ and $B \subseteq A$, then they each contain all the same elements. By definition, sets that contain the same elements are the same, so $A = B$.
 
-Crucially, $\subseteq$ is not total. For example, the sets $\{a, b, c\}$ and $\{a,c,d\}$ are incomparable.
+Crucially, $\subseteq$ is not total. For example, the sets $\{a, b, c\}$ and $\{a,b,d\}$ are incomparable.
 
 We are not allowed to talk about the set of all sets, so we cannot define the poset of all sets. However, given a starting set we can look at the poset of all its subsets. Here it is for the set $\{a, b, c\}$, (where a line now means a set is contained in the one above):
 ```{image} ../../tikz/subset.svg
@@ -174,21 +184,13 @@ We are not allowed to talk about the set of all sets, so we cannot define the po
 ```
 (yes - the empty set is technically a subset of everything)
 
-```{dropdown} What exactly is a Hasse diagram?
-You can draw any (finite) partial order as a Hasse diagram. An vertical line from $x$ to $y$ means $x \leq y$. However, many of the relations are not drawn implicitly so really $x \leq y$ means there is a vertical *path* from $x$ to $y$ in the diagram. How does this match with the definition of a poset?
-
-1. *Reflexivity*: just assume that every element has a path to itself. Drawing circular lines from everything to itself would add clutter, so they're implicit.
-2. *Transitivity*: if there's a path from $x$ to $y$ and another path from $y$ to $z$, then just imagine traversing each path separately and you have a path from $x$ to $z$. This isn't drawn explicitly because it would also add clutter.
-3. *Anti-symmetry*: this is the reason all lines go up. Without anti-symmetry, you would have to use directed arrows, rather than lines and they could go sideways or even downwards. But with anti-symmetry you know that if something is greater than $x$, then it cannot also be less than $x$ (unless it actually is $x$) and so you can put it above $x$. 
-
-```
 
 ### Fun examples
 
 Here are some other examples that can be helpful to think about:
 1. **Time** In special relativity, observers can see the same events happening in a different order (e.g. A happens before B for one person, but A happens after B for another person). This forms a partial order - see [here](https://physics.stackexchange.com/questions/227049/is-causality-a-total-order) for more info.
 2. **Getting Dressed** A similar, but much simpler, time-based example is how to get dressed. You have to put your T-shirt on before your sweater before your coat, but you could put your socks on before or after any of these. I got this from [here](https://courses.grainger.illinois.edu/cs173/fa2008/lectures/lect_34.pdf), where you can see a few more examples.
-3. **Family Trees** People are (transitively) descended from other people. But when we draw family trees, they are not total because people of the same generation or not descended from each other. So its a partial order. In fact, anything that can be drawn as a tree is a partial order.
+3. **Family Trees** People are (transitively) descended from other people. But when we draw family trees, they are not total because people of the same generation are not descended from each other. So its a partial order. In fact, anything that can be drawn as a tree is a partial order.
 4. **Privilege** In our society, some groups of people are more privileged than others. Intersectionality is the idea that combining privileges makes things more complicated. [This talk](https://youtu.be/48VqWQ2YbGk?si=9IP_4SZn7q3yxupP&t=2213) explores how partial orders can help clarify some of these complications. 
 
 (sections:pre:lattice)=
@@ -212,7 +214,7 @@ A diagram may help:
 
 In perhaps the worst clash of notations I've ever seen, $x \land y$ is found at the bottom of the v-shape between $x$ and $y$, while $x \lor y$ is found at the top of the hat *above* $x$ and $y$. Really sorry about that.
 
-The operations do have names: $\land$ is called the *meet* and $\lor$ is called the *join*. But I always get these names mixed up so won't use them that much. 
+The operations do have names: $\land$ is called the *meet* and $\lor$ is called the *join*. But I always get these names mixed up (because they are literally [synonyms](https://www.thesaurus.com/browse/merge) of each other 😡) so won't use them that much. 
 
 There's another way of defining lattices that I have no intution for but you can read about on [wikipedia](https://en.wikipedia.org/wiki/Lattice_(order)#As_algebraic_structure) if you want. 
 
@@ -222,7 +224,7 @@ I'll end with some examples of lattices:
 - The subset partial order from above is also a lattice! $\land$ is the intersection $A \cap B$, $\lor$ is the union $A \cup B$. That $A \cap B$ is contained in both $A$ and $B$ is fairly obvious. That it is the greatest such subset is because if it were any bigger, it would contain elements that either weren't in $A$ or weren't in $B$. 
 
 
-The last two examples are extremely important to keep in mind because in the next chapter because we'll see that productive numbers form a lattice which sort of sits halfway between the divisibility lattice and the subset lattice. In short, $\sqsubseteq \ \cong \ | \ \land \subseteq $[^latref]. 
+The last two examples are extremely important to keep in mind because we'll eventually see that productive numbers form a lattice which sort of sits halfway between the divisibility lattice and the subset lattice. In short, $\sqsubseteq \ \cong \ | \ \land \subseteq $[^latref]. 
 
 
 [^latref]: This is kind of a joke but also not really. There are order-preserving maps (which alas aren't lattice homomorphisms) from productive numbers to both the divisibility order and the subset order. So it's halfway there to being the product in the category of posets, just without the universal property.

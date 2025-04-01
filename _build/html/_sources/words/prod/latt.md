@@ -1,7 +1,7 @@
 (sections:lattice)=
 # Lattices
 
-One day, I was sitting on a roof top practicing some ... breathing excercises ... and it occured to me that maybe graft and prune form a lattice. I didn't really know what a lattice was, so I went downstairs, pulled up the [wikipedia definition](https://en.wikipedia.org/wiki/Lattice_(order)#As_algebraic_structure) and coded up some python to check which conditions were satisfied. It went pretty well.
+One day, I was sitting on a rooftop practicing some ... breathing excercises ... and it occured to me that maybe graft and prune form a lattice. I didn't really know what a lattice was, so I went downstairs, pulled up the [wikipedia definition](https://en.wikipedia.org/wiki/Lattice_(order)#As_algebraic_structure) and coded up some python to check which conditions were satisfied. It went pretty well.
 
 It turns out there's a whole family of different type of lattices that form a kind of poset themselves:
 ```{figure} ../../imgs/Lattice_v4.png
@@ -13,7 +13,7 @@ name: latt-map
 [source](https://en.wikipedia.org/wiki/Map_of_lattices)
 ```
 
-Almost immediately, I realized I had accidentally discovered a distributive lattice. A week later, I had proven it. The next week, I looked into connections with [lattice based cryptography](https://en.wikipedia.org/wiki/Lattice-based_cryptography). Turns out to be a completely different lattice and massive waste of time. Just goes to show that not only do mathematicians suck at naming things, they can't even do it uniquely. Anyway, after a few more months, I finally worked out how to produce Boolean algebras. The following sections detail this journey but with hindsight's gift of clarity.
+Almost immediately, I realized I had accidentally discovered a distributive lattice. A week later, I had proven it. The next week, I looked into connections with [lattice based cryptography](https://en.wikipedia.org/wiki/Lattice-based_cryptography). Turns out to be a completely different lattice and massive waste of time. Just goes to show that not only do mathematicians suck at naming things, they can't even do it uniquely. Anyway, after a few more months, I finally worked out how to produce Boolean algebras, right at the top. The following sections detail this journey but with hindsight's gift of clarity.
 
 (sections:lattice:poset)=
 ## Poset
@@ -49,7 +49,7 @@ Here's a snapshot of the Hasse diagram:
         :align: center
 ```
 
-Once again, its much easier to interpret things with trees. The general pattern is that $x \sqsubseteq y$ if you can place $y$ on top of $x$ and completely cover it. Practice a few for yourself if you want.
+Once again, its much easier to interpret things with trees. The general pattern is that $x \sqsubseteq y$ if you can place $y$ on top of $x$ and completely smother $x$. Practice a few for yourself if you want.
 
 Other than the $4|8$ thing and the fact that the productive poset includes $0$, hopefully you can see there's a lot of similarities between the [divisibility poset](divlatt) and the productive poset above. In fact, the productive poset is hidden inside the divisibility one!
 
@@ -104,14 +104,15 @@ Applying the final number theory fact, $I(x) = \prod_{i=1}^n p_i^{I(x_i)} | \pro
 
 Done. 
 ```
+
 {prf:ref}`leqdiv` is subtle but possibly the most important conceptual result so far. While it makes sense to think of the productive order as a small deviation from the divisibility order, I think the proof highlights how the divisibility order is actually more closely related to the additive order. So maybe the visual similarities of the Hasse diagrams is because we're just looking at the beginning parts and the higher you go, the sparser the similarities. Or maybe not. But it's worth pondering.
 
 ````
 
 
-In any case, we'd probably better check that $\sqsubseteq$ really does define a partial order! I'll go through the reflexivity proof in ''detail'' and you can check out the other parts if you want. They're all not-particularly-insightful inductions.
+In any case, we'd probably better check that $\sqsubseteq$ really does define a partial order. I'll go through the reflexivity proof in ''detail'' and you can check out the other parts if you want. They're all not-particularly-insightful inductions. Quick reminder in case you skipped the previous proofs: productive induction is just: prove it for $0$, then assume it for $x_1, ... x_n$ and prove it for $[x_1, ..., x_n]$.
 
-```{prf:theorem} 
+```{prf:lemma} 
 :label: pleqrefl
 $x \sqsubseteq x$
 ```
@@ -130,7 +131,7 @@ Inductive step ($x = [x_1, ..., x_n]$). Assume for inductive hypothesis $x_i \sq
 
 We'll go with anti-symmetry first because its merely a double induction. 
 
-```{prf:theorem}
+```{prf:lemma}
 :label: pleqasymm
 $x \sqsubseteq y \land y \sqsubseteq x \implies x = y$
 ```
@@ -146,7 +147,7 @@ Now apply inductive hypothesis to get $x_i = y_i$. So $[x_1, ..., x_n] = [y_1, .
 ```
 Transitivity triple induction time!
 
-```{prf:theorem}
+```{prf:lemma}
 :label: pleqtrans
 $x \sqsubseteq y \land y \sqsubseteq z \implies x \sqsubseteq z$
 ```
@@ -209,7 +210,7 @@ You'd never have guessed - its more inductions!
 ```{admonition} Historical Tangent
 This equivalence was pretty exciting for me when I first noticed it because I had written down the definitions of $\sqsubseteq$ and $\sqcap$ completely independently, years apart, and they ended up working together in the nicest possible way, forming some structure I had barely even heard of. The only link between their definitions was that both times, I had tried to write down the simplest thing I could imagine. This gave the same sense of eery excitement you might get from realizing the way you butter your toast is the same as the way you brush your teeth, and these similiarities could help you solve a rubik's cube. 
 
-The fact that both definitions had split into a $0$ case and a $[x_1, ..., x_n]$ case is what led me to write down {eq}`PROD0` and {eq}`PROD1`, where your journey began. Only then did I realize I could prove things by induction at which point the proofs wrote themselves and I could write this book. A couple of coincidences like these should be enough to convince anyone that prods (actually all math) are discovered, not invented.
+The fact that both definitions had split into a $0$ case and a $[x_1, ..., x_n]$ case is what led me to write down {eq}`PROD0` and {eq}`PROD1`, where your journey began. Only then did I realize I could prove things by induction at which point the proofs wrote themselves and I could write this book. Coincidences like these are what convince me that prods (actually all math) are discovered, not invented.
 ```
 
 So we've made it onto the first rung of [the map](latt-map)!
@@ -224,7 +225,7 @@ To prove $\sqcup, \sqcap$ form a lattice, we'll continue ripping off the [wikipe
 
 I won't prove all of these because the proofs are all dull, mechanical inductions. But here's a couple for illustration.
 
-```{prf:theorem}
+```{prf:lemma}
 :label: graftcomm
 $x \sqcup y = y \sqcup x$
 ```
@@ -239,7 +240,7 @@ Inductive step ($x = [x_1, ..., x_n], y = [y_1, ..., y_n]$). Assume for inductiv
 
 The only thing that would change for the proof of $x \sqcap y = y \sqcap x$ would be the base cases, which still of course go through.
 
-```{prf:theorem}
+```{prf:lemma}
 :label: absorb1
 $x \sqcup (x \sqcap y) = x$
 ```
@@ -289,6 +290,7 @@ Then:
 x \sqcap (y \sqcup z) &= [x_1, ..., x_n] \sqcap [y_1 \sqcup z_1, ..., y_n \sqcup z_n] 
 \\ &= [x_1 \sqcap (y_1 \sqcup z_1), ..., x_n \sqcap (y_n \sqcup z_n)] 
 \\ &=_{(IH)} [(x_1 \sqcap y_1) \sqcup (x_1 \sqcap z_1), ..., (x_n \sqcap y_n) \sqcup (x_n \sqcap z_n)] 
+\\ &= [x_1 \sqcap y_1, ... x_n \sqcap y_n] \sqcup [x_1 \sqcap z_1, ..., x_n \sqcap z_n]
 \\ &= (x \sqcap y) \sqcup (x \sqcap z)
 \end{align*}
 
@@ -311,7 +313,7 @@ In a Heyting algebra, the idea is to interpret $a \leq b$ as saying that $a$ all
 
 In the productive lattice, it's easy to always find some $x$ such $a \sqcap x \sqsubseteq b$ - just choose $x = 0$ since $a \sqcap 0 = 0 \sqsubseteq b$, for any $a,b$. The problem is finding the greatest $x$. For example, imagine $a = [0, []]$ and $b = []$. Then $[[]]$ would work for $x$ because $[0, []] \sqcap [[]] = [] \sqsubseteq []$. But so would $[[[]]]$ and $[[[[]]]]$, and so on forever up the $2$ chain. On the other hand, picking $\top$ doesn't work because $[0, []] \sqcap \top = [0, []] \not \sqsubseteq []$. So there is no *greatest* $x$, so we don't have a Heyting algebra. Yet.
 
-The problem is that the productive lattice is currently too large. So the obvious next step (which wasn't obvious to me until a friend suggested it) is to try smaller lattices. Given a prod $x$, we can take the set of prods smaller than it. Techincally, this is called the *downset* of $x$, written $\downarrow x = \{y : y \sqsubseteq x \}$. Here's the downset of $30 = [[], [], []]$:
+The problem is that the productive lattice is currently too large. So the obvious next step (which wasn't obvious to me until a friend suggested it) is to try smaller lattices. Given a prod $x$, we can take the set of prods smaller than it. Technically, this is called the *downset* of $x$, written $\downarrow x = \{y : y \sqsubseteq x \}$. Here's the downset of $30 = [[], [], []]$:
 
 ```{image} ../../tikz/lat30.svg
         :alt: 30 lattice
@@ -325,15 +327,16 @@ Note only does this look pretty (and very similar to [this](sublatt)), but it fo
 
 ```{prf:theorem}
 :label: sublatt
-For any $x \in \mathbb{\Pi}, \downarrow x$ is a finite distributive lattice.
+For any $x \in \mathbb{\Pi}, \downarrow x$ is a Heyting algebra.
 ```
 
 ```{prf:proof}
-That $\downarrow x$ is finite is obvious. Distributivity is inherited from the larger lattice. We just have to make sure that if $y, z \in \downarrow x$, then $y \sqcup z$ and $y \sqcap z$ are both still in $\downarrow x$. In other words, $\sqcup$ and $\sqcap$ cannot take you out of the downset. 
+
+Every finite distributive lattice is a Heyting algebra, so we'll actually prove that instead. That $\downarrow x$ is finite is obvious. Distributivity is inherited from the larger lattice. We just have to make sure that if $y, z \in \downarrow x$, then $y \sqcup z$ and $y \sqcap z$ are both still in $\downarrow x$. In other words, $\sqcup$ and $\sqcap$ cannot take you out of the downset. 
 
 Proving it for $\sqcap$ is easy. It's always the case that $y \sqcap z \sqsubseteq y \sqsubseteq x$, so $y \sqcap z \sqsubseteq x$ by transitivity.
 
-For $\sqcup$ we can use induction on the statement $y,z \sqsubseteq x \implies y \sqcup z \sqsubseteq x$. There could be easier ways but whatever. 
+For $\sqcup$ we can use induction on the statement $y,z \sqsubseteq x \implies y \sqcup z \sqsubseteq x$. There could be nicer ways but whatever. 
 
 Base cases: 
 * if $x=0$, then $\downarrow x$ contains only $0$ so there's nothing to check.
@@ -344,13 +347,15 @@ Inductive step ($x=[x_1, ..., x_n], y=[y_1, ..., y_n], z=[z_1,..., z_n]$): assum
 Assuming $y,z \sqsubseteq x$, then $y_i, z_i \sqsubseteq x_i$. So applying IH, $y_i \sqcup z_i \sqsubseteq x_i$. Therefore, $y \sqcup z = [y_1 \sqcup z_1, ..., y_n \sqcup z_n] \sqsubseteq [x_1, ..., x_n] = x$. Done.
 ```
 
-Once you have $a \to b$ for every element, you can define the opposite of $a$ as $a \to \bot$. This is usally written $\lnot a$ because if $a$ gives you a proof of false, then $a$ had better be false! 
+Once you have $a \to b$ for every element, you can define the opposite of $a$ as $a \to \bot$. This is usually written $\lnot a$ (i.e. *not* $a$) because if $a$ gives you a proof of false, then $a$ had better be false! 
 
 If you choose $0$ as $\bot$, things don't go very well: $a \to 0$ will always be $0$. On the other hand, if you get rid of $0$ from your downsets, some nice structure appears. $\bot$ becomes $[]$ and since there are more ways $\sqcap$ can create $[]$, you get more interesting values for $a \to []$. For example, in the $30$ lattice from above (but without $0$), $\lnot [[]] = [0, [], []]$. In general, you can kind of hop across the diagonal.
 
 Getting rid of $0$ is kind of ad-hoc. I've done it just to make the structure nicer. But interestingly it also makes the lattice closer to the divisibility one. So maybe there's also good reasons.
 
 ### Boolean Algebras
+
+Brief tangnet which I promise is relevant.
 
 If the average science bro is to be believed, Logic gives you the sort objective rational access to Truth that in a different era was attributed to God. However, as you soon as you start studying formal logic you learn that there's actually several different types of logics and (as with most things) their relative merits depend on the context in which you're using them.
 
@@ -359,17 +364,19 @@ Two different logics which concern us here are classical vs. intuitionistic logi
 ```{figure} ../../imgs/meme.webp
 ---
 align: center
-height: 200px
+height: 300px
 name: meme
 ---
 [source](https://www.reddit.com/r/mathmemes/comments/19f9zde/intuitionistic_logic_classical_logic/)
 ```
 
-Formally speaking, the difference between the logics all comes down to whether or not you're willing to automatically assume that for any $a$, $a \lor \lnot a$. This is called the Law of Excluded Middle because it rules out any weird edge cases between True and False. Classical logicians say yes to excluded middle, intuitionistic logicians don't. It's worth emphasizing intuitionists don't assume the opposite (though there is [another logic](https://en.wikipedia.org/wiki/Paraconsistent_logic) which allows it), they just stay silent on it. While the classical logician says "of course $a$ is either true of false", the intuitionist says "I am yet to prove $a$ or $\lnot a$". 
+Formally speaking, the difference between the logics all comes down to whether or not you're willing to automatically assume that for any $a$, $a \lor \lnot a$ (i.e. either $a$ or not $a$). This is called the Law of Excluded Middle because it rules out any weird edge cases between True and False. Classical logicians say yes to excluded middle, intuitionistic logicians don't. It's worth emphasizing intuitionists don't assume the opposite (though there is [another logic](https://en.wikipedia.org/wiki/Paraconsistent_logic) which allows it), they just stay silent on it. While the classical logician says "of course $a$ is either true of false", the intuitionist says "I am yet to prove $a$ or $\lnot a$". 
 
-Having been through a non-classical logic phase myself, it was quite a fun coincidence that intutionism appeared to be making a come back in a completely independent number system. From what I understand, lattices are a useful way for comparing the differences between classical and intuitionistic logic. Heyting is a dead intuitionist and so Heyting algebras are all about intuitionistic logic. Boole is a dead classical logician and so Boolean algebras are all about classical logic. In particular, a Boolean algebra is a Heyting algebra which also satisfies the equation $a \lor \lnot a = \top$ for every $a$. The subset lattice from [here](sections:pre:lattice) is actually a Boolean algebra. The negation of a subset is the subset that has all and only the elements the first one didn't, so taking the union gives back the whole set.
+Having been through a non-classical logic phase myself, it was quite a fun coincidence that intutionism appeared to be making a come back in a completely independent number system. From what I understand, lattices are a useful way of comparing the differences between classical and intuitionistic logic. Heyting is a dead intuitionist and so Heyting algebras are all about intuitionistic logic. Boole is a dead classical logician and so Boolean algebras are all about classical logic. 
 
-Let's check some examples on $\downarrow 30$ from [before](lat30). Remember that $\top$ is $[[], [], []]$ and $\bot$ is $[]$ because we got rid of $0$:
+In particular, a Boolean algebra is a Heyting algebra which also satisfies the equation $a \lor \lnot a = \top$ for every $a$. The subset lattice from [here](sections:pre:lattice) is actually a Boolean algebra. The negation of a subset is the subset that has all and only the elements the first one didn't, so taking the union gives back the whole set.
+
+Let's check some examples on $\downarrow 30$ from [before](lat30). Remember that $\top$ is $[[], [], []]$ and $\bot$ is $[]$ because we got rid of $0$.
 * Recall $[[]] \to [] = [0, [], []]$. Then $[[]] \sqcup [0, [], []] = [[], [], []]$. No middle!
 * $[[], []] \to [] = [0, 0, []]$. Then $[[], []] \sqcup [0, 0, []] = [[], [], []]$. Middle excluded!
 * $[] \to [] = [[], [], []]$. $[] \sqcup [[], [], []] = [[], [], []]$. Middle-free
@@ -392,13 +399,19 @@ $x$ is shallow if and only if $\downarrow x$ is a Boolean algebra
 
 In the forwards direction, assume that $x$ is shallow. Then identify $x$ with the set of primes $\{p_1, ..., p_k\}$ such that $x_i = []$ (since $x$ is shallow, all other $x_j$ are $0$). Then every $y \sqsubseteq x$ corresponds to a subset of $\{p_1, ..., p_k\}$. Since the lattice of subsets is a Boolean algebra, so is the lattice $\downarrow x$.
 
-In the other direction, suppose that $x = [x_1, ..., x_n]$ is not shallow. Without loss of generality, we can assume $x_1$ is strictly greater than $[]$. Thus we have an increasing chain $[[]] \sqsubset [x_1] \sqsubseteq x$.
+In the other direction, suppose that $x = [x_1, ..., x_n]$ is not shallow. Assume $x_1$ is strictly greater than $[]$ (there'll always be some $x_i$ like this but assuming its $x_1$ just means there's fewer ... in the proof). Thus we have an increasing chain $[[]] \sqsubset [x_1] \sqsubseteq x$.
 
 Consider $\lnot [[]] = [[]] \to []$.  By definition, $[[]] \sqcap \lnot [[]] = []$ and so $\lnot [[]] = [0, y_2, ..., y_n]$ for some $y_i$. But that means $[[]] \sqcup \lnot [[]] = [[], y_2, ..., y_n] \sqsubset [x_1, y_2, ..., y_n] \sqsubseteq x$. Therefore $[[]] \sqcup \lnot [[]] \neq x$, so $\downarrow x$ is not a Boolean algebra.
 ```
 
 Reassuringly, the same dichotomy happens in the [divisibility lattice](https://en.wikipedia.org/wiki/Division_lattice) for numbers that are *square-free* (which I regrettably only learnt after struggling on this for ages). The lattices of shallow prods are identical to those of square-free numbers which are both basically identical to subset lattices. So all of the interesting differences are amongst Heyting algebras. If I understood them better, that's where I would look next.
 
-That's it. {prf:ref}`shallowbool` gets us to the top of the [map](latt-map). I don't really know where else to go next, so I leave it up to you. See [this section](sections:post:next) for some vague suggestions.
+## Fin
+
+That's it. {prf:ref}`shallowbool` gets us to the top of the [map](latt-map). Big respect for reading this far - it definitely got a bit hairy near the end.
+
+Having completed wikipedia's instruction manual for lattices,  I don't really know where else to go next. So I leave it up to you. See [this section](sections:post:next) for some vague suggestions.
+
+Thanks for reading :)
 
 [^leqref]: Technically, the definition should be written as $x \sqsubseteq y \iff x = 0 \lor$ {eq}`PLEQ1` but you get the idea.

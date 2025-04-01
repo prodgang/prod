@@ -45,7 +45,9 @@ I've claimed that addition can't be defined productively. I have a hunch that $\
 
 ## Number Theory
 
-Do prods simplify the proof of Fermat's Last Theorem? I wrote down a version of this once, but can't remember where I put it. What about the Riemmann hypothesis? I wouldn't be much of a crackpot internet number theorist if I didn't claim to have solved it, would I?
+Do prods simplify the proof of Fermat's Last Theorem? I wrote down a version of this once, but can't remember where I put it. 
+
+What about the Riemmann hypothesis? I wouldn't be much of a crackpot internet number theorist if I didn't claim to have solved it, would I?
 
 But seriously, what can prods do for number theory? Blind platonic faith tells me there has to be something.
 
@@ -53,7 +55,7 @@ But seriously, what can prods do for number theory? Blind platonic faith tells m
 
 I had hoped to type up all of the proofs of this book into lean to show that my handwaving was not mere crankery. But unfortunately lean turned out to be harder to learn than I expected, at least for the case of endless nested inductions that prods seems to produce.
 
-If you do know lean, it would be much appreciated if you could help me write up the proofs [here](https://github.com/prodgang/proofs).
+If you do know lean, it would be much appreciated if you could help me write up the proofs. You can find my pathetic attempts [here](https://github.com/prodgang/proofs).
 
 ## You
 
