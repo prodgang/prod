@@ -193,8 +193,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../post/note.html">Note from the author</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Symbols and Jargon</a></li>
 <li class="toctree-l1"><a class="reference internal" href="draw.html">CODE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Symbols and Jargon</a></li>
 </ul>
 
     </div>
@@ -241,6 +241,21 @@
         <div class="header-article-item">
 
 <div class="article-header-buttons">
+
+
+<a href="https://github.com/prodgang/prod/issues/new?title=Issue%20on%20page%20%2Fwords/prod/ops.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button"
+   title="Open an issue"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+
+</a>
+
 
 
 
@@ -343,7 +358,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counter-productive-operations">Counter-productive operations</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#addition">Addition</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiplication">Multiplication</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expontentiation">Expontentiation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exponentiation">Exponentiation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list-operations">List operations</a></li>
 </ul>
 </li>
@@ -378,13 +393,13 @@
 <section id="multiplication">
 <h3>Multiplication<a class="headerlink" href="#multiplication" title="Link to this heading">#</a></h3>
 <p>Next operation: multiplication. There’s a very good case that you should be able to define multiplication productively: the fundamental idea behind prods is multiplying primes so that’s kind of what they’re all about. We can even see this happen with an example. Take a look at the trees of <span class="math notranslate nohighlight">\(4,3,12\)</span> and remember that <span class="math notranslate nohighlight">\(12 = 4 \times 3\)</span>:</p>
-<img alt="4 as tree" class="align-left" src="../../_images/p4.svg" />
-<img alt="3 as tree" class="align-center" src="../../_images/p3.svg" />
-<img alt="12 as tree" class="align-right" src="../../_images/p12.svg" />
+<a class="reference internal image-reference" href="../../_images/p4.svg"><img alt="4 as tree" src="../../_images/p4.svg" style="height: 75px;" /></a>
+<a class="reference internal image-reference" href="../../_images/p3.svg"><img alt="3 as tree" src="../../_images/p3.svg" style="height: 50px;" /></a>
+<a class="reference internal image-reference" href="../../_images/p12.svg"><img alt="12 as tree" src="../../_images/p12.svg" style="height: 75px;" /></a>
 <p>You can literally see how four and three are just attached to each other side by side to give <span class="math notranslate nohighlight">\(12\)</span>! Indeed, any time <span class="math notranslate nohighlight">\(x,y\)</span> don’t share any factors (i.e. are coprime), you can multiply them side-by-side like this. However, when they <em>do</em> share factors, then we’re back to the classic equation: <span class="math notranslate nohighlight">\(a^b \times a^c = a^{b+c}\)</span>. So multiplication reduces to addition. So multiplication is counter-productive.</p>
 </section>
-<section id="expontentiation">
-<h3>Expontentiation<a class="headerlink" href="#expontentiation" title="Link to this heading">#</a></h3>
+<section id="exponentiation">
+<h3>Exponentiation<a class="headerlink" href="#exponentiation" title="Link to this heading">#</a></h3>
 <p>There’s a similar story for exponentiation. While you can get away with writing <span class="math notranslate nohighlight">\(2^x\)</span> as <span class="math notranslate nohighlight">\([x]\)</span> and even <span class="math notranslate nohighlight">\(6^x = [x, x]\)</span>, as soon as you have nested powers you have to eventually use the fact that <span class="math notranslate nohighlight">\((x^y)^z = x^{y \times z}\)</span>. So expontentiation reduces to multiplication. So expontention is counter-productive. And so on.</p>
 <p>It’s kind of interesting that none of the usual arithmetic operations work. Even though these counter-examples were not hard to find, it would have been reasonable to expect that defining prods based on taking the product of prime powers would at least allow you to do products and powers. But you can’t. So we need to think more carefully.</p>
 </section>
@@ -644,7 +659,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#counter-productive-operations">Counter-productive operations</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#addition">Addition</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiplication">Multiplication</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expontentiation">Expontentiation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exponentiation">Exponentiation</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list-operations">List operations</a></li>
 </ul>
 </li>

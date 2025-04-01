@@ -22,23 +22,21 @@ Next operation: multiplication. There's a very good case that you should be able
 
 ```{image} ../../tikz/p4.svg
 :alt: 4 as tree
-:align: left
+:height: 75px
 ```
 ```{image} ../../tikz/p3.svg
 :alt: 3 as tree
-:align: center
+:height: 50px
 ```
 ```{image} ../../tikz/p12.svg
 :alt: 12 as tree
-:align: right
+:height: 75px
 ```
-
-
 
 
 You can literally see how four and three are just attached to each other side by side to give $12$! Indeed, any time $x,y$ don't share any factors (i.e. are coprime), you can multiply them side-by-side like this. However, when they *do* share factors, then we're back to the classic equation: $a^b \times a^c = a^{b+c}$. So multiplication reduces to addition. So multiplication is counter-productive.
 
-### Expontentiation
+### Exponentiation
 
 There's a similar story for exponentiation. While you can get away with writing $2^x$ as $[x]$ and even $6^x = [x, x]$, as soon as you have nested powers you have to eventually use the fact that $(x^y)^z = x^{y \times z}$. So expontentiation reduces to multiplication. So expontention is counter-productive. And so on.
 

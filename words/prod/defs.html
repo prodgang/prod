@@ -193,8 +193,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../post/note.html">Note from the author</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Symbols and Jargon</a></li>
 <li class="toctree-l1"><a class="reference internal" href="draw.html">CODE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Symbols and Jargon</a></li>
 </ul>
 
     </div>
@@ -241,6 +241,21 @@
         <div class="header-article-item">
 
 <div class="article-header-buttons">
+
+
+<a href="https://github.com/prodgang/prod/issues/new?title=Issue%20on%20page%20%2Fwords/prod/defs.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button"
+   title="Open an issue"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+
+</a>
+
 
 
 
@@ -476,7 +491,11 @@ I([[[]], 0, []]) &amp;= 2^{I([[]])} \times 3^{I(0)} \times 5^{I([])} \\
 </table>
 </div>
 <p>Don’t be mislead by the fact that these are all small numbers with tiny exponents. The pattern for bigger numbers is less intuitive. For now, make sure you understand why <span class="math notranslate nohighlight">\(8 = [[0, []]]\)</span>.</p>
-<p>As you can see already, it gets quite fiddly to parse these nested brackets. Luckily, a friend pointed out to me a much more human-readable way of writing prods: trees! All you have to do is substitute <span class="math notranslate nohighlight">\(0\)</span> to <span class="math notranslate nohighlight">\(\circ\)</span>, <span class="math notranslate nohighlight">\([]\)</span> to <span class="math notranslate nohighlight">\(\bullet\)</span> and <span class="math notranslate nohighlight">\([x_1, ..., x_n]\)</span> to a root node connected to <span class="math notranslate nohighlight">\(x_1, ..., x_n\)</span>. Here’s the same table but with trees:</p>
+<p>As you can see already, it gets quite fiddly to parse these nested brackets. Luckily, a friend pointed out to me a much more human-readable way of writing prods: trees! All you have to do is substitute the following:</p>
+<a class="reference internal image-reference" href="../../_images/treedef0.svg"><img alt="0 as a circle" src="../../_images/treedef0.svg" style="height: 50px;" /></a>
+<a class="reference internal image-reference" href="../../_images/treedef1.svg"><img alt="1 as dot" src="../../_images/treedef1.svg" style="height: 50px;" /></a>
+<a class="reference internal image-reference" href="../../_images/treedef2.svg"><img alt="list as tree" src="../../_images/treedef2.svg" style="height: 100px;" /></a>
+<p>Here’s the same table but with trees:</p>
 <div class="pst-scrollable-table-container"><table class="table table-center">
 <thead>
 <tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(n\)</span></p></th>
@@ -491,7 +510,8 @@ I([[[]], 0, []]) &amp;= 2^{I([[]])} \times 3^{I(0)} \times 5^{I([])} \\
 </tr>
 <tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(1\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(1\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(\bullet\)</span></p></td>
+<td><a class="reference internal image-reference" href="../../_images/p1.svg"><img alt="2 as tree" src="../../_images/p1.svg" style="height: 25px;" /></a>
+</td>
 </tr>
 <tr class="row-even"><td><p><span class="math notranslate nohighlight">\(2\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(2^1\)</span></p></td>

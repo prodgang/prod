@@ -126,7 +126,24 @@ Here's a table of some numbers, their factorization and their productive represe
 
 Don't be mislead by the fact that these are all small numbers with tiny exponents. The pattern for bigger numbers is less intuitive. For now, make sure you understand why $8 = [[0, []]]$. 
 
-As you can see already, it gets quite fiddly to parse these nested brackets. Luckily, a friend pointed out to me a much more human-readable way of writing prods: trees! All you have to do is substitute $0$ to $\circ$, $[]$ to $\bullet$ and $[x_1, ..., x_n]$ to a root node connected to $x_1, ..., x_n$. Here's the same table but with trees:
+As you can see already, it gets quite fiddly to parse these nested brackets. Luckily, a friend pointed out to me a much more human-readable way of writing prods: trees! All you have to do is substitute the following:
+```{image} ../../tikz/treedef0.svg
+        :alt: 0 as a circle
+        :height: 50px
+```
+
+```{image} ../../tikz/treedef1.svg
+    :alt: 1 as dot
+    :height: 50px
+```
+
+```{image} ../../tikz/treedef2.svg
+    :alt: list as tree
+    :height: 100px
+```
+
+
+Here's the same table but with trees:
 
 ```{list-table}
 :align: center 
@@ -140,7 +157,10 @@ As you can see already, it gets quite fiddly to parse these nested brackets. Luc
   - $\circ$
 * - $1$
   - $1$
-  - $\bullet$
+  - ```{image} ../../tikz/p1.svg
+        :alt: 2 as tree
+        :height: 25px
+    ```
 * - $2$
   - $2^1$
   - ```{image} ../../tikz/p2.svg

@@ -1,8 +1,8 @@
 # Note from the author
 
-*Who am I?* A random internet nerd.
+*Who am I?* A random internet nerd who wrote a book on primes.
 
-*Why did I do this?* No particular reason except I love numbers (and don't like counting).
+*Why bother?* No particular reason except I love numbers (and don't like counting).
 
 *Why did I write this?* Two reasons:
 1. So that people can learn about productive numbers and do something cool with them.
