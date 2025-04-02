@@ -34,7 +34,14 @@ The other natural requirements are for the primes to be incomparable and that if
    x_1 \sqsubseteq y_1, ..., x_n \sqsubseteq y_n \implies [x_1, ..., x_n] \sqsubseteq [y_1, ..., y_n]
 ```
 
-And that's it[^leqref]. Let's try a couple of examples:
+~~And that's it.~~ According to a [pedantic redditor](https://www.reddit.com/r/numbertheory/comments/1jp68a5/comment/ml17bz6/), we'll also need the following which basically says $0$ is definitely the smallest prod:
+```{math}
+:label: PLEQ2
+   x \subseteq 0 \implies x = 0
+```
+
+
+Let's try a couple of examples:
 
 1. $[] \sqsubseteq []$. Remember that $[] = [0]$ by {eq}`PRODPAD`. Since $0 \sqsubseteq 0$ by {eq}`PLEQ0`, then $[0] \sqsubseteq [0]$ by {eq}`PLEQ1`.
 2. $[] \sqsubseteq x$, for any $x \neq 0$. Expand $[]$ to $[0, ..., 0]$ and $x$ to $[x_1, ..., x_n]$. Apply {eq}`PLEQ0` to every component and then {eq}`PLEQ1` on the whole thing.
@@ -79,7 +86,7 @@ $x \sqsubseteq y \implies I(x) \leq_+ I(y)$
 
 Base cases:
 * ($x = 0$): $0 \leq_+ y$, for any $y$ so that's fine.
-* ($y = 0$): $x \sqsubseteq 0$ means $x = 0$, so that's also fine.
+* ($y = 0$): $x \sqsubseteq 0$ means $x = 0$ by {eq}`PLEQ2`, so that's also fine.
 
 Inductive step ($x = [x_1, ..., x_n], y = [y_1, ..., y_n]$): assume for inductive hypothesis that $x_i \sqsubseteq y_i \implies I(x_i) \leq_+ I(y_i)$. 
 
@@ -137,7 +144,7 @@ $x \sqsubseteq y \land y \sqsubseteq x \implies x = y$
 ```
 
 ```{prf:proof} 
-Base cases: If $x=0$ then $y \sqsubseteq 0$, so $y = 0 = x$. Similarly for $y=0$.
+Base cases: If $x=0$ then $y \sqsubseteq 0$, so $y = 0 = x$ by {eq}`PLEQ2`. Similarly for $y=0$.
 
 Inductive step ($x = [x_1, ..., x_n], y = [y_1, ..., y_n])$. As usual, we can assume $x$ and $y$ have the same length by padding. Assume for inductive hypothesis that $x_i \sqsubseteq y_i \land y_i \sqsubseteq x_i \implies x_i = y_i$. 
 
@@ -154,9 +161,9 @@ $x \sqsubseteq y \land y \sqsubseteq z \implies x \sqsubseteq z$
 
 ```{prf:proof} 
 Base case split on $x,y,z$:
-- $x=0$ immediately implies $x \sqsubseteq z$ by {eq}`PLEQ0`
-- $y=0$ and $x \sqsubseteq y$ implies $x = 0$ and so $x \sqsubseteq z$
-- $z=0$ and $y \sqsubseteq z$ implies $y=0$ which implies $x=0$ and so $x \sqsubseteq z$.
+- $x=0$ immediately implies $x \sqsubseteq z$ by {eq}`PLEQ0`.
+- $y=0$ and $x \sqsubseteq y$ implies $x = 0$ by {eq}`PLEQ2` and so $x \sqsubseteq z$.
+- $z=0$ and $y \sqsubseteq z$ implies $y=0$ which implies $x=0$ (both by {eq}`PLEQ2`) and so $x \sqsubseteq z$.
 
 Inductive step ($x = [x_1, ..., x_n], y=[y_1, ..., y_n], z=[z_1, ..., z_n]$): assume for inductive hypothesis that $x_i \sqsubseteq y_i \land y_i \sqsubseteq z_i \implies x_i \sqsubseteq z_i$, for every $i$. 
 
@@ -189,7 +196,7 @@ You'd never have guessed - its more inductions!
 
    Base case ($x = 0$): $0 \sqcap y = 0$ by {eq}`PRUNE0`.
 
-   Inductive step ($x = [x_1, ..., x_n]$): suppose $x \sqsubseteq y$. Then $y \neq 0$, so let $y = [y_1, ..., y_n]$. 
+   Inductive step ($x = [x_1, ..., x_n]$): suppose $x \sqsubseteq y$. Then $y \neq 0$ by {eq}`PLEQ2`, so let $y = [y_1, ..., y_n]$. 
    
    By {eq}`PLEQ1`, we have $x_i \sqsubseteq y_i$. By inductive hypothesis, $x_i = x_i \sqcap y_i$. 
    
@@ -199,7 +206,7 @@ You'd never have guessed - its more inductions!
 
    Base case ($x = 0$): $0 \sqsubseteq y$ by {eq}`PLEQ0`.
 
-   Inductive step ($x = [x_1, ..., x_n]$): suppose $x = x \sqcap y$. Then $y \neq 0$, so let $y = [y_1, ..., y_n]$. 
+   Inductive step ($x = [x_1, ..., x_n]$): suppose $x = x \sqcap y$. Then $y \neq 0$ by {eq}`PLEQ2`, so let $y = [y_1, ..., y_n]$. 
    
    By {eq}`PRUNE1`, $x_i = x_i \sqcap y_i$. By inductive hypothesis, $x_i \sqsubseteq y_i$. Therefore, $x \sqsubseteq y$ by {eq}`PLEQ1`. Done.
 ```
@@ -413,5 +420,3 @@ That's it. {prf:ref}`shallowbool` gets us to the top of the [map](latt-map). Big
 Having completed wikipedia's instruction manual for lattices,  I don't really know where else to go next. So I leave it up to you. See [this section](sections:post:next) for some vague suggestions.
 
 Thanks for reading :)
-
-[^leqref]: Technically, the definition should be written as $x \sqsubseteq y \iff x = 0 \lor$ {eq}`PLEQ1` but you get the idea.

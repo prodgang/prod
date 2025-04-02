@@ -394,7 +394,10 @@
 <p>The other natural requirements are for the primes to be incomparable and that if <span class="math notranslate nohighlight">\(x \sqsubseteq y\)</span>, then <span class="math notranslate nohighlight">\([x] \sqsubseteq [y]\)</span>. This second part generalizes to:</p>
 <div class="math notranslate nohighlight" id="equation-pleq1">
 <span class="eqno">(23)<a class="headerlink" href="#equation-pleq1" title="Link to this equation">#</a></span>\[   x_1 \sqsubseteq y_1, ..., x_n \sqsubseteq y_n \implies [x_1, ..., x_n] \sqsubseteq [y_1, ..., y_n]\]</div>
-<p>And that’s it<a class="footnote-reference brackets" href="#leqref" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>. Let’s try a couple of examples:</p>
+<p><s>And that’s it.</s> According to a <a class="reference external" href="https://www.reddit.com/r/numbertheory/comments/1jp68a5/comment/ml17bz6/">pedantic redditor</a>, we’ll also need the following which basically says <span class="math notranslate nohighlight">\(0\)</span> is definitely the smallest prod:</p>
+<div class="math notranslate nohighlight" id="equation-pleq2">
+<span class="eqno">(24)<a class="headerlink" href="#equation-pleq2" title="Link to this equation">#</a></span>\[   x \subseteq 0 \implies x = 0\]</div>
+<p>Let’s try a couple of examples:</p>
 <ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\([] \sqsubseteq []\)</span>. Remember that <span class="math notranslate nohighlight">\([] = [0]\)</span> by <a class="reference internal" href="defs.html#equation-prodpad">(15)</a>. Since <span class="math notranslate nohighlight">\(0 \sqsubseteq 0\)</span> by <a class="reference internal" href="#equation-pleq0">(22)</a>, then <span class="math notranslate nohighlight">\([0] \sqsubseteq [0]\)</span> by <a class="reference internal" href="#equation-pleq1">(23)</a>.</p></li>
 <li><p><span class="math notranslate nohighlight">\([] \sqsubseteq x\)</span>, for any <span class="math notranslate nohighlight">\(x \neq 0\)</span>. Expand <span class="math notranslate nohighlight">\([]\)</span> to <span class="math notranslate nohighlight">\([0, ..., 0]\)</span> and <span class="math notranslate nohighlight">\(x\)</span> to <span class="math notranslate nohighlight">\([x_1, ..., x_n]\)</span>. Apply <a class="reference internal" href="#equation-pleq0">(22)</a> to every component and then <a class="reference internal" href="#equation-pleq1">(23)</a> on the whole thing.</p></li>
@@ -434,7 +437,7 @@
 <p class="sd-card-text">Base cases:</p>
 <ul class="simple">
 <li><p class="sd-card-text">(<span class="math notranslate nohighlight">\(x = 0\)</span>): <span class="math notranslate nohighlight">\(0 \leq_+ y\)</span>, for any <span class="math notranslate nohighlight">\(y\)</span> so that’s fine.</p></li>
-<li><p class="sd-card-text">(<span class="math notranslate nohighlight">\(y = 0\)</span>): <span class="math notranslate nohighlight">\(x \sqsubseteq 0\)</span> means <span class="math notranslate nohighlight">\(x = 0\)</span>, so that’s also fine.</p></li>
+<li><p class="sd-card-text">(<span class="math notranslate nohighlight">\(y = 0\)</span>): <span class="math notranslate nohighlight">\(x \sqsubseteq 0\)</span> means <span class="math notranslate nohighlight">\(x = 0\)</span> by <a class="reference internal" href="#equation-pleq2">(24)</a>, so that’s also fine.</p></li>
 </ul>
 <p class="sd-card-text">Inductive step (<span class="math notranslate nohighlight">\(x = [x_1, ..., x_n], y = [y_1, ..., y_n]\)</span>): assume for inductive hypothesis that <span class="math notranslate nohighlight">\(x_i \sqsubseteq y_i \implies I(x_i) \leq_+ I(y_i)\)</span>.</p>
 <p class="sd-card-text">Assuming <span class="math notranslate nohighlight">\(x \sqsubseteq y\)</span>, then <span class="math notranslate nohighlight">\(x_i \sqsubseteq y_i\)</span> by <a class="reference internal" href="#equation-pleq1">(23)</a> and so <span class="math notranslate nohighlight">\(I(x_i) \leq_+ I(y_i)\)</span> by IH.</p>
@@ -471,7 +474,7 @@
 <p class="sd-card-text"><span class="math notranslate nohighlight">\(x \sqsubseteq y \land y \sqsubseteq x \implies x = y\)</span></p>
 </section>
 </div><div class="proof admonition" id="proof">
-<p class="sd-card-text">Proof. Base cases: If <span class="math notranslate nohighlight">\(x=0\)</span> then <span class="math notranslate nohighlight">\(y \sqsubseteq 0\)</span>, so <span class="math notranslate nohighlight">\(y = 0 = x\)</span>. Similarly for <span class="math notranslate nohighlight">\(y=0\)</span>.</p>
+<p class="sd-card-text">Proof. Base cases: If <span class="math notranslate nohighlight">\(x=0\)</span> then <span class="math notranslate nohighlight">\(y \sqsubseteq 0\)</span>, so <span class="math notranslate nohighlight">\(y = 0 = x\)</span> by <a class="reference internal" href="#equation-pleq2">(24)</a>. Similarly for <span class="math notranslate nohighlight">\(y=0\)</span>.</p>
 <p class="sd-card-text">Inductive step (<span class="math notranslate nohighlight">\(x = [x_1, ..., x_n], y = [y_1, ..., y_n])\)</span>. As usual, we can assume <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> have the same length by padding. Assume for inductive hypothesis that <span class="math notranslate nohighlight">\(x_i \sqsubseteq y_i \land y_i \sqsubseteq x_i \implies x_i = y_i\)</span>.</p>
 <p class="sd-card-text">Since <span class="math notranslate nohighlight">\(x \sqsubseteq y\)</span>, then <span class="math notranslate nohighlight">\(x_i \sqsubseteq y_i\)</span> for every <span class="math notranslate nohighlight">\(i\)</span> by <a class="reference internal" href="#equation-pleq1">(23)</a>. Similarly, <span class="math notranslate nohighlight">\(y \sqsubseteq x\)</span> implies <span class="math notranslate nohighlight">\(y_i \sqsubseteq x_i\)</span>.</p>
 <p class="sd-card-text">Now apply inductive hypothesis to get <span class="math notranslate nohighlight">\(x_i = y_i\)</span>. So <span class="math notranslate nohighlight">\([x_1, ..., x_n] = [y_1, ..., y_n]\)</span> and <span class="math notranslate nohighlight">\(x = y\)</span>. Done.</p>
@@ -485,9 +488,9 @@
 </div><div class="proof admonition" id="proof">
 <p class="sd-card-text">Proof. Base case split on <span class="math notranslate nohighlight">\(x,y,z\)</span>:</p>
 <ul class="simple">
-<li><p class="sd-card-text"><span class="math notranslate nohighlight">\(x=0\)</span> immediately implies <span class="math notranslate nohighlight">\(x \sqsubseteq z\)</span> by <a class="reference internal" href="#equation-pleq0">(22)</a></p></li>
-<li><p class="sd-card-text"><span class="math notranslate nohighlight">\(y=0\)</span> and <span class="math notranslate nohighlight">\(x \sqsubseteq y\)</span> implies <span class="math notranslate nohighlight">\(x = 0\)</span> and so <span class="math notranslate nohighlight">\(x \sqsubseteq z\)</span></p></li>
-<li><p class="sd-card-text"><span class="math notranslate nohighlight">\(z=0\)</span> and <span class="math notranslate nohighlight">\(y \sqsubseteq z\)</span> implies <span class="math notranslate nohighlight">\(y=0\)</span> which implies <span class="math notranslate nohighlight">\(x=0\)</span> and so <span class="math notranslate nohighlight">\(x \sqsubseteq z\)</span>.</p></li>
+<li><p class="sd-card-text"><span class="math notranslate nohighlight">\(x=0\)</span> immediately implies <span class="math notranslate nohighlight">\(x \sqsubseteq z\)</span> by <a class="reference internal" href="#equation-pleq0">(22)</a>.</p></li>
+<li><p class="sd-card-text"><span class="math notranslate nohighlight">\(y=0\)</span> and <span class="math notranslate nohighlight">\(x \sqsubseteq y\)</span> implies <span class="math notranslate nohighlight">\(x = 0\)</span> by <a class="reference internal" href="#equation-pleq2">(24)</a> and so <span class="math notranslate nohighlight">\(x \sqsubseteq z\)</span>.</p></li>
+<li><p class="sd-card-text"><span class="math notranslate nohighlight">\(z=0\)</span> and <span class="math notranslate nohighlight">\(y \sqsubseteq z\)</span> implies <span class="math notranslate nohighlight">\(y=0\)</span> which implies <span class="math notranslate nohighlight">\(x=0\)</span> (both by <a class="reference internal" href="#equation-pleq2">(24)</a>) and so <span class="math notranslate nohighlight">\(x \sqsubseteq z\)</span>.</p></li>
 </ul>
 <p class="sd-card-text">Inductive step (<span class="math notranslate nohighlight">\(x = [x_1, ..., x_n], y=[y_1, ..., y_n], z=[z_1, ..., z_n]\)</span>): assume for inductive hypothesis that <span class="math notranslate nohighlight">\(x_i \sqsubseteq y_i \land y_i \sqsubseteq z_i \implies x_i \sqsubseteq z_i\)</span>, for every <span class="math notranslate nohighlight">\(i\)</span>.</p>
 <p class="sd-card-text">Then <span class="math notranslate nohighlight">\(x \sqsubseteq y\)</span> implies <span class="math notranslate nohighlight">\(x_i \sqsubseteq y_i\)</span> by <a class="reference internal" href="#equation-pleq1">(23)</a>. Similarly, <span class="math notranslate nohighlight">\(y \sqsubseteq z\)</span> implies <span class="math notranslate nohighlight">\(y_i \sqsubseteq z_i\)</span>.</p>
@@ -508,12 +511,12 @@
 <div class="proof admonition" id="proof">
 <p class="sd-card-text">Proof.    Forwards direction: <span class="math notranslate nohighlight">\(x \sqsubseteq y \implies x = x \sqcap y\)</span></p>
 <p class="sd-card-text">Base case (<span class="math notranslate nohighlight">\(x = 0\)</span>): <span class="math notranslate nohighlight">\(0 \sqcap y = 0\)</span> by <a class="reference internal" href="ops.html#equation-prune0">(20)</a>.</p>
-<p class="sd-card-text">Inductive step (<span class="math notranslate nohighlight">\(x = [x_1, ..., x_n]\)</span>): suppose <span class="math notranslate nohighlight">\(x \sqsubseteq y\)</span>. Then <span class="math notranslate nohighlight">\(y \neq 0\)</span>, so let <span class="math notranslate nohighlight">\(y = [y_1, ..., y_n]\)</span>.</p>
+<p class="sd-card-text">Inductive step (<span class="math notranslate nohighlight">\(x = [x_1, ..., x_n]\)</span>): suppose <span class="math notranslate nohighlight">\(x \sqsubseteq y\)</span>. Then <span class="math notranslate nohighlight">\(y \neq 0\)</span> by <a class="reference internal" href="#equation-pleq2">(24)</a>, so let <span class="math notranslate nohighlight">\(y = [y_1, ..., y_n]\)</span>.</p>
 <p class="sd-card-text">By <a class="reference internal" href="#equation-pleq1">(23)</a>, we have <span class="math notranslate nohighlight">\(x_i \sqsubseteq y_i\)</span>. By inductive hypothesis, <span class="math notranslate nohighlight">\(x_i = x_i \sqcap y_i\)</span>.</p>
 <p class="sd-card-text">Therefore, <span class="math notranslate nohighlight">\(x \sqcap y = [x_1, ..., x_n] \sqcap [y_1, ..., y_n] = [x_1 \sqcap y_1, ..., x_n \sqcap y_n] = [y_1, ..., y_n] = y\)</span>. Done.</p>
 <p class="sd-card-text">Backwards direction: <span class="math notranslate nohighlight">\(x = x \sqcap y \implies x \sqsubseteq y\)</span>.</p>
 <p class="sd-card-text">Base case (<span class="math notranslate nohighlight">\(x = 0\)</span>): <span class="math notranslate nohighlight">\(0 \sqsubseteq y\)</span> by <a class="reference internal" href="#equation-pleq0">(22)</a>.</p>
-<p class="sd-card-text">Inductive step (<span class="math notranslate nohighlight">\(x = [x_1, ..., x_n]\)</span>): suppose <span class="math notranslate nohighlight">\(x = x \sqcap y\)</span>. Then <span class="math notranslate nohighlight">\(y \neq 0\)</span>, so let <span class="math notranslate nohighlight">\(y = [y_1, ..., y_n]\)</span>.</p>
+<p class="sd-card-text">Inductive step (<span class="math notranslate nohighlight">\(x = [x_1, ..., x_n]\)</span>): suppose <span class="math notranslate nohighlight">\(x = x \sqcap y\)</span>. Then <span class="math notranslate nohighlight">\(y \neq 0\)</span> by <a class="reference internal" href="#equation-pleq2">(24)</a>, so let <span class="math notranslate nohighlight">\(y = [y_1, ..., y_n]\)</span>.</p>
 <p class="sd-card-text">By <a class="reference internal" href="ops.html#equation-prune1">(21)</a>, <span class="math notranslate nohighlight">\(x_i = x_i \sqcap y_i\)</span>. By inductive hypothesis, <span class="math notranslate nohighlight">\(x_i \sqsubseteq y_i\)</span>. Therefore, <span class="math notranslate nohighlight">\(x \sqsubseteq y\)</span> by <a class="reference internal" href="#equation-pleq1">(23)</a>. Done.</p>
 </div>
 </div>
@@ -665,13 +668,6 @@ x \sqcap (y \sqcup z) &amp;= [x_1, ..., x_n] \sqcap [y_1 \sqcup z_1, ..., y_n \s
 <p>That’s it. <a class="reference internal" href="#shallowbool">Theorem 10</a> gets us to the top of the <a class="reference internal" href="#latt-map"><span class="std std-ref">map</span></a>. Big respect for reading this far - it definitely got a bit hairy near the end.</p>
 <p>Having completed wikipedia’s instruction manual for lattices,  I don’t really know where else to go next. So I leave it up to you. See <a class="reference internal" href="../post/next.html#sections-post-next"><span class="std std-ref">this section</span></a> for some vague suggestions.</p>
 <p>Thanks for reading :)</p>
-<hr class="footnotes docutils" />
-<aside class="footnote-list brackets">
-<aside class="footnote brackets" id="leqref" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
-<p>Technically, the definition should be written as <span class="math notranslate nohighlight">\(x \sqsubseteq y \iff x = 0 \lor\)</span> <a class="reference internal" href="#equation-pleq1">(23)</a> but you get the idea.</p>
-</aside>
-</aside>
 </section>
 </section>
 
