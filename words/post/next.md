@@ -55,7 +55,7 @@ But seriously, what can prods do for number theory? Blind platonic faith tells m
 
 I had hoped to type up all of the proofs of this book into lean to show that my handwaving was not mere crankery. But unfortunately lean turned out to be harder to learn than I expected, at least for the case of endless nested inductions that prods seems to produce.
 
-If you do know lean, it would be much appreciated if you could help me write up the proofs. You can find my pathetic attempts [here](https://github.com/prodgang/proofs).
+If you do know lean, it would be much appreciated if you could help me write up the proofs. You can find my pathetic attempts [here](https://github.com/prodgang/prodproofs).
 
 ## You
 
