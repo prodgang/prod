@@ -34,9 +34,9 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css?v=b4b7a797" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=afb57fd3" />
   
@@ -190,7 +190,6 @@
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../post/post.html">POST</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../post/next.html">Next Steps</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../post/note.html">Note from the author</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="draw.html">CODE</a></li>
@@ -454,7 +453,7 @@
 </div>
 <p class="sd-card-text"><a class="reference internal" href="#leqdiv">Theorem 6</a> is subtle but possibly the most important conceptual result so far. While it makes sense to think of the productive order as a small deviation from the divisibility order, I think the proof highlights how the divisibility order is actually more closely related to the additive order. So maybe the visual similarities of the Hasse diagrams is because we’re just looking at the beginning parts and the higher you go, the sparser the similarities. Or maybe not. But it’s worth pondering.</p>
 </div>
-</details><p>In any case, we’d probably better check that <span class="math notranslate nohighlight">\(\sqsubseteq\)</span> really does define a partial order. I’ll go through the reflexivity proof in ‘’detail’’ and you can check out the other parts if you want. They’re all not-particularly-insightful inductions. Quick reminder in case you skipped the previous proofs: productive induction is just: prove it for <span class="math notranslate nohighlight">\(0\)</span>, then assume it for <span class="math notranslate nohighlight">\(x_1, ... x_n\)</span> and prove it for <span class="math notranslate nohighlight">\([x_1, ..., x_n]\)</span>.</p>
+</details><p>In any case, we’d probably better check that <span class="math notranslate nohighlight">\(\sqsubseteq\)</span> really does define a partial order. I’ll go through the reflexivity proof in ‘’detail’’ and you can check out the other parts if you want. They’re all not-particularly-insightful inductions. Quick reminder in case you skipped the previous proofs, productive induction is just: prove it for <span class="math notranslate nohighlight">\(0\)</span>, then assume it for <span class="math notranslate nohighlight">\(x_1, ... x_n\)</span> and prove it for <span class="math notranslate nohighlight">\([x_1, ..., x_n]\)</span>. Then you’re done.</p>
 <div class="proof lemma admonition" id="pleqrefl">
 <p class="admonition-title"><span class="caption-number">Lemma 3 </span></p>
 <section class="lemma-content" id="proof-content">
@@ -513,7 +512,7 @@
 <p class="sd-card-text">Base case (<span class="math notranslate nohighlight">\(x = 0\)</span>): <span class="math notranslate nohighlight">\(0 \sqcap y = 0\)</span> by <a class="reference internal" href="ops.html#equation-prune0">(20)</a>.</p>
 <p class="sd-card-text">Inductive step (<span class="math notranslate nohighlight">\(x = [x_1, ..., x_n]\)</span>): suppose <span class="math notranslate nohighlight">\(x \sqsubseteq y\)</span>. Then <span class="math notranslate nohighlight">\(y \neq 0\)</span> by <a class="reference internal" href="#equation-pleq2">(24)</a>, so let <span class="math notranslate nohighlight">\(y = [y_1, ..., y_n]\)</span>.</p>
 <p class="sd-card-text">By <a class="reference internal" href="#equation-pleq1">(23)</a>, we have <span class="math notranslate nohighlight">\(x_i \sqsubseteq y_i\)</span>. By inductive hypothesis, <span class="math notranslate nohighlight">\(x_i = x_i \sqcap y_i\)</span>.</p>
-<p class="sd-card-text">Therefore, <span class="math notranslate nohighlight">\(x \sqcap y = [x_1, ..., x_n] \sqcap [y_1, ..., y_n] = [x_1 \sqcap y_1, ..., x_n \sqcap y_n] = [y_1, ..., y_n] = y\)</span>. Done.</p>
+<p class="sd-card-text">Therefore, <span class="math notranslate nohighlight">\(x \sqcap y = [x_1, ..., x_n] \sqcap [y_1, ..., y_n] = [x_1 \sqcap y_1, ..., x_n \sqcap y_n] = [x_1, ..., x_n] = x\)</span>. Done.</p>
 <p class="sd-card-text">Backwards direction: <span class="math notranslate nohighlight">\(x = x \sqcap y \implies x \sqsubseteq y\)</span>.</p>
 <p class="sd-card-text">Base case (<span class="math notranslate nohighlight">\(x = 0\)</span>): <span class="math notranslate nohighlight">\(0 \sqsubseteq y\)</span> by <a class="reference internal" href="#equation-pleq0">(22)</a>.</p>
 <p class="sd-card-text">Inductive step (<span class="math notranslate nohighlight">\(x = [x_1, ..., x_n]\)</span>): suppose <span class="math notranslate nohighlight">\(x = x \sqcap y\)</span>. Then <span class="math notranslate nohighlight">\(y \neq 0\)</span> by <a class="reference internal" href="#equation-pleq2">(24)</a>, so let <span class="math notranslate nohighlight">\(y = [y_1, ..., y_n]\)</span>.</p>
@@ -532,7 +531,7 @@
 <p>To prove <span class="math notranslate nohighlight">\(\sqcup, \sqcap\)</span> form a lattice, we’ll continue ripping off the <a class="reference external" href="https://en.wikipedia.org/wiki/Lattice_(order)#As_algebraic_structure">wikipedia</a> definition. So we need:</p>
 <ul class="simple">
 <li><p>Commutativity: <span class="math notranslate nohighlight">\(x \sqcup y = y \sqcup x\)</span> and <span class="math notranslate nohighlight">\(x \sqcap y = y \sqcap x\)</span></p></li>
-<li><p>Associativity: <span class="math notranslate nohighlight">\((x \sqcup y) \sqcup z = x \sqcup (y \sqcup z)\)</span> and <span class="math notranslate nohighlight">\((x \sqcup y) \sqcup z = x \sqcup (y \sqcup z)\)</span></p></li>
+<li><p>Associativity: <span class="math notranslate nohighlight">\((x \sqcup y) \sqcup z = x \sqcup (y \sqcup z)\)</span> and <span class="math notranslate nohighlight">\((x \sqcap y) \sqcap z = x \sqcap (y \sqcap z)\)</span></p></li>
 <li><p>Absorption: <span class="math notranslate nohighlight">\(x \sqcup (x \sqcap y) = x\)</span> and <span class="math notranslate nohighlight">\(x \sqcap (x \sqcup y) = x\)</span></p></li>
 </ul>
 <p>I won’t prove all of these because the proofs are all dull, mechanical inductions. But here’s a couple for illustration.</p>
@@ -543,7 +542,9 @@
 </section>
 </div><div class="proof admonition" id="proof">
 <p>Proof. Base cases: clearly if either <span class="math notranslate nohighlight">\(x\)</span> or <span class="math notranslate nohighlight">\(y\)</span> is <span class="math notranslate nohighlight">\(0\)</span> then just use <a class="reference internal" href="ops.html#equation-graft0">(18)</a>.</p>
-<p>Inductive step (<span class="math notranslate nohighlight">\(x = [x_1, ..., x_n], y = [y_1, ..., y_n]\)</span>). Assume for inductive hypothesis that <span class="math notranslate nohighlight">\(x_i \sqcup y_i = y_i \sqcup x_i\)</span>. Then <span class="math notranslate nohighlight">\(x \sqcup y = [x_1 \sqcup y_1, ..., x_n \sqcup y_n] = [y_1 \sqcup x_1, ..., y_n \sqcup x_n] = y \sqcup x\)</span>. Done.</p>
+<p>Inductive step (<span class="math notranslate nohighlight">\(x = [x_1, ..., x_n], y = [y_1, ..., y_n]\)</span>). Assume for inductive hypothesis that <span class="math notranslate nohighlight">\(x_i \sqcup y_i = y_i \sqcup x_i\)</span>.</p>
+<p>Then <span class="math notranslate nohighlight">\(x \sqcup y = [x_1 \sqcup y_1, ..., x_n \sqcup y_n] = [y_1 \sqcup x_1, ..., y_n \sqcup x_n] = y \sqcup x\)</span>.
+Done.</p>
 </div>
 <p>The only thing that would change for the proof of <span class="math notranslate nohighlight">\(x \sqcap y = y \sqcap x\)</span> would be the base cases, which still of course go through.</p>
 <div class="proof lemma admonition" id="absorb1">

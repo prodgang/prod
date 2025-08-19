@@ -203,13 +203,11 @@ If you look at the final column of the table, you might notice some other patter
 3. $x \sqcup x = x$. You can see the proof of that below, which is also our first example of a purely productive proof(!)
 4. When $x \neq y$ but they share multiple factors, those factors are combined. 
 
-````{dropdown} Click me for proof of idempotence
-
 This is our first instance of productive induction!
 
 Remember from [here](sections:numbers:induction) that additive induction proves something for every number by showing that it holds for $0$, and that if it holds for $n$ then it holds for $n+1$. 
 
-So productive induction is very similar: first show that some property holds for $0$. Then assume that it holds for $x_1, ..., x_n$ and show that it holds for $[x_1, ..., x_n]$. Since all prods are built in such a way, this proves the property holds for every prod.
+So productive induction is very similar: first show that some property holds for $0$. Then assume that it holds for $x_1, ..., x_n$ and show that it holds for $[x_1, ..., x_n]$. Since all prods are built in such a way, this proves the property holds for every prod. Technically this is called [structural induction](https://en.wikipedia.org/wiki/Structural_induction)
 
 ```{prf:lemma}
 :label: graftidem
@@ -226,8 +224,6 @@ $x \sqcup x = x$
    
    Done.
 ```
-
-````
 
 
 Those properties make grafting look a lot like LCM ([least common multiple](https://en.wikipedia.org/wiki/Least_common_multiple)). I initially thought they were the same. But my trusty method of making wildly optimistic conjectures then getting python to check on the first 50 numbers showed me a very crucial difference: LCM takes the additive max of the exponents, while graft takes the graft of the exponents (because its recursive). 
@@ -346,7 +342,7 @@ Hopefully you can see that pruning is very similar to GCD. In particular, $gcd(x
 
 Here's a brief highlight of some other properties of these operations. If you don't know what the words mean, don't worry about it.
 - Like any mergey operation worth its salt, graft is a commutative monoid. 
-  - The identity is obviously $0$ because of the base case {eq}`GRAFT0`. But $[]$ is also the identity on everything else, which you can check for yourself.
+  - The identity is obviously $0$ because of the base case {eq}`GRAFT0`. But $[]$ is also the identity on everything else (i.e. $\mathbb{\Pi} - \{0\}), which you can check for yourself.
   - I spent the longest time trying to make it a group, because at the time groups were the only structure I was familiar with, but you can't. Because of the idempotence, for one thing.
 - Although its not the least, graft does give you a common multiple. Similarly, prune gives you a (not-necessarily-greatest) common divisor. 
 - Prune distributes over graft! I'll prove this in the next section, but perhaps you were already wondering. 

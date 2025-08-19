@@ -34,9 +34,9 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css?v=b4b7a797" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=afb57fd3" />
   
@@ -190,7 +190,6 @@
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../post/post.html">POST</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../post/next.html">Next Steps</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../post/note.html">Note from the author</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="draw.html">CODE</a></li>
@@ -496,25 +495,21 @@
 <li><p><span class="math notranslate nohighlight">\(x \sqcup x = x\)</span>. You can see the proof of that below, which is also our first example of a purely productive proof(!)</p></li>
 <li><p>When <span class="math notranslate nohighlight">\(x \neq y\)</span> but they share multiple factors, those factors are combined.</p></li>
 </ol>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-<span class="sd-summary-text">Click me for proof of idempotence</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">This is our first instance of productive induction!</p>
-<p class="sd-card-text">Remember from <a class="reference internal" href="../pre/numbers.html#sections-numbers-induction"><span class="std std-ref">here</span></a> that additive induction proves something for every number by showing that it holds for <span class="math notranslate nohighlight">\(0\)</span>, and that if it holds for <span class="math notranslate nohighlight">\(n\)</span> then it holds for <span class="math notranslate nohighlight">\(n+1\)</span>.</p>
-<p class="sd-card-text">So productive induction is very similar: first show that some property holds for <span class="math notranslate nohighlight">\(0\)</span>. Then assume that it holds for <span class="math notranslate nohighlight">\(x_1, ..., x_n\)</span> and show that it holds for <span class="math notranslate nohighlight">\([x_1, ..., x_n]\)</span>. Since all prods are built in such a way, this proves the property holds for every prod.</p>
+<p>This is our first instance of productive induction!</p>
+<p>Remember from <a class="reference internal" href="../pre/numbers.html#sections-numbers-induction"><span class="std std-ref">here</span></a> that additive induction proves something for every number by showing that it holds for <span class="math notranslate nohighlight">\(0\)</span>, and that if it holds for <span class="math notranslate nohighlight">\(n\)</span> then it holds for <span class="math notranslate nohighlight">\(n+1\)</span>.</p>
+<p>So productive induction is very similar: first show that some property holds for <span class="math notranslate nohighlight">\(0\)</span>. Then assume that it holds for <span class="math notranslate nohighlight">\(x_1, ..., x_n\)</span> and show that it holds for <span class="math notranslate nohighlight">\([x_1, ..., x_n]\)</span>. Since all prods are built in such a way, this proves the property holds for every prod. Technically this is called <a class="reference external" href="https://en.wikipedia.org/wiki/Structural_induction">structural induction</a></p>
 <div class="proof lemma admonition" id="graftidem">
 <p class="admonition-title"><span class="caption-number">Lemma 1 </span></p>
 <section class="lemma-content" id="proof-content">
-<p class="sd-card-text"><span class="math notranslate nohighlight">\(x \sqcup x = x\)</span></p>
+<p><span class="math notranslate nohighlight">\(x \sqcup x = x\)</span></p>
 </section>
 </div><div class="proof admonition" id="proof">
-<p class="sd-card-text">Proof.    Base case (<span class="math notranslate nohighlight">\(x=0\)</span>): <span class="math notranslate nohighlight">\(0 \sqcup 0 = 0\)</span> by <a class="reference internal" href="#equation-graft0">(18)</a>.</p>
-<p class="sd-card-text">Inductive step (<span class="math notranslate nohighlight">\(x = [x_1, ..., x_n]\)</span>): Assume for inductive hypothesis that <span class="math notranslate nohighlight">\(x_i \sqcup x_i = x_i\)</span>, for every <span class="math notranslate nohighlight">\(i \leq n\)</span>.</p>
-<p class="sd-card-text">Then <span class="math notranslate nohighlight">\(x \sqcup x = [x_1, ..., x_n] \sqcup [x_1, ..., x_n] = [x_1 \sqcup x_1, ..., x_n \sqcup x_n] = [x_1, ..., x_n] = x\)</span>, where the second equality comes from <a class="reference internal" href="#equation-graft1">(19)</a> and the third from IH.</p>
-<p class="sd-card-text">Done.</p>
+<p>Proof.    Base case (<span class="math notranslate nohighlight">\(x=0\)</span>): <span class="math notranslate nohighlight">\(0 \sqcup 0 = 0\)</span> by <a class="reference internal" href="#equation-graft0">(18)</a>.</p>
+<p>Inductive step (<span class="math notranslate nohighlight">\(x = [x_1, ..., x_n]\)</span>): Assume for inductive hypothesis that <span class="math notranslate nohighlight">\(x_i \sqcup x_i = x_i\)</span>, for every <span class="math notranslate nohighlight">\(i \leq n\)</span>.</p>
+<p>Then <span class="math notranslate nohighlight">\(x \sqcup x = [x_1, ..., x_n] \sqcup [x_1, ..., x_n] = [x_1 \sqcup x_1, ..., x_n \sqcup x_n] = [x_1, ..., x_n] = x\)</span>, where the second equality comes from <a class="reference internal" href="#equation-graft1">(19)</a> and the third from IH.</p>
+<p>Done.</p>
 </div>
-</div>
-</details><p>Those properties make grafting look a lot like LCM (<a class="reference external" href="https://en.wikipedia.org/wiki/Least_common_multiple">least common multiple</a>). I initially thought they were the same. But my trusty method of making wildly optimistic conjectures then getting python to check on the first 50 numbers showed me a very crucial difference: LCM takes the additive max of the exponents, while graft takes the graft of the exponents (because its recursive).</p>
+<p>Those properties make grafting look a lot like LCM (<a class="reference external" href="https://en.wikipedia.org/wiki/Least_common_multiple">least common multiple</a>). I initially thought they were the same. But my trusty method of making wildly optimistic conjectures then getting python to check on the first 50 numbers showed me a very crucial difference: LCM takes the additive max of the exponents, while graft takes the graft of the exponents (because its recursive).</p>
 <p>This has dramatic consequences. Remember that <span class="math notranslate nohighlight">\(4 = 2^2\)</span> and <span class="math notranslate nohighlight">\(8 = 2^3\)</span>. Then <span class="math notranslate nohighlight">\(lcm(4, 8) = 8\)</span>, but <span class="math notranslate nohighlight">\(4 \sqcup 8 = 64 = 2^6\)</span>. In this case, the exponents were multiplied but that’s just because the exponents <span class="math notranslate nohighlight">\(2\)</span> and <span class="math notranslate nohighlight">\(3\)</span> don’t share factors (try out an example where they do like <span class="math notranslate nohighlight">\(4 \sqcup 16\)</span>).</p>
 <p>We’ll see in the <a class="reference internal" href="latt.html#sections-lattice"><span class="std std-ref">next section</span></a> that graft shares a lot of <em>algebraic</em> properties with LCM, but hopefully you can nevertheless appreciate that they are very different functions indeed. I do not recommend trying to interpret graft additively.</p>
 </section>
@@ -583,7 +578,7 @@
 <ul class="simple">
 <li><p>Like any mergey operation worth its salt, graft is a commutative monoid.</p>
 <ul>
-<li><p>The identity is obviously <span class="math notranslate nohighlight">\(0\)</span> because of the base case <a class="reference internal" href="#equation-graft0">(18)</a>. But <span class="math notranslate nohighlight">\([]\)</span> is also the identity on everything else, which you can check for yourself.</p></li>
+<li><p>The identity is obviously <span class="math notranslate nohighlight">\(0\)</span> because of the base case <a class="reference internal" href="#equation-graft0">(18)</a>. But <span class="math notranslate nohighlight">\([]\)</span> is also the identity on everything else (i.e. $\mathbb{\Pi} - {0}), which you can check for yourself.</p></li>
 <li><p>I spent the longest time trying to make it a group, because at the time groups were the only structure I was familiar with, but you can’t. Because of the idempotence, for one thing.</p></li>
 </ul>
 </li>

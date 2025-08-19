@@ -60,4 +60,7 @@ Partial Order
 Total Order
     Partial order where everything is comparable.
 
+Proposition
+    A logical statement that can be true or false
+
 ```

@@ -21,7 +21,7 @@ chapters:
     title: POST
     sections:
       - file: words/post/next
-      - file: words/post/note
+     #- file: words/post/note
   - file: words/prod/draw
     title: CODE
   - file: words/glossary

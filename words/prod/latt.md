@@ -117,7 +117,7 @@ Done.
 ````
 
 
-In any case, we'd probably better check that $\sqsubseteq$ really does define a partial order. I'll go through the reflexivity proof in ''detail'' and you can check out the other parts if you want. They're all not-particularly-insightful inductions. Quick reminder in case you skipped the previous proofs: productive induction is just: prove it for $0$, then assume it for $x_1, ... x_n$ and prove it for $[x_1, ..., x_n]$.
+In any case, we'd probably better check that $\sqsubseteq$ really does define a partial order. I'll go through the reflexivity proof in ''detail'' and you can check out the other parts if you want. They're all not-particularly-insightful inductions. Quick reminder in case you skipped the previous proofs, productive induction is just: prove it for $0$, then assume it for $x_1, ... x_n$ and prove it for $[x_1, ..., x_n]$. Then you're done. 
 
 ```{prf:lemma} 
 :label: pleqrefl
@@ -200,7 +200,7 @@ You'd never have guessed - its more inductions!
    
    By {eq}`PLEQ1`, we have $x_i \sqsubseteq y_i$. By inductive hypothesis, $x_i = x_i \sqcap y_i$. 
    
-   Therefore, $x \sqcap y = [x_1, ..., x_n] \sqcap [y_1, ..., y_n] = [x_1 \sqcap y_1, ..., x_n \sqcap y_n] = [y_1, ..., y_n] = y$. Done.
+   Therefore, $x \sqcap y = [x_1, ..., x_n] \sqcap [y_1, ..., y_n] = [x_1 \sqcap y_1, ..., x_n \sqcap y_n] = [x_1, ..., x_n] = x$. Done.
 
    Backwards direction: $x = x \sqcap y \implies x \sqsubseteq y$. 
 
@@ -227,7 +227,7 @@ So we've made it onto the first rung of [the map](latt-map)!
 
 To prove $\sqcup, \sqcap$ form a lattice, we'll continue ripping off the [wikipedia](https://en.wikipedia.org/wiki/Lattice_(order)#As_algebraic_structure) definition. So we need:
 * Commutativity: $x \sqcup y = y \sqcup x$ and $x \sqcap y = y \sqcap x$
-* Associativity: $(x \sqcup y) \sqcup z = x \sqcup (y \sqcup z)$ and $(x \sqcup y) \sqcup z = x \sqcup (y \sqcup z)$
+* Associativity: $(x \sqcup y) \sqcup z = x \sqcup (y \sqcup z)$ and $(x \sqcap y) \sqcap z = x \sqcap (y \sqcap z)$
 * Absorption: $x \sqcup (x \sqcap y) = x$ and $x \sqcap (x \sqcup y) = x$
 
 I won't prove all of these because the proofs are all dull, mechanical inductions. But here's a couple for illustration.
@@ -241,7 +241,10 @@ $x \sqcup y = y \sqcup x$
 
 Base cases: clearly if either $x$ or $y$ is $0$ then just use {eq}`GRAFT0`.
 
-Inductive step ($x = [x_1, ..., x_n], y = [y_1, ..., y_n]$). Assume for inductive hypothesis that $x_i \sqcup y_i = y_i \sqcup x_i$. Then $x \sqcup y = [x_1 \sqcup y_1, ..., x_n \sqcup y_n] = [y_1 \sqcup x_1, ..., y_n \sqcup x_n] = y \sqcup x$. Done.
+Inductive step ($x = [x_1, ..., x_n], y = [y_1, ..., y_n]$). Assume for inductive hypothesis that $x_i \sqcup y_i = y_i \sqcup x_i$. 
+
+Then $x \sqcup y = [x_1 \sqcup y_1, ..., x_n \sqcup y_n] = [y_1 \sqcup x_1, ..., y_n \sqcup x_n] = y \sqcup x$. 
+Done.
 ```
 
 
